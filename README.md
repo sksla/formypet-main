@@ -1,3 +1,6 @@
+
+> 본 저장소는 포크된 프로젝트가 비공개로 설정되어 있어, 공개를 목적으로 별도로 구성한 저장소입니다.
+
 # formypet(포마이펫)
 
 <img src="src/main/webapp/resources/images/logo.png" width="300px" height="300px" alt="포마이펫 로고 이미지">
