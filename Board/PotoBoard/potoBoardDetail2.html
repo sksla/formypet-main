@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포토갤러리</title>
+    <link rel="icon" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../03_JavaScript/resources/js/sample.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Board_list bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../PotoBoardCSS/potoBoardDetail2.css">
+    <link rel="stylesheet" href="../../src/main/webapp/resources/css/breadcrumb.css">
+    <script src="js/fmp.js"> </script>
+    
+</head>
+<body>
+    <div class="wrap">
+
+    <!--headr start-->   
+    <header class="header-top-section">
+ 
+        <nav class="header_nav">
+           <div width="80%">
+              <div class="menu_logo">
+                  <a href=""><img src="../../html/webapp/resources/images/포마이펫.png" style="width: 200px;" ></a>
+                </div>
+
+              <div class="menu_item">
+              <a href="" class="community">EVENT</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >강아지</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >고양이</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >리뷰</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >게시판</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >고객센터</a>
+            </div> 
+         </div>   
+          <div class="section">
+            <table class="Login_section">
+              <tr>
+                <td><a href="#"><img src="../../html/webapp/resources/images/로그인아이콘.PNG" style="height: 45px; margin-left: 40px;"></a></td>
+                <td><a href="#"><img src="../../html/webapp/resources/images/검색아이콘.PNG" style="height: 40px;  margin-left: 10px;"></a></td>
+                <td><a href="#"><img src="../../html/webapp/resources/images/찜 아이콘.PNG" style="height: 60px; margin-left: 13px"></a></td>
+                <td><a href="#"><img src="../../html/webapp/resources/images/장바구니 아이콘.PNG" style="height: 45px; margin-right: 45px;"></a></td>
+               
+              </tr>
+            </table>
+          </div>
+        </nav>
+        <table id="hiddenTable" style="display: none;">
+            <tr>
+                <td>테이블 내용</td>
+            </tr>
+        </table>
+    </header>
+
+    <!--headr end-->
+    
+    <!-- 브레드크럼 start -->
+    <div class="breadc">
+      <ol>
+        <li><a href="#">Home</a></li>
+        <li class="separator">&gt</li>
+        <li><a href="#">게시판</a></li>
+        <li class="separator">&gt</li>
+        <li>사진게시판</li>
+      </ol>
+    </div>
+    <!-- 브레드크럼 end -->
+
+   <!--section start--> 
+      
+        <!-- sidebar start -->
+        <section class="main_content">
+
+          <div>
+            <h3  class="board_title">사진게시글</h3>
+          </div>
+          <div class="content_area">
+            <div class="side_area">
+                <h5>게시판</h5>
+                <a href="#" class="listTitle">자유게시판</a>
+                <ul class="list">
+                  <li><a href="#">게시글 작성</a></li>
+                  <li><a href="#">내가 쓴 글</a></li>
+                </ul>
+
+                <a href="#" class="listTitle" style="color:#ffa51f;">사진게시판</a>
+                <ul class="list">
+                  <li><a href="#">게시글 작성</a></li>
+                  <li><a href="#">내가 쓴 글</a></li>
+              </ul>
+
+            </div>
+            <!-- sidebar end -->
+          
+          <div class="board_content">
+              
+              
+
+              <div class="content_notice contentBox">
+                
+                  º 포마이펫 자유게시판은 집사님들의 자유로운 소통과 정보공유를 위한 공간입니다. <br> <br>
+    
+                  상업성광고,특정단체나 개인의 명예훼손 게시물, 음란물 등 미풍양속에 어긋나는 게실물은 <br>
+                  관리자의 권한으로 삭제 될 수 있으니 게시판 성격에 맞는 내용만 게시하시기 바랍니다. <br>
+                  <br><br>
+              
+                  º 자유게시판에 등록된 홍보·광고성 글은 개인이 등록한 글입니다
+              
+                  홍보된 내용이나 개인 상호간 거래에 대해서는 책임지지 않습니다. <br><br>
+                  상호 거래 시 유의하시기 바랍니다.
+              </div>
+                
+                  <table class="table table-item">
+                    <tr>
+                        <th width="150px">제목</th>
+                        <td colspan="4">기존 일반사진글 제목</td>
+                    </tr>
+                    <tr>
+                        <th width="100px">작성자</th>
+                        <td width="200px">user01</td>
+                        <th width="80px">작성일</th>
+                        <td>2023-12-24</td>
+                        <td width="100px">조회수 5</td>
+                    </tr>
+                  </table>
+                
+
+              <div id="img_content" class="carousel slide" data-ride="carousel">
+
+                  <!-- Indicators -->
+                  <ul class="carousel-indicators">
+                      <!-- li요소는 이미지의 갯수만큼 -->
+                    <li data-target="#img_content" data-slide-to="0" class="active"></li>
+                    <li data-target="#img_content" data-slide-to="1"></li>
+                    <li data-target="#img_content" data-slide-to="2"></li>
+                    <li data-target="#img_content" data-slide-to="3"></li>
+                  </ul>
+                
+                  <!-- The slideshow -->
+                  <div class="carousel-inner">
+                      <!-- 이미지 갯수만큼 .carousel-item-->
+                    <div class="carousel-item active">
+                      <img src="../resources/images/river1.jpg" alt="Los Angeles">
+                    </div>
+
+                    <div class="carousel-item">
+                      <img src="chicago.jpg" alt="Chicago">
+                    </div>
+
+                    <div class="carousel-item">
+                      <img src="ny.jpg" alt="New York">
+                    </div>
+
+                    <div class="carousel-item">
+                      <img src="ny.jpg" alt="New York">
+                    </div>
+                  </div>
+                
+                  <!-- Left and right controls -->
+                  <a class="carousel-control-prev" href="#img_content" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                  </a>
+                  <a class="carousel-control-next" href="#img_content" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                  </a>
+                
+                </div>
+
+
+              
+
+              <table class="table table-item">
+                  <tr>
+                      <th width="140px">내용</th>
+                      <td colspan="4"><div class="detail" style="width: 100%;">기존 일반사진글 내용</div></td>
+                  </tr>
+                  <tr>
+                      <th>첨부파일</th>
+                      <td colspan="3">
+                          <!-- case1. 해당 게시글에 첨부파일이 없을 경우 -->
+                          <!--
+                          현재 첨부파일이 없습니다. 
+                          -->
+
+                          <!-- case2. 해당 게시글에 첨부파일이 있을 경우 -->
+                          <a href="" style="color:black">첨부파일원본명.jpg</a>
+                      </td>
+                  </tr>
+                  
+              </table>
+
+              <br><br>
+          
+
+
+
+            <!-- 댓글관련 영역 -->
+          
+            <table class="table table-item">
+              <thead>
+                  <tr>
+                      <th width=140px>댓글</th>
+                      <th width="600px"><input type="text" class="form-control" placeholder="내용을 입력해주세요"></th>
+                      <th><button class="btn btn-secondary btn-sm">댓글등록</button></th>
+                  </tr>
+              </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="3">벌이 집사님</th> 
+                    </tr>
+                    <tr>
+                      <td colspan="2">댓글내용입니다~~~~</td>
+                        <td>2024/01/12</td>
+                    </tr>
+
+                </tbody>
+
+              </table>
+          </div>
+          <div class="side_area"></div>
+    </div>
+
+    </section>
+
+
+      <!--section end-->
+
+      <!--footer start-->    
+      
+          <div class="footer_company">
+              <ul>
+                  <li>상호명 : 포마이펫</li>
+                  <li>전화 : 02) 2696-8000</li>
+                  <li>서울특별시 금천구 가산디지털2로 95 3층</li>
+              </ul>
+          </div>
+
+          <ul class="footer_copyright">
+              Copyright ⓒ <span style="color: #f1da05;">ForMyPet</span>. All rights reserved.
+          </ul>
+      </footer>
+      <!--footer end-->
+
+      <!--sidebar start-->
+      
+        <!--sidebar end-->
+      </div>
+
+
+
+
+  </div>
+
+</body>
+</html>

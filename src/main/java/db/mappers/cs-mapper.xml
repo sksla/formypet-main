@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<!-- 관리자-공지사항 목록 조회 -->
+	<entry key="selectManagerNoticeList">
+		SELECT
+		       NOTICE_NO
+	         , USER_ID
+	         , NOTICE_TITLE
+			 , NOTICE_CONTENT
+			 , TO_CHAR(N.ENROLL_DATE, 'YYYY-MM-DD') ENROLL_DATE
+			 , N.STATUS
+		  FROM NOTICE N
+		  JOIN MEMBER ON (NOTICE_WRITER = USER_NO)
+		  ORDER 
+		     BY NOTICE_NO DESC
+	        
+	</entry>
+	
+	<!-- 사용자-공지사항 목록 조회 -->
+	<entry key="selectNoticeList">
+		SELECT
+		       NOTICE_NO
+	         , USER_ID
+	         , NOTICE_TITLE
+			 , NOTICE_CONTENT
+			 , TO_CHAR(N.ENROLL_DATE, 'YYYY-MM-DD') ENROLL_DATE
+			 , READ_COUNT
+		  FROM NOTICE N
+		  JOIN MEMBER ON (NOTICE_WRITER = USER_NO)
+		 WHERE N.STATUS = 'Y' 
+		  ORDER 
+		     BY NOTICE_NO DESC
+		
+	</entry>
+	
+	<!-- 관리자-공지사항 등록 -->
+	<entry key="insertNotice">
+		INSERT
+		  INTO NOTICE
+		  (
+		    NOTICE_NO
+		  , NOTICE_TITLE
+		  , NOTICE_CONTENT
+		  , NOTICE_WRITER 
+		  )
+		  VALUES
+		  (
+		  	SEQ_NNO.NEXTVAL
+		  , ?
+		  , ?
+		  , ?
+		  )
+		  
+	</entry>
+	
+	<!-- 관리자-공지사항 상세조회 -->
+	<entry key="selectManagerNotice">
+		SELECT 
+		       NOTICE_NO
+		     , NOTICE_TITLE
+		     , NOTICE_CONTENT
+		  FROM NOTICE
+		 WHERE NOTICE_NO = ?       
+		  
+	</entry>
+	
+	<!-- 관리자-공지사항 수정 -->
+	<entry key="updateNotice">
+		UPDATE
+		       NOTICE
+		   SET NOTICE_TITLE = ?
+		     , NOTICE_CONTENT = ?
+		     , MODIFY_DATE = SYSDATE
+		 WHERE NOTICE_NO = ?
+	</entry>
+	
+	<!-- 관리자-공지사항 글상태 선택변경 -->
+	<entry key="changeNoticeStatus">
+		UPDATE
+		       NOTICE
+		   SET STATUS = ?    
+		       
+	
+	</entry>
+	
+	<!-- 관리자-공지사항 선택삭제 -->
+	<entry key="deleteNotice">
+		DELETE
+		  FROM NOTICE 
+	
+	</entry>
+	
+	<!-- 관리자-FAQ목록 조회 -->
+	<entry key="selectManagerFaqList">
+		SELECT 
+		       FAQ_NO
+			 , FAQ_TITLE
+			 , FAQ_CONTENT
+			 , TO_CHAR(ENROLL_DATE, 'YYYY-MM-DD') ENROLL_DATE
+			 , STATUS
+		  FROM FAQ
+		 ORDER 
+		    BY FAQ_NO DESC 
+		  
+	</entry>
+	
+	<!-- 관리자-FAQ 상세 조회 -->
+	<entry key="selectManagerFaq">
+		SELECT 
+		       FAQ_NO
+			 , FAQ_TITLE
+			 , FAQ_CONTENT
+			 , TO_CHAR(ENROLL_DATE, 'YYYY-MM-DD') ENROLL_DATE
+			 , STATUS
+		  FROM FAQ
+		 WHERE FAQ_NO = ?
+		  
+	</entry>
+	
+	<!-- 관리자-FAQ 수정 -->
+	<entry key="updateFaq">
+		UPDATE
+		       FAQ
+		   SET FAQ_TITLE = ?
+		     , FAQ_CONTENT = ?
+		     , MODIFY_DATE = SYSDATE
+		 WHERE FAQ_NO = ?    
+	</entry>
+	
+	<!-- 관리자-FAQ 글상태 선택변경 -->
+	<entry key="changeFaqStatus">
+		UPDATE
+		       FAQ
+		   SET STATUS = ?   
+	</entry>
+	
+	<!-- 관리자-FAQ 선택 삭제 -->
+	<entry key="deleteFaq">
+		DELETE
+		  FROM FAQ
+	
+	</entry>
+	
+	<!-- 관리자-FAQ등록-->
+	<entry key="insertFaq">
+		INSERT
+		  INTO FAQ
+		  (
+		    FAQ_NO
+		  , FAQ_TITLE
+		  , FAQ_CONTENT
+		  )
+		  VALUES
+		  (
+		  	SEQ_FNO.NEXTVAL
+		  , ?
+		  , ?
+		  )
+	</entry>
+	
+	<!-- 관리자- 1:1 문의 목록 -->
+	<entry key="selectManagerQnaList">
+		SELECT 
+			   QNA_NO
+			 , USER_ID
+			 , CATEGORY_NAME
+			 , QNA_TITLE
+			 , QNA_CONTENT
+			 , TO_CHAR(Q.ENROLL_DATE, 'YYYY-MM-DD') ENROLL_DATE
+			 , Q.STATUS
+	      FROM QNA Q
+	      JOIN QNA_CATEGORY ON (CATEGORY = CATEGORY_NO)
+	      JOIN MEMBER ON (QNA_WRITER = USER_NO)
+	     WHERE Q.STATUS IN ('Y', 'N')
+	     ORDER
+	        BY QNA_NO DESC 		 
+	</entry>
+	
+	<!-- 관리자- 1:1 문의 내용&답변 상세조회 -->
+	<entry key="selectManagerQna">
+		SELECT 
+		       QNA_NO
+		     , MU.USER_ID AS QNA_WRITER
+		     , CATEGORY_NAME
+		     , QNA_TITLE
+		     , QNA_CONTENT
+		     , TO_CHAR(Q.ENROLL_DATE, 'YYYY-MM-DD HH24:MI') ENROLL_DATE
+		     , Q.STATUS
+		     , MA.USER_ID AS ANSWER_WRITER
+		     , ANSWER_CONTENT
+		     , TO_CHAR(ANSWER_DATE, 'YYYY-MM-DD HH24:MI') ANSWER_DATE  
+		  FROM QNA Q
+		  JOIN MEMBER MU ON(QNA_WRITER = MU.USER_NO)
+		  JOIN QNA_CATEGORY ON (CATEGORY = CATEGORY_NO)
+		  LEFT JOIN MEMBER MA ON (ANSWER_WRITER = MA.USER_NO)
+		 WHERE QNA_NO = ?
+	</entry>
+	
+	<!-- 관리자- 1:1 문의 답변 등록 -->
+	<entry key="insertQnaReply">
+		UPDATE
+		       QNA
+		   SET
+		        ANSWER_WRITER = ?
+		      , ANSWER_CONTENT = ?   
+		      , ANSWER_DATE = SYSDATE
+		      , STATUS = 'Y'
+		 WHERE QNA_NO = ?     
+	</entry>
+	
+	<!-- 1:1 문의 첨부파일 조회 -->
+	<entry key="selectAttachment">
+		SELECT
+		       FILE_NO
+		     , ORIGIN_NAME
+		     , CHANGE_NAME
+		     , FILE_PATH
+		  FROM ATTACHMENT
+		 WHERE REF_BNO = ?
+		   AND REF_TYPE = 'Q'
+		 ORDER
+		    BY FILE_LEVEL ASC
+	</entry>
+	
+	<!-- 관리자- 1:1 문의 선택 삭제 -->
+	<entry key="deleteManagerQna">
+		UPDATE
+		       QNA
+		   SET STATUS = 'D'
+		       
+	</entry>
+	
+	<!-- 관리자- 1:1 문의 첨부파일 선택 삭제 -->
+	<entry key="deleteManagerQnaAttachment">
+		UPDATE
+		       ATTACHMENT
+		   SET STATUS = 'N'
+		 WHERE REF_TYPE = 'Q'
+		       
+	</entry>
+	
+	
+	<!-- 사용자- 1:1 문의 등록 -->
+	<entry key="insertQna">
+		INSERT
+		  INTO QNA
+		  (
+		    QNA_NO
+		  , CATEGORY
+		  , QNA_TITLE
+		  , QNA_CONTENT
+		  , QNA_WRITER
+		  )
+		  VALUES
+		  (
+		    SEQ_QNO.NEXTVAL
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  )
+	</entry>
+	
+	<!-- 사용자- 1:1 문의글 첨부파일 등록 -->
+	<entry key="insertAttachment">
+		INSERT
+		  INTO ATTACHMENT
+		  (
+		    FILE_NO
+		  ,	REF_BNO
+		  , REF_TYPE
+		  ,	ORIGIN_NAME
+		  ,	CHANGE_NAME
+		  ,	FILE_PATH
+		  )
+		  VALUES
+		  (
+			SEQ_ANO.NEXTVAL
+		  , SEQ_QNO.CURRVAL
+		  , 'Q'
+		  , ?
+		  , ?
+		  , ?
+		  )
+	</entry>
+	
+	<!-- 사용자- 1:1 문의글 카테고리 목록 조회 -->
+	<entry key="selectCategoryList">
+		SELECT
+			   CATEGORY_NO
+			 , CATEGORY_NAME
+		  FROM QNA_CATEGORY
+	</entry>
+	
+	
+	<!-- 사용자- 1:1 문의 목록 -->
+	<entry key="selectQnaList">
+		SELECT 
+			   QNA_NO
+			 , CATEGORY_NAME
+			 , QNA_TITLE
+			 , USER_ID
+			 , TO_CHAR(Q.ENROLL_DATE, 'YYYY-MM-DD') ENROLL_DATE
+			 , Q.STATUS
+	      FROM QNA Q
+	      JOIN QNA_CATEGORY ON (CATEGORY = CATEGORY_NO)
+	      JOIN MEMBER ON (QNA_WRITER = USER_NO)
+	     WHERE Q.STATUS IN ('Y', 'N')
+	       AND USER_NO = ?
+	     ORDER
+	        BY QNA_NO DESC 		 
+	</entry>
+	
+	<!-- 사용자- 1:1 문의 내용&답변 상세조회 -->
+	<entry key="selectQna">
+		SELECT 
+		       QNA_NO
+		     , MU.USER_ID AS QNA_WRITER
+		     , CATEGORY_NAME
+		     , QNA_TITLE
+		     , QNA_CONTENT
+		     , TO_CHAR(Q.ENROLL_DATE, 'YYYY-MM-DD HH24:MI') ENROLL_DATE
+		     , Q.STATUS
+		     , MA.USER_ID AS ANSWER_WRITER
+		     , ANSWER_CONTENT
+		     , TO_CHAR(ANSWER_DATE, 'YYYY-MM-DD HH24:MI') ANSWER_DATE  
+		  FROM QNA Q
+		  JOIN MEMBER MU ON(QNA_WRITER = MU.USER_NO)
+		  JOIN QNA_CATEGORY ON (CATEGORY = CATEGORY_NO)
+		  LEFT JOIN MEMBER MA ON (ANSWER_WRITER = MA.USER_NO)
+		 WHERE QNA_NO = ?
+	</entry>
+	
+	<!-- 사용자- 1:1 문의 첨부파일 조회 -->
+	<entry key="memberSelectAttachment">
+		SELECT
+		       FILE_NO
+		     , ORIGIN_NAME
+		     , CHANGE_NAME
+		     , FILE_PATH
+		  FROM ATTACHMENT
+		 WHERE REF_BNO = ?
+		   AND REF_TYPE = 'Q'
+		 ORDER
+		    BY FILE_LEVEL ASC
+	</entry>
+	
+	<!-- 사용자- 1:1 문의 수정 -->
+	<entry key="updateQna">	
+		UPDATE   
+		   	   QNA
+	       SET CATEGORY = ?
+	         , QNA_TITLE = ?
+	         , QNA_CONTENT = ?
+		 WHERE QNA_NO = ?
+	</entry>
+	
+	<!-- 사용자- 1:1 문의 수정(첨부파일) -->
+	<entry key="updateAttachment">
+		UPDATE
+			   ATTACHMENT
+		   SET ORIGIN_NAME = ? <!-- 새 첨부파일 원본명 -->
+		  	 , CHANGE_NAME = ? <!-- 새 첨부파일 수정명 -->
+		  	 , FILE_PATH = ?   <!-- 새 첨부파일 저장경로 -->
+		 WHERE FILE_NO = ?	   <!-- 기존 첨부파일의 고유번호 -->
+	</entry>
+	
+	<!-- 사용자- 1:1 문의 수정(첨부파일) 기존X 수정시등록한첨부파일 -->
+		<entry key="insertNewAttachment">
+		INSERT
+		  INTO ATTACHMENT
+		  (
+		    FILE_NO
+		  ,	REF_BNO
+		  , REF_TYPE
+		  ,	ORIGIN_NAME
+		  ,	CHANGE_NAME
+		  ,	FILE_PATH
+		  )
+		  VALUES
+		  (
+		    SEQ_ANO.NEXTVAL
+		  , ? <!-- 기존 게시글 번호 -->
+		  , 'Q'
+		  , ? <!-- 새 첨부파일 원본명 -->
+		  , ? <!-- 새 첨부파일 수정명 -->
+		  , ? <!-- 새 첨부파일 저장경로 -->
+		  )
+	</entry>
+	
+	<!-- 사용자- FAQ 리스트 조회 -->
+	<entry key="selectFaqList">
+		SELECT
+		       FAQ_NO
+		    ,  FAQ_TITLE
+		    ,  FAQ_CONTENT
+		  FROM FAQ
+		 WHERE STATUS = 'Y'
+		 ORDER
+		    BY FAQ_NO DESC
+		
+	</entry>
+	
+	<!-- 사용자- 공지사항 리스트 조회 -->
+	<entry key="memberSelectNoticeList">
+		SELECT
+			   NOTICE_NO
+			,  USER_ID
+			,  NOTICE_TITLE
+			,  TO_CHAR(N.ENROLL_DATE, 'YYYY-MM-DD') ENROLL_DATE
+			,  NOTICE_CONTENT
+		 FROM  NOTICE N
+		 JOIN  MEMBER M ON NOTICE_WRITER = USER_NO
+		 WHERE N.STATUS = 'Y'
+		 ORDER
+		    BY NOTICE_NO DESC
+	</entry>
+	
+	<!-- 사용자- 고객센터 홈화면 FAQ 리스트 최신 5개 조회 -->
+	<entry key="selectFaqListHome">
+		SELECT
+		       FAQ_NO
+		    ,  FAQ_TITLE
+		    ,  FAQ_CONTENT
+		FROM (
+		    SELECT
+		           FAQ_NO
+		        ,  FAQ_TITLE
+		        ,  FAQ_CONTENT
+		        ,  RANK() OVER (ORDER BY FAQ_NO DESC) AS rank
+		    FROM  FAQ
+		    WHERE STATUS = 'Y'
+		)
+	<![CDATA[
+		WHERE rank <= 5
+	]]>
+	</entry>
+	
+	<!-- 사용자- 고객센터 홈화면 공지사항 리스트 최신 2개 조회 -->
+	<entry key="selectNoticeListHome">
+	    SELECT
+	        NOTICE_NO,
+	        NOTICE_TITLE,
+	        USER_ID,
+	        TO_CHAR(ENROLL_DATE, 'YYYY-MM-DD') AS ENROLL_DATE,
+	        NOTICE_CONTENT
+	    FROM (
+	        SELECT
+	            N.NOTICE_NO,
+	            N.NOTICE_TITLE,
+	            M.USER_ID,
+	            N.ENROLL_DATE,
+	            N.NOTICE_CONTENT,
+	            ROW_NUMBER() OVER (ORDER BY N.NOTICE_NO DESC) AS rank
+	        FROM
+	            NOTICE N
+	            JOIN MEMBER M ON N.NOTICE_WRITER = M.USER_NO
+	        WHERE
+	            N.STATUS = 'Y'
+	    )
+	<![CDATA[
+	    WHERE rank <= 2
+	]]>
+	</entry>
+	
+	
+		  
+		 
+</properties>

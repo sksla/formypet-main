@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인페이지</title>
+  <link rel="icon" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="../03_JavaScript/resources/js/sample.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="../../../../ForMyPet/css/formypet.css">
+  <script src="js/fmp.js"> </script>
+
+
+
+
+  <!-- 장바구니 아이콘 부트스트랩 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+  <style>
+
+    /*--------- 장바구니 스타일 ---------------*/
+    *{
+        box-sizing: border-box;
+    }
+    
+    body{
+      width:1300px;
+      margin:auto;
+    }
+    .main_content{
+      display: flex;
+      flex-direction: column;
+      
+    }
+
+    .cart_wrap{
+      height:90%;
+      text-align: center;
+    }
+
+    .main_content>div {
+      margin-top: 0;
+      padding: 0;
+    }
+    
+
+    /* 선택삭제 체크박스, 버튼 스타일*/
+    .check_del{
+      width:1000px;
+      display: flex;
+      justify-content: space-between;
+      
+    }
+    
+    /* 상품 정보 스타일 */
+    .pro_info_wrap{
+            display: flex;
+            /* justify-content: space-evenly; */
+            width:500px;
+        }
+
+        .pro_info{
+            margin-left: 15px;
+        }
+
+        .thumbnail_img{
+            width: 240px;
+            height: 240px;
+        }
+
+        .thumbnail{
+            position:relative;
+        }
+
+        .thumbnail_like{
+            position:absolute;
+            top:175px;
+            left:180px;
+            text-align: right;
+            z-index: 10;
+        }
+
+
+
+        /* 찜아이콘 스타일 */
+        .bi-heart{
+            font-size: 40px;
+            
+        }
+
+        .bi-heart-fill{
+            font-size: 40px;
+            color:hotpink;
+        }
+    
+        .pay_count{
+          color:darkorange;
+        }
+
+        /* 결제예상금액 */
+        .expect_price{
+          display: flex;
+          justify-content: space-evenly;
+        }
+        
+    
+
+
+    /* Breadcrumbs */
+    .breadcrumb {
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+    color: black;
+    font-weight: 600;
+    background: none;
+    }
+
+    .breadcrumb a {
+    color: #CACACA;
+    transition: 0.3s;
+    }
+
+    .breadcrumb .separator{
+      font-size: 15px;
+      color:#CACACA;
+    }
+
+    .breadcrumb a:hover {
+    color: #51678f;
+    }
+
+    .breadcrumb .breadcrumb-item::before {
+    color: #899bbd;
+    }
+
+    .breadcrumb .active {
+    color: #51678f;
+    font-weight: 600;
+    }
+
+    /* ----------------------------------------------------------- */
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!--head start-->
+    <header class="header-top-section">
+
+      <nav class="header_nav">
+        <div width="80%">
+          <div class="menu_logo">
+            <a href=""><img src="../../resources/images/포마이펫.png" style="width: 200px;"></a>
+
+          </div>
+
+          <div class="menu_item">
+            <a href="" class="community">EVENT</a>
+          </div>
+          <div class="menu_item">
+            <a href="">강아지</a>
+          </div>
+          <div class="menu_item">
+            <a href="">고양이</a>
+          </div>
+          <div class="menu_item">
+            <a href="">리뷰</a>
+          </div>
+          <div class="menu_item">
+            <a href="">게시판</a>
+          </div>
+          <div class="menu_item">
+            <a href="">고객센터</a>
+          </div>
+        </div>
+        <div class="section">
+          <table class="Login_section">
+            <tr>
+              <td><a href="#"><img src="../../resources/images/로그인아이콘.PNG" style="height: 45px; margin-left: 40px;"></a>
+              </td>
+              <td><a href="#"><img src="../../resources/images/검색아이콘.PNG" style="height: 40px;  margin-left: 10px;"></a>
+              </td>
+              <td><a href="#"><img src="../../resources/images/찜 아이콘.PNG" style="height: 60px; "></a></td>
+              <td><a href="#"><img src="../../resources/images/장바구니 아이콘.PNG" style="height: 45px; "></a></td>
+
+            </tr>
+          </table>
+        </div>
+      </nav>
+
+    </header>
+
+    <!--head end-->
+
+
+    <div height="2rem;">
+        <ol class="breadcrumb">
+            <li><a href="">Home</a></li> &nbsp;
+            <li class="separator">&gt</li> &nbsp;
+            <li>장바구니</li>
+        </ol>
+    </div>
+    
+
+    <!--section content start-->
+    <section class="main_content">
+        
+        
+
+        <div class="cart_wrap">
+            <h1>장바구니</h1>
+            <br><br>
+
+            <!-- 전체 선택 체크박스 & 선택삭제 -->
+            <div class="cart_list">
+              <div class="check_del">
+                <div>
+                  <input name="all" type="checkbox" id="del_all">&nbsp;
+                  <label for="del_all">전체선택</label>
+
+                </div>
+
+                <button type="button" class="btn btn-outline-secondary">선택삭제</button>
+              </div>
+              <br>
+              
+
+              <!-- 장바구니 상품 정보 -->
+              <form action="">
+                  <table class="table" align="center">
+                      <tr>
+                        <th width="50px"></th>
+                        <th width="500px">상품정보</th>
+                        <th width="140px">배송정보</th>
+                        <th width="220px">주문금액</th>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" name="check"></td>
+                        <td align="center">
+                          <div class="pro_info_wrap">
+                            <div class="thumbnail">
+                              <img class="thumbnail_img" src="../../resources/images/오리젠퍼피.png" alt="">
+                              
+                              <!-- 상품 품절 아닐때 -->
+                              <div class="thumbnail_like">
+                                <!-- 찜 누르기 전 -->
+                                <i class="bi bi-heart heart"></i>
+                                <!-- 찜 누른 후 -->
+                                <!-- <i class="bi bi-heart-fill heart"></i> -->
+                              </div>
+                              
+                              <!-- 상품 품절시 뜨게 해야되는 요소 
+                              <div class="thumbnail_status">품절</div>
+                               -->
+                    
+                            </div>
+                            
+                            <table class="pro_info">
+                              <tr>
+                                  <td>상품명상품명상품명</td>
+                              </tr>
+                              <tr>
+                                  <td>1개</td>
+                              </tr>
+                              <tr>
+                                  <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#change_amount">수량 변경</button></td>
+                              </tr>
+                            </table>
+                            
+                          </div>
+                          
+                        </td>
+                        <td>무료배송</td>
+                        <td><h5>21,900원</h5></td>
+                      </tr>
+
+                      <tr>
+                        <td><input type="checkbox" name="check"></td>
+                        <td align="center">
+                          <div class="pro_info_wrap">
+                            <div class="thumbnail">
+                              <img class="thumbnail_img" src="../../resources/images/오리젠퍼피.png" alt="">
+                              
+                              <!-- 상품 품절 아닐때 -->
+                              <div class="thumbnail_like">
+                                <!-- 찜 누르기 전 -->
+                                <i class="bi bi-heart"></i>
+                                <!-- 찜 누른 후 -->
+                                <!-- <i class="bi bi-heart-fill heart"></i> -->
+                              </div>
+                              
+                              <!-- 상품 품절시 뜨게 해야되는 요소 
+                              <div class="thumbnail_status">품절</div>
+                               -->
+                    
+                            </div>
+                            
+                            <table class="pro_info">
+                              <tr>
+                                  <td>상품명상품명상품명</td>
+                              </tr>
+                              <tr>
+                                  <td>1개</td>
+                              </tr>
+                              <tr>
+                                  <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#change_amount">수량 변경</button></td>
+                              </tr>
+                            </table>
+                            
+                          </div>
+                          
+                        </td>
+                        <td>무료배송</td>
+                        <td><h5>21,900원</h5></td>
+                      </tr>
+                  </table>
+
+                  <!-- 수량변경 버튼 클릭시 나타나는 모달창 -->
+
+                  <div class="modal" id="change_amount">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                  
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">선택 상품 수량 변경</h4>
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                  
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <h5>
+                            변경할 상품명 : 강아지사료강아지사료
+                          </h5>
+                          <br>
+                          
+                          변경할 수량 입력: 
+                          <input type="number" min="1" max="10" required value="1"> 개
+                          <br>
+                          
+                          * 1~10개 까지 입력가능합니다.
+                        </div>
+                  
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">돌아가기</button>
+                          <button type="button" class="btn btn-warning">변경</button>
+
+                        </div>
+                  
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <br><br>
+
+
+                  <!-- 결제예상금액 -->
+
+                  <hr>
+                  <div class="expect_price_wrap">
+                    <h4 style="text-align: left;">
+                      결제 예상 금액 총 &nbsp; <span class="pay_count">1</span> 건
+                    </h4>
+                    <hr>
+
+                    <div class="expect_price">
+                      <div>
+                        <h3>21,900원</h3>
+                        <h6>상품금액</h6>
+                      </div>
+
+                      <div>
+                        <h3>+</h3>
+                        <h6></h6>
+                      </div>
+
+                      <div>
+                        <h3>0원</h3>
+                        <h6>배송비</h6>
+                      </div>
+
+                      <div>
+                        <h3>=</h3>
+                        <h6></h6>
+                      </div>
+
+                      <div>
+                        <h3>21.900원</h3>
+                        <h6>총 결제금액</h6>
+                      </div>
+
+
+                    </div>
+                    <hr>
+
+                    <div class="btn-group btn-block btn-group-lg">
+                      <button type="button" class="btn btn-outline-secondary">쇼핑 계속하기</button>
+                      <button type="button" class="btn btn-warning">결제하기</button>
+                    </div>
+
+                  </div>
+
+                </form>
+            </div>
+            <br>
+            <br>
+        </div>
+
+
+    </section>
+
+
+    <!--section content end-->
+
+
+    <!--footer start-->
+    <footer>
+      <div class="footer_company">
+        <ul>
+          <li>상호명 : 포마이펫</li>
+          <li>전화 : 02) 2696-8000</li>
+          <li>서울특별시 금천구 가산디지털2로 95 3층</li>
+        </ul>
+      </div>
+
+      <ul class="footer_copyright">
+        Copyright ⓒ <span style="color: #f1da05;">ForMyPet</span>. All rights reserved.
+      </ul>
+    </footer>
+    <!--footer end-->
+
+    <!--sidebar start-->
+    <button id="toggleButton">></button>
+    <div id="sidebar">
+      <ul id="recently-viewed">
+        <li><a href="#">상품 1</a></li>
+        <li><a href="#">상품 2</a></li>
+        <li><a href="#">상품 3</a></li>
+        <li><a href="#">상품 4</a></li>
+        <li><a href="#">상품 5</a></li>
+      </ul>
+      <h4>최근 본 상품</h4>
+    </div>
+
+    <script>
+      const toggleButton = document.getElementById('toggleButton');
+      const sidebar = document.getElementById('sidebar');
+
+      toggleButton.addEventListener('click', function () {
+        const currentRight = parseInt(getComputedStyle(sidebar).right);
+
+        if (currentRight < 0) {
+          sidebar.style.right = '0';
+        } else {
+          sidebar.style.right = '-250px';
+        }
+      });
+    </script>
+    </nav>
+    <!--sidebar end-->
+  </div>
+
+
+
+
+  </div>
+
+</body>
+
+</html>

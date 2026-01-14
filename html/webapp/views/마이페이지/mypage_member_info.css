@@ -1,0 +1,40 @@
+/* 회원정보 수정 css */
+
+
+
+.main_content > div{
+    border: 0px solid;
+    width: 60%;
+    margin: auto;
+    margin-bottom : 200px; 
+    min-height: 1200px;
+    padding: center;
+}
+
+#table_signup input, #table_signup_sub input{
+    width:50%;
+}
+
+#table_signup th, #table_signup_sub th{
+    white-space: nowrap;
+}
+/* #table_signup, #table_signup_sub {
+table-layout: auto; /* 테이블의 너비를 내용에 맞게 조절 */
+
+
+/* 회원가입페이지 최상단 h2요소 중앙배치 */
+.center {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.breadcrumb{
+    background-color: white;
+} 
+
+
+.form-control.member_none {
+    background-color: lightgray; /* 회색 배경색 */
+    pointer-events: none; /* 클릭 비활성화 */
+}

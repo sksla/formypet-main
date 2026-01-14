@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>주문·교환·반품·취소 내역</title>
+        
+    </head>
+    
+    <!-- 브레드크럼 css -->
+    <link rel="stylesheet" href="/html/webapp/resources/css/breadcrumb.css">
+    
+    <!-- 마이페이지 css -->
+    <link rel="stylesheet" href="mypage.css">
+
+    <!-- 마에페이지 주문전용 css -->
+    <link rel="stylesheet" href="mypage_order.css"> 
+
+    <!-- 사이드바 적용 js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="mypage.js"></script>
+    
+    <body  class="mx-auto">
+        <!--head start-->   
+        <header>
+            <h1>헤더 영역</h1>
+            <h1>헤더 영역</h1>
+        </header>
+        
+        <!--head end-->
+        <hr class="hr1">
+        
+        <!-- 브레드크럼 start -->
+        <div class="breadcrumb">
+            <ol>
+                <li><a href="/html/webapp/views/공통부분/mainPage.html">Home</a></li>
+                <li class="separator">&gt</li>
+                <li><a href="mypage_mainpage.html">마이페이지</a></li>
+                <li class="separator">&gt</li>
+                <li>주문·교환·반품·취소 내역</li>
+                
+            </ol>
+        </div>
+    <!-- 브레드크럼 end -->
+    
+    <!-- 메인페이지 start-->
+    <!-- 제목 -->
+    <h1 class="title">주문·교환·반품·취소 내역</h1>
+    
+    <!-- section start -->
+    <section>
+        <!-- 좌우로 영역 나누기(사이드바, contents) start -->
+        <div class="dividing_area1">
+            <!-- 사이드바 -->
+            <div class="sidebar"></div>
+            
+            
+            <!-- contents start-->
+            <div class="content_div">
+
+
+                <!-- 날짜 기능 -->
+                <div class="date_tab"></div>
+
+
+                
+                <!-- 주문·교환·반품·취소 버튼 start -->
+                <div class="div_total mouse_hover">
+                    <div class="product_order" onclick="selectTab('order1')">
+                        <p>주문</p>
+                        <hr class="hr_selected">
+                    </div>
+                    <div class="product_chagne" onclick="selectTab('order2')">
+                        <p>교환</p>
+                        <hr class="hr_NoSelected">
+                    </div>
+                    <div class="product_return" onclick="selectTab('order3')">
+                        <p>반품</p>
+                        <hr class="hr_NoSelected">
+                    </div>
+                    <div class="product_cancle" onclick="selectTab('order4')">
+                        <p>취소</p>
+                        <hr class="hr_NoSelected">
+                    </div>
+                </div>
+                <!-- 주문·교환·반품·취소 버튼 end -->
+
+
+                <!-- 결과 값 출력 -->
+                <div id="content_result" class="content_result">
+                    
+                    <!-- 주문 내역 start-->
+                    <!-- title -->
+                    <p class="mypage_font6">주문내역</p>
+                    <div class="mypage_order_detail">
+                        <p class="mypage_font8">2024.02.24</p>
+                        <a href="" class="mypage_font8">주문상세 &gt;</a>
+                    </div>
+
+                    <hr>
+                    <table class="table">
+                        <tr>
+                            <td class="td1" rowspan="2">
+                                <a href="">
+                                    <img src="/html/webapp/resources/images/아카나퍼피-removebg-preview.png" alt="상품이미지">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="">
+                                    <span>아카나 사료 2/6/11.4kg 프리런덕 요크셔 포크 라이트앤피트 퍼피 어덜트 스몰브리드 패시피카 와일드프레이리 독</span>
+                                </a>
+                            </td>
+                            <td rowspan="4" class="td3">
+                                <p class="mypage_font2">입금대기중</p>
+                                <a href=""><span>주문취소</span></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td2">
+                                <a href="">
+                                    <span class="mypage_font4">요크셔 포크 2kg 1개 / 32,700 원</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr class="hr3">
+                    <!-- 주문 내역 end-->
+
+
+
+                </div>
+
+
+                
+
+            </div>
+            <!-- contents end-->
+
+  
+            
+        </div>
+        <!-- 좌우로 영역 나누기(사이드바, contents) end -->
+
+
+    </section>
+    <!-- section end -->
+
+
+
+
+
+
+
+    
+    <!-- 메인페이지 End-->
+
+
+
+    <hr class="hr1">
+    <!-- 푸터 영역 start -->
+    <footer>
+        <h1>푸터 영역</h1>
+        <h1>푸터 영역</h1>
+    </footer>
+    <!-- 푸터 영역 end -->
+
+
+</body>
+</html>

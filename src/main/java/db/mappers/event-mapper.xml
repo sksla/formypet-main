@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="selectListCount">
+		select Count(*) count
+			from event
+	</entry>
+	
+	<entry key="selectList">
+		SELECT *
+		  FROM (
+				SELECT ROWNUM RNUM, A.*
+				  FROM(
+						select 
+								event_no
+							  ,	event_title
+							  , start_date
+							  , end_date
+							  , event_show
+							  , e.status
+							  , change_name
+							  , file_path
+							  , file_level
+						  from event e
+					 left join attachment on (ref_type='E' and file_level = 1 and ref_bno = event_no)
+						 ORDER
+						     BY event_no DESC
+					  ) A
+			  )
+		 WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	
+	<entry key="insertEvent">
+		insert
+			into event
+			(
+				event_no
+			  , event_title
+			  , start_date
+			  , end_date
+			  , event_show
+			)
+			values
+			(
+				SEQ_ENO.NEXTVAL
+			  , ?
+			  , ?
+			  , ?
+			  , ?
+			)	
+	</entry>
+	
+	<entry key="insertEventProduct">
+		insert
+			into event_product
+			(
+				event_no
+			  , pro_no
+			  , discount
+			)
+			values
+			(
+				SEQ_ENO.CURRVAL
+			  , ?
+			  , ?
+			)	
+	</entry>
+	
+	<entry key="insertAttachment">
+		insert
+				into attachment
+				(
+					file_no
+				  , ref_bno
+				  , ref_type
+				  , origin_name
+				  , change_name
+				  , file_path
+				  , file_level
+				)
+				values
+				(
+					SEQ_ANO.NEXTVAL
+				  , SEQ_ENO.CURRVAL
+				  , 'E'
+				  , ?
+				  , ?
+				  , ?
+				  , ?
+				)
+	</entry>
+	
+	<entry key="updateProductType">
+		update
+				product
+		   set  
+		   		status = 'Y'
+		 where  pro_no = ?
+	</entry>
+	
+	<!-- <entry key="selectDetailEvent">
+		SELECT 
+			   EVENT_NO	
+		  	  ,EVENT_TITLE
+		  	  ,START_DATE
+		  	  ,END_DATE
+		  	  ,ENROLL_DATE
+		  	  ,EVENT_SHOW
+		  	  ,STATUS
+		  	  ,FILE_PATH
+		  	  ,CHANGE_NAME
+		 FROM 
+		      EVENT
+		  left join attachment on (ref_type='E' and file_level = 1 and ref_bno = event_no)
+		 WHERE EVENT_NO = ?
+		   AND STATUS = 'Y'
+	</entry> -->
+	
+	<entry key="selectDetailEvent">
+		select 
+				event_no
+			  ,	event_title
+			  , start_date
+			  , end_date
+			  , event_show
+			  , e.status
+			  , change_name
+			  , file_path
+			  , file_level
+		  from event e
+	 	left join attachment on (ref_type='E' and file_level = 1 and ref_bno = event_no)
+	 	
+	</entry>
+</properties>

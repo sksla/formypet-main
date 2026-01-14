@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<entry key="countSoldOutProduct">
+	<!-- 김영주 관리자- 품절 상품의 개수  -->
+		SELECT COUNT(*) COUNT
+  		  FROM PRODUCT
+         WHERE STOCK = 0
+	</entry>
+	
+	<entry key="countTodayEnrollMember">
+		<!-- 김영주 관리자 - 오늘 회원가입한 회원수 -->
+		SELECT COUNT(*) AS COUNT
+	      FROM MEMBER
+         WHERE TRUNC(ENROLL_DATE) = TRUNC(SYSDATE)
+           AND STATUS = 'Y'
+	</entry>
+	
+	<entry key="countTodayEnrollQna">
+		SELECT COUNT(*) AS COUNT
+          FROM QNA
+         WHERE TRUNC(ENROLL_DATE) = TRUNC(SYSDATE)
+           AND STATUS = 'N'
+         
+	</entry>
+	
+	<entry key="bestSaleRateProList">
+	<!-- 김영주 - 관리자 메인 판매량(출고량) BEST 5 조회 -->
+		SELECT *
+          FROM
+              (
+                SELECT
+                       DENSE_RANK() OVER(ORDER BY SUM DESC) RANK
+		             , S.PRO_NO
+		             , PRO_NAME
+		             , PRICE
+		             , SUM
+		             , PRO_MAIN_IMAGE
+            
+        		  FROM
+            			(
+                		  SELECT 
+                                 PRO_NO
+                               , SUM(COUNT) SUM
+                  			FROM STOCK
+                		   WHERE STATUS = 'O'
+                 		GROUP BY PRO_NO
+             			) S
+        		  JOIN PRODUCT P ON (S.PRO_NO = P.PRO_NO) 
+    		  )
+  		 WHERE RANK BETWEEN 1 AND 5
+	</entry>
+</properties>

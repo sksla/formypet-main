@@ -1,0 +1,181 @@
+/* 위시리스트 css */
+
+.wishlist_contents{
+    width: 100%;
+}
+
+.wishlist_title{
+    display: flex;
+    margin: 0 10px;
+    align-items: center;
+    width: 100%;
+}
+.wishlist_title_left{
+    width: 50%;
+    text-align: left;
+    display: flex;
+}
+
+/* 위시리스트 카운트 숫자 글자 */
+.font_yellow{
+    color: gold;
+    margin-left: 15px;
+}
+.wishlist_title_right{
+    width: 50%;
+    text-align: right;
+    vertical-align: middle;
+}
+
+/* 품절제외, 체크박스 높이 맞추기 */
+.wishlist_title_right , .checkbox_text , .checkbox_wishlist {
+    vertical-align: middle;
+}
+
+
+.wishlist_font1, .wishlist_font2 {
+    font-size: 20px;
+}
+.checkbox_wishlist{
+    width: 25px;
+    height: 25px;
+}
+
+.wishlist_delete{
+    border: 1px solid gray;
+    background-color: white;
+    font-size: 20px;
+    width: 120px;
+    height: 50px;
+}
+.wishlist_delete:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+
+/* 위시리스트 상품 이미지 보여주기 */
+.wishlist_product{
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.div_pro{
+    width: 25%;
+    padding: 10px;
+    pointer-events: none;
+    margin-bottom: 20px;
+}
+.div_pro img{
+    width: 100%;
+    background-color: gainsboro;
+    height: auto;
+}
+.div_pro:hover{
+    cursor: pointer;
+}
+.div_img {
+    height: 250px;
+}
+
+
+
+
+/* 상품 설명 */
+.wishlist_font2{
+    display: flex;
+    font-size: 15px;
+    font-weight: 600;
+    height: 50px;
+}
+.wishlist_font3{
+    display: flex;
+    font-size: 15px;
+    color: gray;
+    text-decoration: line-through;
+}
+.wishlist_font4{
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 600;
+    color: red;
+}
+.tr2 p{
+    margin: 0;
+}
+.div_flex{
+    display: flex;
+    align-items: center;
+}
+.wishlist_font5{
+    float: right;
+    font-size: 25px;
+    font-weight: 600;
+}
+.div_right{
+    text-align: right;
+    margin-left: auto;
+}
+.wishlist_font6{
+    float: right;
+    
+}
+.div_text_left{
+    text-align: left;
+}
+
+/* 삭제버튼 */
+.btn_delete, .btn_cancle{
+    width: 150px;
+    height: 50px;
+    font-size: 25px;
+    border: 1px solid gray;
+}
+.btn_delete {
+    background-color: gold;
+}
+.btn_delete:hover {
+    background-color: goldenrod;
+}
+.btn_cancle{
+    background-color: white;
+}
+.btn_cancle:hover {
+    background-color: lightgray;
+}
+
+/* 전체삭제 modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid gainsboro;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .close {
+    color: gray;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

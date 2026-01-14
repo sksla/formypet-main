@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인페이지</title>
+  <link rel="icon" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="../03_JavaScript/resources/js/sample.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="../../../../ForMyPet/css/formypet.css">
+  <script src="../../../../ForMyPet/js/fmp.js"> </script>
+  <style>
+    .main_list{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .thumbnail{
+      margin: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!--head start-->
+    <header class="header-top-section">
+
+      <nav class="header_nav">
+        <div width="80%">
+          <div class="menu_logo">
+            <a href=""><img src="../../resources/images/포마이펫.png" style="width: 200px;"></a>
+
+          </div>
+
+          <div class="menu_item">
+            <a href="" class="community">EVENT</a>
+          </div>
+          <div class="menu_item">
+            <a href="">강아지</a>
+          </div>
+          <div class="menu_item">
+            <a href="">고양이</a>
+          </div>
+          <div class="menu_item">
+            <a href="">리뷰</a>
+          </div>
+          <div class="menu_item">
+            <a href="">게시판</a>
+          </div>
+          <div class="menu_item">
+            <a href="">고객센터</a>
+          </div>
+        </div>
+        <div class="section">
+          <table class="Login_section">
+            <tr>
+              <td><a href="#"><img src="../../resources/images/로그인아이콘.PNG" style="height: 45px; margin-left: 40px;"></a>
+              </td>
+              <td><a href="#"><img src="../../resources/images/검색아이콘.PNG" style="height: 40px;  margin-left: 10px;"></a>
+              </td>
+              <td><a href="#"><img src="../../resources/images/찜 아이콘.PNG" style="height: 60px; "></a></td>
+              <td><a href="#"><img src="../../resources/images/장바구니 아이콘.PNG" style="height: 45px; "></a></td>
+
+            </tr>
+          </table>
+        </div>
+      </nav>
+    </header>
+
+    <!--head end-->
+    <div class="category_area_dog">
+      <div class="category">
+        <table style=" margin: 0 auto; width: 60%;">
+          <tr>
+            <th class="big_category" rowspan="2">사료</th>
+            <td colspan="2" style="border-top: 0;">퍼피<span>(1세 미만)</span></td>
+            <td colspan="2" style="border-top: 0;">어덜트<span>(1~7세 미만)</span></td>
+            <td colspan="2" style="border-top: 0;">시니어<span>(7세 이상)</span></td>
+            <td colspan="2" style="padding-right: 70px; border-top: 0;">전연령</td>
+          </tr>
+
+          <tr>
+            <td colspan="2">건식 사료</td>
+            <td colspan="2">에어/동결 사료</td>
+            <td colspan="4" style="text-align: left; padding-left:50px;">습식 사료</td>
+
+          </tr>
+        </table>
+      </div>
+      <div class="category">
+        <table style=" margin: 0 auto; width: 60%;">
+          <tr>
+            <th class="big_category">간식</th>
+            <td>전체</td>
+            <td>뼈간식</td>
+            <td style="padding-right: 20px;">껌</td>
+            <td style="padding-right: 10px;">저키</td>
+            <td style="padding-left:20px;">음료</td>
+            <td style="padding-left:20px;">영양/기능</td>
+            <td style="padding-right:20px;">처방식</td>
+            <td>수제간식</td>
+          </tr>
+        </table>
+      </div>
+      <div class="category">
+        <table style=" margin: 0 auto; width: 60%;">
+          <tr>
+            <th class="big_category" rowspan="2">용품</th>
+            <td>배변용품</td>
+            <td>위생용품</td>
+            <td>미용/관리</td>
+            <td>산책용품</td>
+            <td>훈련용품</td>
+            <td>장난감</td>
+            <td colspan="2">노즈워크</td>
+          </tr>
+          <tr>
+            <td colspan="2">의류/악세사리</td>
+            <td style="padding-left:0px;">생활용품</td>
+            <td colspan="2" style="padding-left: 40px;">급수/급식기</td>
+            <td colspan="3" style="text-align: left;">기타</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!--section start-->
+    <section class="main_content">
+
+      <div class="d_product_best">
+        <h1 class="product_best">●●● BEST ●●●</h1>
+        <div class="best_product">
+          <div class="thumbnail">
+            <img class="thumbnail_img" src="../../resources/images/오리젠퍼피.png" alt="">
+
+            <!-- 상품 품절시 뜨게 해야되는 요소  -->
+            <div class="thumbnail_status">품절</div>
+            
+
+            <table class="thumbnail_etc">
+              <tr>
+                <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+              </tr>
+              <tr>
+                <td colspan="4" class="s_price"><s>40,000</s></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="discount"><b>20</b>%</td>
+                <td colspan="2" class="price">29,200 <a> 원 </a></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="star">★</td>
+                <td class="average">4.9</td>
+                <td class="review_count">(1,000)</td>
+              </tr>
+            </table>
+          </div>
+          <div class="thumbnail">
+            <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+
+            <table class="thumbnail_etc">
+              <tr>
+                <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+              </tr>
+              <tr>
+                <td colspan="4" class="s_price"><s>40,000</s></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="discount"><b>20</b>%</td>
+                <td colspan="2" class="price">29,200 <a> 원 </a></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="star">★</td>
+                <td class="average">4.9</td>
+                <td class="review_count">(1,000)</td>
+              </tr>
+            </table>
+
+          </div>
+          <div class="thumbnail">
+            <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+            <table class="thumbnail_etc">
+              <tr>
+                <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+              </tr>
+              <tr>
+                <td colspan="4" class="s_price"><s>40,000</s></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="discount"><b>20</b>%</td>
+                <td colspan="2" class="price">29,200 <a> 원 </a></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="star">★</td>
+                <td class="average">4.9</td>
+                <td class="review_count">(1,000)</td>
+              </tr>
+            </table>
+          </div>
+          <div class="thumbnail">
+            <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+            <table class="thumbnail_etc">
+              <tr>
+                <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+              </tr>
+              <tr>
+                <td colspan="4" class="s_price"><s>40,000</s></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="discount"><b>20</b>%</td>
+                <td colspan="2" class="price">29,200 <a> 원 </a></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="star">★</td>
+                <td class="average">4.9</td>
+                <td class="review_count">(1,000)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!----------------------------------------------------------------------------------------------------------->
+        <div class="product_main">
+          <div class="main_list">
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/images/오리젠퍼피.png" alt="">
+              <div class="thumbnail_status">품절</div>
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+
+            </div>
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+
+            </div>
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+            </div>
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/images/오리젠퍼피.png" alt="">
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+
+            </div>
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+
+            </div>
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+            </div>
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/images/오리젠퍼피.png" alt="">
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+
+            </div>
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+
+            </div>
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+            </div>
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/images/오리젠퍼피.png" alt="">
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+
+            </div>
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+
+            </div>
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+            </div>
+            <div class="thumbnail">
+              <img class="thumbnail_img" src="../../resources/img/city1.jpg" alt="">
+
+              <table class="thumbnail_etc">
+                <tr>
+                  <th colspan="4" class="product_name">오리젠 독 퍼피</th>
+                </tr>
+                <tr>
+                  <td colspan="4" class="s_price"><s>40,000</s></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="discount"><b>20</b>%</td>
+                  <td colspan="2" class="price">29,200 <a> 원 </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="star">★</td>
+                  <td class="average">4.9</td>
+                  <td class="review_count">(1,000)</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+    </section>
+
+
+    <!--section end-->
+
+
+    <!--footer start-->
+    <footer>
+      <div class="footer_company">
+        <ul>
+          <li>상호명 : 포마이펫</li>
+          <li>전화 : 02) 2696-8000</li>
+          <li>서울특별시 금천구 가산디지털2로 95 3층</li>
+        </ul>
+      </div>
+
+      <ul class="footer_copyright">
+        Copyright ⓒ <span style="color: #f1da05;">ForMyPet</span>. All rights reserved.
+      </ul>
+    </footer>
+    <!--footer end-->
+
+    <!--sidebar start-->
+    <button id="toggleButton">></button>
+    <div id="sidebar">
+      <ul id="recently-viewed">
+        <li><a href="#">상품 1</a></li>
+        <li><a href="#">상품 2</a></li>
+        <li><a href="#">상품 3</a></li>
+        <li><a href="#">상품 4</a></li>
+        <li><a href="#">상품 5</a></li>
+      </ul>
+      <h4>최근 본 상품</h4>
+    </div>
+
+    <script>
+      const toggleButton = document.getElementById('toggleButton');
+      const sidebar = document.getElementById('sidebar');
+
+      toggleButton.addEventListener('click', function () {
+        const currentRight = parseInt(getComputedStyle(sidebar).right);
+
+        if (currentRight < 0) {
+          sidebar.style.right = '0';
+        } else {
+          sidebar.style.right = '-250px';
+        }
+      });
+    </script>
+    </nav>
+    <!--sidebar end-->
+  </div>
+
+
+
+
+  </div>
+
+</body>
+
+</html>

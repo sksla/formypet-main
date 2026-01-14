@@ -1,0 +1,100 @@
+
+
+/*sidebarstyle*/
+
+ 
+ /* BoardDetail*/
+
+ .main_content > a{
+    text-decoration: none;
+ }
+
+ .board_title{
+    
+    width: 400px;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+ }
+
+ .board_list > h5{
+    margin-bottom: 30px;
+ }
+
+ .content_area{
+    display: flex;
+    width: 100%;
+    margin-top: 100px;
+}
+
+
+
+.board_list{
+    margin-right: 10px;
+    width: 20%;
+ }
+
+.board_list > .listTitle{
+    text-decoration: none;
+    color: black;
+}
+ 
+ .list>li{
+    margin-top: 10px;
+    list-style-type: none;
+ }
+
+ .list>li>a{
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+ }
+
+ .content{
+    width: 60%;
+ }
+ .contentBox{
+    border: solid lightgray 1px;
+    margin: auto;
+}
+
+.content_notice{
+    margin-bottom: 10px;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+.content_title{
+    text-align: center;
+}
+
+.content_detail{
+   height: 50%;
+}
+
+.comment_area{
+    width: 60%;
+}
+
+
+.form-control{
+    width: 700px;
+
+}
+.content_info{
+   width: 100%;
+   display: flex;
+   justify-content:space-between;
+   font-size: 15px;
+   font-weight: bold;
+
+}
+
+
+
+
+
+ 

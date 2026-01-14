@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+    <link rel="icon" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../03_JavaScript/resources/js/sample.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="../../../../ForMyPet/css/formypet.css">
+    <script src="js/fmp.js"> </script>
+
+    
+  <!-- 장바구니 아이콘 부트스트랩 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- 상품 상세 페이지 스타일 -->
+    <style>
+        .pro_top,
+        .product_bar,
+        .pro_detail,
+        .review_qna {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 25px;
+            padding-bottom: 15px;
+        }
+
+        .top_table {
+            width: 60%;
+            margin-top: 40px;
+        }
+
+        .product_img {
+            width: 45%;
+            padding: 10px;
+            position: relative;
+        }
+        .product_img img{
+            width: 600px;
+        }
+
+        .product_order {
+            padding-left: 50px;
+            border-bottom: 2px solid darkgray;
+            height: 490px;
+        }
+
+        .product_order b {
+            font-size: 33px;
+        }
+
+        .product_order p {
+            font-size: small;
+            color: rgb(117, 114, 114);
+        }
+
+        .price_info b {
+            font-size: x-large;
+            padding-left: 15px;
+        }
+
+        .total_price {
+            display: flex;
+            margin-left: 140px;
+            padding-top: 10px;
+        }
+
+        .total_price b {
+            margin-left: 20px;
+            font-size: 33px;
+        }
+
+        .total_price span {
+            padding-top: 18px;
+            padding-left: 5px;
+        }
+
+        .order_btn {
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .order_btn button {
+            background-color: #fff458;
+            border: none;
+            padding: 10px;
+            color: rgb(48, 44, 44);
+            border-radius: 5px;
+            width: 120px;
+            font-size: small;
+        }
+
+        .bar_table {
+            width: 70%;
+            border: 1px solid darkgray;
+            text-align: center;
+            border-radius: 30px;
+        }
+
+        .bar_table th {
+            width: 33%;
+        }
+
+        .board_title {
+            cursor: pointer;
+        }
+
+        .review_table,
+        .qna_table {
+            text-align: center;
+        }
+        .bi-heart{
+            font-size: 60px;
+            
+        }
+        .wish_icon{
+            position: absolute;
+            top: 520px;
+            left: 530px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <!--head start-->
+        <header class="header-top-section">
+
+            <nav class="header_nav">
+                <div width="80%">
+                    <div class="menu_logo">
+                        <a href=""><img src="../../resources/images/포마이펫.png" style="width: 200px;"></a>
+
+                    </div>
+
+                    <div class="menu_item">
+                        <a href="" class="community">EVENT</a>
+                    </div>
+                    <div class="menu_item">
+                        <a href="">강아지</a>
+                    </div>
+                    <div class="menu_item">
+                        <a href="">고양이</a>
+                    </div>
+                    <div class="menu_item">
+                        <a href="">리뷰</a>
+                    </div>
+                    <div class="menu_item">
+                        <a href="">게시판</a>
+                    </div>
+                    <div class="menu_item">
+                        <a href="">고객센터</a>
+                    </div>
+                </div>
+                <div class="section">
+                    <table class="Login_section">
+                        <tr>
+                            <td><a href="#"><img src="../../resources/images/로그인아이콘.PNG"
+                                        style="height: 45px; margin-left: 40px;"></a>
+                            </td>
+                            <td><a href="#"><img src="../../resources/images/검색아이콘.PNG"
+                                        style="height: 40px;  margin-left: 10px;"></a>
+                            </td>
+                            <td><a href="#"><img src="../../resources/images/찜 아이콘.PNG" style="height: 60px; "></a></td>
+                            <td><a href="#"><img src="../../resources/images/장바구니 아이콘.PNG" style="height: 45px; "></a>
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+            </nav>
+
+        </header>
+
+        <!--head end-->
+
+
+        <!-- section category start-->
+        <section>
+            <div class="pro_top">
+                <table class="top_table">
+                    <tr>
+                        <th class="product_img" rowspan="2"><img src="https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/d/c/9/9/d/f/9dc99dffaa648c2151ffaddd6022b22e/10000/62464ad4d4a2ebd37c4798ad16d02804.jpeg" alt="">
+                            
+                                <div class="wish_icon">
+                                <i class="bi bi-heart"></i>
+                                <!-- 찜 누른 후 -->
+                                <!-- <i class="bi bi-heart-fill heart"></i> -->
+                               </div>
+                        
+                        </th>
+
+                        <td class="product_order">
+                            <b>오리젠 독 퍼피 2kg</b><br><br>
+                            <span>별점</span><br><br><br>
+                            <p>
+                                평일 오후 3시 이전 주문시 자사 당일 배송 <br>
+                                적립금 1%
+                            </p><br>
+                            <div class="price_info">
+                                <span style="color: red; font-weight: bolder;  font-size: large;">20%</span>
+                                <s style="color: lightgray; padding-left: 10px;">41000</s>
+                                <b>32,900원</b>
+                            </div>
+                            <br><br>
+                            <label for="quantity">* 수량</label> &nbsp;&nbsp;
+							<input type="number" min="1">
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="total_price">
+                                <span>총 상품 금액</span>
+                                <b>32,900</b> <span> 원</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th class="order_btn">
+                            <button>장바구니</button> &nbsp;
+                            <button>구매하기</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="product_bar">
+                <table class="bar_table">
+                    <tr>
+                        <th>상품상세</th>
+                        <th>리뷰</th>
+                        <th>문의</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="pro_detail">
+                <img src="https://itzgroom.com/web/upload/NNEditor/20230206/EC98A4EBA6ACECA0A0-ED8DBCED94BCEC8381EC84B8.jpg" >
+            </div>
+            <hr>
+
+            <div class="review_qna">
+                <div class="review_section">
+                    <h4>REVIEW</h4>
+                    <table class="review_table">
+                        <thead>
+                            <tr>
+                                <th width="50px">번호</th>
+                                <th width="70px">평점</th>
+                                <th width="600px">글제목</th>
+                                <th width="120px">작성자</th>
+                                <th width="120px">작성일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- case1. 조회된 리뷰 없을 경우 -->
+                            <!--  
+                        <tr>
+                            <td colspan="5" style="text-align: center;">아직 등록된 리뷰가 없습니다.</td>
+                        </tr>   
+                        -->
+
+                            <!-- case2. 조회된 리뷰글이 있을 경우 -->
+                            <tr class="board_title" data-toggle="collapse" data-target="#review3">
+                                <td>3</td>
+                                <td>★★★★★</td>
+                                <td>글제목입니다</td>
+                                <td>admin</td>
+                                <td>2024-01-12</td>
+                            </tr>
+                            <tr id="review3" class="collapse">
+                                <td colspan="5">
+                                    <p style="min-height:150px;" class="border rounded w-75 mx-auto p-3">3번 게시글의 내용입니다.
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr class="board_title" data-toggle="collapse" data-target="#review2">
+                                <td>2</td>
+                                <td>★★★★★</td>
+                                <td>좋아요 아이가 잘 먹어요!</td>
+                                <td>admin</td>
+                                <td>2024-01-12</td>
+                            </tr>
+                            <tr id="review2" class="collapse">
+                                <td colspan="5">
+                                    <p style="min-height:150px;" class="border rounded w-75 mx-auto p-3">좋아요 아이가 잘 먹어요!
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr class="board_title" data-toggle="collapse" data-target="#review1">
+                                <td>1</td>
+                                <td>★★★★★</td>
+                                <td>글제목입니다</td>
+                                <td>admin</td>
+                                <td>2024-01-12</td>
+                            </tr>
+                            <tr id="review1" class="collapse">
+                                <td colspan="5">
+                                    <p style="min-height:150px;" class="border rounded w-75 mx-auto p-3">3번 게시글의 내용입니다.
+                                    </p>
+                                </td>
+                            </tr>
+
+                    </table>
+
+                </div>
+            </div>
+            <ul class="pagination pagination-sm justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#">&lt;</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
+              </ul>
+            <br>
+            <hr>
+            <hr>
+            <div class="review_qna">
+                <div class="review_section">
+                    <h4>Q&A</h4>
+                    <table class="qna_table">
+                        <thead>
+                            <tr>
+                                <th width="50px">번호</th>
+                                <th width="600px">글제목</th>
+                                <th width="120px">작성자</th>
+                                <th width="120px">작성일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- case1. 조회된 리뷰 없을 경우 -->
+                            <!--  
+                            <tr>
+                                <td colspan="5" style="text-align: center;">아직 등록된 리뷰가 없습니다.</td>
+                            </tr>   
+                            -->
+
+                            <!-- case2. 조회된 리뷰글이 있을 경우 -->
+                            <tr class="board_title" data-toggle="collapse" data-target="#qna3">
+                                <td>3</td>
+                                <td>글제목입니다</td>
+                                <td>admin</td>
+                                <td>2024-01-12</td>
+                            </tr>
+                            <tr id="qna3" class="collapse">
+                                <td colspan="5">
+                                    <p style="min-height:150px;" class="border rounded w-75 mx-auto p-3">3번 게시글의 내용입니다.
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr class="board_title" data-toggle="collapse" data-target="#qna2">
+                                <td>2</td>
+                                <td>좋아요 아이가 잘 먹어요!</td>
+                                <td>admin</td>
+                                <td>2024-01-12</td>
+                            </tr>
+                            <tr id="qna2" class="collapse">
+                                <td colspan="5">
+                                    <p style="min-height:150px;" class="border rounded w-75 mx-auto p-3">좋아요 아이가 잘 먹어요!
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr class="board_title" data-toggle="collapse" data-target="#qna1">
+                                <td>1</td>
+                                <td>글제목입니다</td>
+                                <td>admin</td>
+                                <td>2024-01-12</td>
+                            </tr>
+                            <tr id="qna1" class="collapse">
+                                <td colspan="5">
+                                    <p style="min-height:150px;" class="border rounded w-75 mx-auto p-3">3번 게시글의 내용입니다.
+                                    </p>
+                                </td>
+                            </tr>
+
+                    </table>
+
+                </div>
+            </div>
+            <ul class="pagination pagination-sm justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#">&lt;</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
+              </ul>
+            <br><br><br>
+
+        </section>
+
+        <!--section content end-->
+
+
+        <!--footer start-->
+        <footer>
+            <div class="footer_company">
+                <ul>
+                    <li>상호명 : 포마이펫</li>
+                    <li>전화 : 02) 2696-8000</li>
+                    <li>서울특별시 금천구 가산디지털2로 95 3층</li>
+                </ul>
+            </div>
+
+            <ul class="footer_copyright">
+                Copyright ⓒ <span style="color: #f1da05;">ForMyPet</span>. All rights reserved.
+            </ul>
+        </footer>
+        <!--footer end-->
+
+        <!--sidebar start-->
+        <button id="toggleButton">></button>
+        <div id="sidebar">
+            <ul id="recently-viewed">
+                <li><a href="#">상품 1</a></li>
+                <li><a href="#">상품 2</a></li>
+                <li><a href="#">상품 3</a></li>
+                <li><a href="#">상품 4</a></li>
+                <li><a href="#">상품 5</a></li>
+            </ul>
+            <h4>최근 본 상품</h4>
+        </div>
+
+        <script>
+            const toggleButton = document.getElementById('toggleButton');
+            const sidebar = document.getElementById('sidebar');
+
+            toggleButton.addEventListener('click', function () {
+                const currentRight = parseInt(getComputedStyle(sidebar).right);
+
+                if (currentRight < 0) {
+                    sidebar.style.right = '0';
+                } else {
+                    sidebar.style.right = '-250px';
+                }
+            });
+        </script>
+        </nav>
+        <!--sidebar end-->
+    </div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>

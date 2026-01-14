@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자유게시글 작성</title>
+    <link rel="icon" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../03_JavaScript/resources/js/sample.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Board_list bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../boardCSS/boardInsert.css">
+    <link rel="stylesheet" href="../../src/main/webapp/resources/css/breadcrumb.css">
+    <script src="js/fmp.js"> </script>
+</head>
+<body>
+    <div class="wrap">
+
+    <!--headr start-->   
+    <header class="header-top-section">
+ 
+        <nav class="header_nav">
+           <div width="80%">
+              <div class="menu_logo">
+                  <a href=""><img src="../../html/webapp/resources/images/포마이펫.png" style="width: 200px;" "></a>
+                </div>
+
+              <div class="menu_item">
+              <a href="" class="community">EVENT</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >강아지</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >고양이</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >리뷰</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >게시판</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >고객센터</a>
+            </div> 
+         </div>   
+          <div class="section">
+            <table class="Login_section">
+              <tr>
+                <td><a href="#"><img src="../../html/webapp/resources/images/로그인아이콘.PNG" style="height: 45px; margin-left: 40px;"></a></td>
+                <td><a href="#"><img src="../../html/webapp/resources/images/검색아이콘.PNG" style="height: 40px;  margin-left: 10px;"></a></td>
+                <td><a href="#"><img src="../../html/webapp/resources/images/찜 아이콘.PNG" style="height: 60px; margin-left: 13px"></a></td>
+                <td><a href="#"><img src="../../html/webapp/resources/images/장바구니 아이콘.PNG" style="height: 45px; margin-right: 45px;"></a></td>
+               
+              </tr>
+            </table>
+          </div>
+        </nav>
+        <table id="hiddenTable" style="display: none;">
+            <tr>
+                <td>테이블 내용</td>
+            </tr>
+        </table>
+    </header>
+
+    <!--headr end-->
+
+    <!-- 브레드크럼 strat -->
+    <div class="breadc">
+      <ol>
+        <li><a href="#">Home</a></li>
+        <li class="separator">&gt</li>
+        <li><a href="#">게시판</a></li>
+        <li class="separator">&gt</li>
+        <li><a href="#">자유게시판</a></li>
+        <li class="separator">&gt</li>
+        <li>게시글 작성</li>
+      </ol>
+    </div>
+    <!-- 브레드크럼 end -->
+  
+      <!--section start-->    
+      <section class="main_content">
+
+        <div>
+          <h3 class="board_title">게시글 작성</h3>
+        </div>
+
+        <div class="content_area">
+          <div class="board_list">
+            <h5>게시판</h5>
+                <a href="#" class="listTitle" style="color:#ffa51f;">자유게시판</a>
+                <ul class="list">
+                  <li><a href="#">게시글 작성</a></li>
+                  <li><a href="#">내가 쓴 글</a></li>
+                </ul>
+
+                <a href="#" class="listTitle">사진게시판</a>
+                <ul class="list">
+                  <li><a href="#">게시글 작성</a></li>
+                  <li><a href="">내가 쓴 글</a></li>
+               </ul>
+
+            </ul>
+          </div>
+        
+       
+
+          <!-- content start-->
+     
+          <div class="content">
+            
+            <div class="content_title">
+                <span><b>제목</b>
+                    <select name="" id="">
+                        <option value="">강아지</option>
+                        <option value="">고양이</option>
+                    </select>
+              
+                    <input type="text" id="post_title" placeholder="제목을 입력해주세요">
+                </span>
+             
+                <hr>
+            </div>
+            
+            <div>
+              <p><b>내용</b></p>
+              <textarea id="post_detail" name="" cols="" rows="10" class="content_detail" placeholder="내용을 입력해주세요"></textarea>
+            </div>
+
+            <div class="btn_area">
+                <button type="button" class="float-right btn btn-warning btn-sm insertBtn" data-toggle="modal" data-target="#insert_modal">글 작성</button>
+            </div>
+            <!-- modal start -->
+            <!-- 글작성 -->
+            
+                  <!-- The Modal -->
+            <div class="modal" id="insert_modal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <!-- modal Header 부분 삭제-->
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div class="modal-detail">
+                      <h5><strong>작성한 게시글을 저장하시겠습니까?</strong></h5>
+                    </div>
+                    
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <div class="modal-btn-area">
+                      <button type="button" class="btn btn-warning item" data-dismiss="modal" onclick="boardSave();">확인</button>
+                      <button type="button" class="btn btn-secondary item" data-dismiss="modal">취소</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- modal end -->
+            
+            
+              <hr>
+            
+            
+            <div class="btn_area">
+                <button type="button" id="listBtn" class="float-right btn btn-secondary btn-sm" onclick="listPage();">목록</button>
+            </div>
+          </div>
+
+          <div class="content_side_area"></div>
+
+
+        </div>
+          <!-- content end-->
+         
+        
+
+      </section>
+      <!--section end-->
+
+      <!--footer start-->    
+      
+          <div class="footer_company">
+              <ul>
+                  <li>상호명 : 포마이펫</li>
+                  <li>전화 : 02) 2696-8000</li>
+                  <li>서울특별시 금천구 가산디지털2로 95 3층</li>
+              </ul>
+          </div>
+
+          <ul class="footer_copyright">
+              Copyright ⓒ <span style="color: #f1da05;">ForMyPet</span>. All rights reserved.
+          </ul>
+          </footer>
+          <!--footer end-->
+
+          <!--sidebar start-->
+          
+            <!--sidebar end-->
+        
+  </div>
+
+  <script>
+    // 게시글 저장 후 목록 페이지로 이동
+    function boardSave(){
+      window.location.href = "https://#";
+    }
+     // 목록 페이지로 이동
+    function listPage(){
+      window.location.href = "https://#";
+    }
+
+    
+  </script>
+
+</body>
+</html>

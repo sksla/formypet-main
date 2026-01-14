@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+    <link rel="icon" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../03_JavaScript/resources/js/sample.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="../../../../ForMyPet/css/formypet.css">
+    <script src="js/fmp.js"> </script>
+    <style>
+        .side_menu_notice{
+            color:#ffa51f;
+        }
+
+
+        .board_title{
+            cursor: pointer;
+        }
+
+        /* ------------------------ 페이징 바 ----------------------------- */
+        .page-link{
+            color: darkgray;
+        }
+        .page-link::marker{
+            background-color: #ffa51f;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: #ffd000; /* 선택된 페이지의 배경색을 나타내는 원하는 색상 코드를 지정하세요 */
+            color: #fff; /* 선택된 페이지의 텍스트 색상 설정 */
+            border-color: #f7cb07;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="wrap">
+
+    <!--head start-->   
+    <header class="header-top-section">
+ 
+      <nav class="header_nav">
+         <div width="80%">
+            <div class="menu_logo">
+                <a href=""><img src="../../resources/images/포마이펫.png" style="width: 200px;"></a>
+              
+              </div>
+
+            <div class="menu_item">
+            <a href="" class="community">EVENT</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >강아지</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >고양이</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >리뷰</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >게시판</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >고객센터</a>
+            </div> 
+          </div>   
+        <div class="section">
+          <table class="Login_section">
+            <tr>
+              <td><a href="#"><img src="../../../../ForMyPet/images/로그인아이콘.png" style="height: 45px; margin-left: 40px;"></a></td>
+              <td><a href="#"><img src="../../../../ForMyPet/images/검색아이콘.PNG" style="height: 40px;  margin-left: 10px;"></a></td>
+              <td><a href="#"><img src="../../../../ForMyPet/images/찜 아이콘.png" style="height: 60px; "></a></td>
+              <td><a href="#"><img src="../../../../ForMyPet/images/장바구니 아이콘.png" style="height: 45px; "></a></td>
+             
+            </tr>
+          </table>
+        </div>
+      </nav>
+      
+  </header>
+    <!--head end-->
+
+    <!--section start-->  
+    <section class="section_notice"> 
+    <div class="notice" >
+        <!-- 사이드 -->
+        <div class="notice_side" >
+            <div class="notice_h1"><h1>고객센터</h1></div>
+            <div class="notice_side_list">
+                <H3>FAQ</H3>
+                <br>
+                <H3>1:1 문의</H3>
+                <ul>
+                    <li>1:1 문의하기</li>
+                    <li>1:1 문의내역</li>
+                </ul>
+                <br>
+                <h3 class="side_menu_notice">공지사항</h3>
+            </div>
+            <br>
+            
+            <div class="notice_side_list list2" >
+            <img src="../../../../ForMyPet/images/전화 아이콘.png" alt="" style="width: 30px; height: 30px"> 
+            <h4>고객센터 ></h4>
+            </div>
+            <div class="notice_side_list list3">
+                <h3>02-1234-5678</h3>
+                <pre>평일 10:00 ~ 18:00 <br>점심시간 12:30 ~ 14:00 <br>주말/공휴일 휴무
+                </pre>
+            </div>
+        </div>
+        <div class="notice_hidden"></div>
+        <!-- 공지사항 목록 -->
+        <div class="notice_list">
+            <div class="notice_list_menu">
+                
+                <h3>1:1 문의하기</h3>
+                <br>
+                * 고객센터 운영시간(10:00~18:00) 이후 문의는 고객센터 운영시간 내에 순차적으로 답변드립니다.
+                <br>
+                <br>   
+
+
+                <form action="">
+                        <table class="table">
+                            <tr>
+                                <th width="100px">문의유형</th>
+                                <td>
+                                    <select name="" class="form-control">
+                                        <option value="10">상품</option>
+                                        <option value="20">교환</option>
+                                        <option value="30">반품</option>
+                                        <option value="40">주문/결제/취소</option>
+                                        <option value="50">취소</option>
+                                        <option value="60">배송문의</option>
+                                        <option value="70">기타</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>제목</th>
+                                <td><input type="text" class="form-control" required placeholder="제목을 입력해주세요"></td>
+                            </tr>
+                            <tr>
+                                <th>내용</th>
+                                <td><textarea cols="30" rows="10" class="form-control" style="resize: none;" required placeholder="내용을 입력해주세요"></textarea></td>
+                            </tr>
+                            <tr>
+                                <th>첨부파일</th>
+                                <td>
+                                    <input type="file" class="form-control-file border"><br>
+                                    <p style="color:gray;">* 파일은 10mb이하의 jpg,png,gif 파일로 첨부 가능합니다. </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <button type="submit" class="btn btn-outline-secondary btn-sm">등록하기</button>
+                                    <button type="reset" class="btn btn-outline-danger btn-sm">초기화</button>
+                                    <button type="button" class="btn btn-outline-warning btn-sm" onclick="history.back();">뒤로가기</button>
+                                </td>
+                            </tr>
+                    </table>
+
+                </form>
+
+            </div>
+           
+        </div>
+         
+    </div>
+    <br><br><br><br>
+    </section> 
+     
+    <!--section end-->
+
+
+
+
+   
+    <!--footer start-->    
+    <footer>
+      <div class="footer_company">
+          <ul>
+              <li>상호명 : 포마이펫</li>
+              <li>전화 : 02) 2696-8000</li>
+              <li>서울특별시 금천구 가산디지털2로 95 3층</li>
+          </ul>
+      </div>
+
+      <ul class="footer_copyright">
+          Copyright ⓒ <span style="color: #f1da05;">ForMyPet</span>. All rights reserved.
+      </ul>
+    </footer>
+    <!--footer end-->
+
+    <!--sidebar start-->
+    <button id="toggleButton">></button>
+        <div id="sidebar">
+          <ul id="recently-viewed">
+            <li><a href="#">상품 1</a></li>
+            <li><a href="#">상품 2</a></li>
+            <li><a href="#">상품 3</a></li>
+            <li><a href="#">상품 4</a></li>
+            <li><a href="#">상품 5</a></li>
+          </ul>
+          <h4>최근 본 상품</h4>
+        </div>
+    
+        <script>
+          const toggleButton = document.getElementById('toggleButton');
+          const sidebar = document.getElementById('sidebar');
+  
+          toggleButton.addEventListener('click', function() {
+              const currentRight = parseInt(getComputedStyle(sidebar).right);
+  
+              if (currentRight < 0) {
+                  sidebar.style.right = '0';
+              } else {
+                  sidebar.style.right = '-250px';
+              }
+          });
+      </script>
+      <!--sidebar end-->
+
+
+</div>
+
+
+
+</body>
+</html>

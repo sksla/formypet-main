@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<entry key="insertToCart">
+	INSERT 
+	  INTO CART
+	  		(
+	  		  CART_NO
+	  		, CART_USER
+	  		, CART_PRO
+	  		, CART_COUNT
+	  		, CART_PRICE
+	  		)
+	  VALUES
+	  		 (
+	  		   SEQ_ONO.NEXTVAL
+	  		 , ?
+	  		 , ?
+	  		 , ?
+	  		 , ?
+	  		  )
+	  
+	</entry>
+	
+	<entry key="selectOrderCount">
+		select Count(*) count
+		  from order_detail
+	</entry>
+	
+	<entry key="selectOrderList">
+	
+						SELECT
+							    order_date
+							  , order_no
+							  , user_name
+							  , user_id
+							  , tb_order.phone phone
+							  , tb_order.address address
+							  , pro_cate_code
+							  , pro_midd_no
+							  , pro_no
+							  , pro_name
+							  , order_detail.count count
+							  , deli_status
+						  FROM
+							    order_detail
+							    left JOIN tb_order USING (order_no)
+							    left JOIN product USING (pro_no)
+							    left JOIN member USING (user_no)
+						 
+	</entry>
+	
+</properties>

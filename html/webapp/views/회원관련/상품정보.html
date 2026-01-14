@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../03_JavaScript/resources/js/sample.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 아이콘 부트스트랩 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        .pro_info_wrap{
+            display: flex;
+            /* justify-content: space-evenly; */
+            width:500px;
+        }
+
+        .pro_info{
+            margin-left: 15px;
+        }
+
+        .thumbnail_img{
+            width: 240px;
+            height: 240px;
+        }
+
+        .thumbnail{
+            position:relative;
+        }
+
+        .thumbnail_like{
+            position:absolute;
+            top:175px;
+            left:180px;
+            text-align: right;
+            z-index: 10;
+        }
+
+
+
+        /* 찜아이콘 스타일 */
+        .bi-heart{
+            font-size: 40px;
+            
+        }
+
+        .bi-heart-fill{
+            font-size: 40px;
+            color:hotpink;
+        }
+    </style>
+</head>
+<body>
+    <div class="pro_info_wrap">
+        <div class="thumbnail">
+          <img class="thumbnail_img" src="../../resources/images/오리젠퍼피.png" alt="">
+          
+          <div class="thumbnail_like"><i class="bi bi-heart"></i></div>
+          <!-- <div class="thumbnail_like"><i class="bi bi-heart-fill heart"></i></div> -->
+
+        </div>
+        
+        <table class="pro_info">
+          <tr>
+              <td>상품명상품명상품명상품명</td>
+          </tr>
+          <tr>
+              <td>1개</td>
+          </tr>
+          <tr>
+              <td><button type="button" class="btn btn-outline-secondary">옵션/수량 변경</button></td>
+          </tr>
+        </table>
+        
+
+        <!-- 상품 품절시 뜨게 해야되는 요소 
+        <div class="thumbnail_status">품절</div>
+         -->
+         
+        
+      </div>
+</body>
+</html>

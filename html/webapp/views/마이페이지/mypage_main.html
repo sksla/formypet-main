@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+</head>
+
+
+<!-- 부트스트랩 -->
+<!-- <script src="../03_JavaScript/resources/js/sample.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
+<!-- 브레드크럼 css -->
+<link rel="stylesheet" href="/html/webapp/resources/css/breadcrumb.css">
+
+<!-- 마이페이지 css -->
+<link rel="stylesheet" href="mypage.css">
+
+<!-- 사이드바 적용 js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- <script src="mypage.js"></script> -->
+
+
+<body>
+    <!--head start-->   
+    <header>
+        
+    </header>
+
+    <!--head end-->
+    <hr class="hr1">
+    
+    <!-- 브레드크럼 start -->
+    <div class="breadc">
+        <ol>
+            <li><a href="">Home</a></li>
+            <li class="separator">&gt</li>
+            <li>마이페이지</li>
+        </ol>
+    </div>
+    <!-- 브레드크럼 end -->
+    
+    
+    <!-- 메인페이지 start-->
+    <!-- 제목 -->
+    <h1 class="title">마이페이지</h1>
+    
+    <!-- section start -->
+    <section>
+        <!-- 좌우로 영역 나누기(사이드바, contents) start -->
+        <div class="dividing_area1">
+            <!-- 사이드바 -->
+            <div class="sidebar"></div>
+            
+            <!-- contents start-->
+            <div class="content_div">
+                <hr class="hr2">
+
+                <!-- 좌우로 영역 나누기(프로필,적립금상품리뷰)  start -->
+                <div class="dividing_area1">
+                    <!-- 프로필 -->
+                    <div class="mypage_profile_left">
+                        <div class="mypage_profile_circle">
+                            <img src="/html/webapp/resources/images/cat2.png" alt="프로필사진">
+                        </div>
+                        <div>
+                            <a href="" class="mypage_font1">째롱 님></a>
+                            <p class="mypage_font2">formypet1234@gmail.com</p>
+                            <div>
+                                <span>누적 구매금액</span>
+                                <span class="mypage_font3">340,600 원</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 적립금, 상품리뷰 -->
+                    <div class="mypage_profile_right">
+                        <div>
+                            <p class="mypage_font4">적립금</p>
+                            <p class="mypage_font5"><a href="">15,000 원</a></p>
+                        </div>
+
+                        <hr class="hr1">
+                        
+                        <div>
+                            <p class="mypage_font4">상품리뷰</p>
+                            <p class="mypage_font5"><a href="">10 건</a></p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- 좌우로 영역 나누기(프로필,적립금상품리뷰)  end -->
+                <hr class="hr2">
+                
+
+                <!--
+                    상품 주문상태 유형
+                    1. 주문
+                        - 입금대기중, 주문취소(클릭가능)
+                        - 배송준비중
+                        - 배송중, 배송조회(클릭가능)
+                        - 배송완료
+                    2. 교환
+                        - 교환접수중, 교환취소(클릭가능)
+                        - 교환진행중, 배송조회(클릭가능)
+                        - 교환완료
+                    3. 반품
+                        - 반품접수중, 반품취소(클릭가능)
+                        - 반품진행중, 배송조회(클릭가능)
+                        - 반품완료
+                    5. 취소 (1번 주문 이후 주문취소 시 다음 상태로 변경됨)
+                        - 취소완료
+                 -->
+
+
+                
+                <!-- 주문 영역 start -->
+                <div class="content_order">
+                    
+                    <!-- 주문 내역 없을 경우 -->
+                    <p>현재 진행중인 주문·교환·반품·취소내역이 없습니다.</p>
+
+
+                    <!-- 주문 내역 있을 경우 -->
+                    <!-- 입금대기중 상품 1개 start -->
+                    <p class="mypage_font6">주문내역</p>
+                    <div class="mypage_order_detail">
+                        <p class="mypage_font8">2024.02.24</p>
+                        <a href="" class="mypage_font8">주문상세 &gt;</a>
+                    </div>
+
+                    <hr>
+                    <table class="table">
+                        <tr>
+                            <td class="td1" rowspan="2">
+                                <a href="">
+                                    <img src="/html/webapp/resources/images/아카나퍼피-removebg-preview.png" alt="상품이미지">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="">
+                                    <span>아카나 사료 2/6/11.4kg 프리런덕 요크셔 포크 라이트앤피트 퍼피 어덜트 스몰브리드 패시피카 와일드프레이리 독</span>
+                                </a>
+                            </td>
+                            <td rowspan="4" class="td3">
+                                <p class="mypage_font2">입금대기중</p>
+                                <a href=""><span>주문취소</span></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td2">
+                                <a href="">
+                                    <span class="mypage_font4">요크셔 포크 2kg 1개 / 32,700 원</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr class="hr3">
+                    <!-- 입금대기중 상품 1개 end -->
+                    
+                    <!-- 배송중 상품 2개 start -->
+                    <div class="mypage_order_detail">
+                        <p class="mypage_font8">2024.02.20</p>
+                        <a href="" class="mypage_font8">주문상세 &gt;</a>
+                    </div>
+
+                    <hr>
+                    <table class="table">
+                        <!-- 1번 상품 -->
+                        <tr>
+                            <td class="td1" rowspan="2">
+                                <a href="">
+                                    <img src="/html/webapp/resources/images/아투퍼피-removebg-preview.png" alt="상품이미지">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="">
+                                    <span>아카나 사료 2/6/11.4kg 프리런덕 요크셔 포크 라이트앤피트 퍼피 어덜트 스몰브리드 패시피카 와일드프레이리 독</span>
+                                </a>
+                            </td>
+                            <td rowspan="4" class="td3">
+                                <p class="mypage_font2">배송준비중</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td2">
+                                <a href="">
+                                    <span class="mypage_font4">요크셔 포크 2kg 1개 / 32,700 원</span>
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- 2번 상품 -->
+                        <tr>
+                            <td class="td1" rowspan="2">
+                                <a href="">
+                                    <img src="/html/webapp/resources/images/오리젠퍼피.png" alt="상품이미지">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="">
+                                    <span>아카나 사료 2/6/11.4kg 프리런덕 요크셔 포크 라이트앤피트 퍼피 어덜트 스몰브리드 패시피카 와일드프레이리 독</span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td2">
+                                <a href="">
+                                    <span class="mypage_font4">요크셔 포크 2kg 1개 / 32,700 원</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr class="hr3">
+                    <!-- 배송중 상품 2개 end -->
+
+                    <!-- 배송준비중 상품 3개 start-->
+                    <div class="mypage_order_detail">
+                        <p class="mypage_font8">2024.02.10</p>
+                        <a href="" class="mypage_font8">주문상세 &gt;</a>
+                    </div>
+
+                    <hr>
+                    <table class="table">
+                        <!-- 1번 상품 -->
+                        <tr>
+                            <td class="td1" rowspan="2">
+                                <a href="">
+                                    <img src="/html/webapp/resources/images/아카나퍼피-removebg-preview.png" alt="상품이미지">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="">
+                                    <span>아카나 사료 2/6/11.4kg 프리런덕 요크셔 포크 라이트앤피트 퍼피 어덜트 스몰브리드 패시피카 와일드프레이리 독</span>
+                                </a>
+                            </td>
+                            <td rowspan="6" class="td3">
+                                <p class="mypage_font2">배송중</p>
+                                <a href=""><span>배송조회</span></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td2">
+                                <a href="">
+                                    <span class="mypage_font4">요크셔 포크 2kg 1개 / 32,700 원</span>
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- 2번 상품 -->
+                        <tr>
+                            <td class="td1" rowspan="2">
+                                <a href="">
+                                    <img src="/html/webapp/resources/images/아투퍼피-removebg-preview.png" alt="상품이미지">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="">
+                                    <span>아카나 사료 2/6/11.4kg 프리런덕 요크셔 포크 라이트앤피트 퍼피 어덜트 스몰브리드 패시피카 와일드프레이리 독</span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td2">
+                                <a href="">
+                                    <span class="mypage_font4">요크셔 포크 2kg 1개 / 32,700 원</span>
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- 3번 상품 -->
+                        <tr>
+                            <td class="td1" rowspan="2">
+                                <a href="">
+                                    <img src="/html/webapp/resources/images/오리젠퍼피.png" alt="상품이미지">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="">
+                                    <span>아카나 사료 2/6/11.4kg 프리런덕 요크셔 포크 라이트앤피트 퍼피 어덜트 스몰브리드 패시피카 와일드프레이리 독</span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td2">
+                                <a href="">
+                                    <span class="mypage_font4">요크셔 포크 2kg 1개 / 32,700 원</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr class="hr3">
+                    <!-- 배송준비중 상품 3개 end-->
+
+                    <!-- 배송완료 상품 1개 start-->
+                    <div class="mypage_order_detail">
+                        <p class="mypage_font8">2024.02.05</p>
+                        <a href="" class="mypage_font8">주문상세 &gt;</a>
+                    </div>
+
+                    <hr>
+                    <table class="table">
+                        <tr>
+                            <td class="td1" rowspan="2">
+                                <a href="">
+                                    <img src="/html/webapp/resources/images/아카나퍼피-removebg-preview.png" alt="상품이미지">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="">
+                                    <span>아카나 사료 2/6/11.4kg 프리런덕 요크셔 포크 라이트앤피트 퍼피 어덜트 스몰브리드 패시피카 와일드프레이리 독</span>
+                                </a>
+                            </td>
+                            <td rowspan="4" class="td3">
+                                <p class="mypage_font2">배송완료</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td2">
+                                <a href="">
+                                    <span class="mypage_font4">요크셔 포크 2kg 1개 / 32,700 원</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr class="hr3">
+                    <!-- 입금대기중 상품 1개 end-->
+
+
+                </div>
+                <hr>
+                <!-- 주문 영역 end -->
+
+
+
+                <!-- 활동 영역 start -->
+                <div class="mypage_activity">
+                    <div>
+                        <p class="mypage_font7">진행중인 문의 내역</p>
+                        <div>
+                            <div class="mypage_activity2">
+                                <p class="mypage_font3">1:1문의</p>
+                                <p class="mypage_font3">상품 Q&A</p>
+                            </div>
+                            <div class="mypage_activity2">
+                                <p class="mypage_font3">0</p>
+                                <p class="mypage_font3">0</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="hr4">
+
+                    <div>
+                        <p class="mypage_font7">진행중인 문의 내역</p>
+                        <div>
+                            <div class="mypage_activity2">
+                                <p class="mypage_font3">찜한상품</p>
+                                <p class="mypage_font3">이벤트 참여 내역</p>
+                            </div>
+                            <div class="mypage_activity2">
+                                <p class="mypage_font3">3</p>
+                                <p class="mypage_font3">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 활동 영역 end -->
+
+
+
+
+                
+            </div>
+            <!-- contents end-->
+            
+
+        </div>
+        <!-- 좌우로 영역 나누기(사이드바, contents) end -->
+
+
+    </section>
+    <!-- section end -->
+
+
+    
+    <!-- 메인페이지 End-->
+
+
+
+
+
+    <hr class="hr1">
+    <!-- 푸터 영역 start -->
+    <footer>
+        <h1>푸터 영역</h1>
+        <h1>푸터 영역</h1>
+    </footer>
+    <!-- 푸터 영역 end -->
+
+
+</body>
+</html>

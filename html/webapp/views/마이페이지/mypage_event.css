@@ -1,0 +1,24 @@
+/* 이벤트 css */
+
+
+.wishlist_title{
+    display: flex;
+    margin: 0 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.wishlist_title_left{
+    width: 50%;
+    text-align: left;
+    display: flex;
+}
+
+/* 이벤트 카운트 숫자 글자 */
+.font_yellow{
+    color: gold;
+    margin-left: 15px;
+}
+.wishlist_title_right{
+    width: 50%;
+    text-align: right;
+}

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포마이펫 로그인</title>
+    <link rel="icon" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../03_JavaScript/resources/js/sample.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+    <link rel="stylesheet" href="../../../../ForMyPet/css/formypet.css">
+    <script src="js/fmp.js"> </script>
+
+
+
+<style>
+
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+body{
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.login-wrapper{
+    width: 400px;
+    height: 350px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.login-wrapper > h2{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#login-form > input{
+    width: 400px;
+    height: 48px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    background-color: #F8F8F8;
+}
+#login-form > input::placeholder{
+    color: #818080;
+}
+
+#login-form > input[type="submit"]{
+    color: black;
+    font-size: 16px;
+    background-color: rgb(255, 224, 96);
+    margin-top: 20px;
+}
+
+#user_login, #not_login{
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    width: 200px;
+
+}
+
+.input_group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link_group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.link_group a {
+    color: rgb(70, 70, 70);
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.line {
+    border-top: 1px solid gray;
+}
+
+.text {
+    padding: 0 20px;
+    user-select: none;
+    color: rgb(70, 70, 70);
+}
+
+.login_etc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 0px;
+}
+
+
+
+
+
+/* 언더라인 긋는 3가지 방법 :
+.login > a { font-size: 14px; color: #666; text-decoration: underline;}
+
+.login > a { position: relative; font-size: 14px; color: #666;}
+.login > a:after { content:""; position:absolute; left:0; bottom:0; width: 100%;
+height: 1px; background: #666; \}
+
+.login > a { padding: 0 0 2px; font-size: 14px; color: #666; border-bottom: 1px solid #666;}
+주변에 다른 컨텐츠가 있으면 padding을 쓰면 안된다. 주변에 영향을 미치기 때문! 주의하자~!*/
+
+  
+  /* 로그인페이지 최상단 h2요소 중앙배치 */
+  .center {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  .breadcrumb{
+    background-color: white;
+  }
+
+</style>
+</head>
+<body>
+  
+  <link rel="stylesheet" href="../../resources/css/breadcrumb.css">
+
+    <div class="wrap">
+
+    <!--head start-->
+    <header class="header-top-section">
+
+      <nav class="header_nav">
+        <div width="80%">
+          <div class="menu_logo">
+            <a href=""><img src="../../resources/images/포마이펫.png" style="width: 200px;"></a>
+
+          </div>
+
+          <div class="menu_item">
+            <a href="" class="community">EVENT</a>
+          </div>
+          <div class="menu_item">
+            <a href="">강아지</a>
+          </div>
+          <div class="menu_item">
+            <a href="">고양이</a>
+          </div>
+          <div class="menu_item">
+            <a href="">리뷰</a>
+          </div>
+          <div class="menu_item">
+            <a href="">게시판</a>
+          </div>
+          <div class="menu_item">
+            <a href="">고객센터</a>
+          </div>
+        </div>
+        <div class="section">
+          <table class="Login_section">
+            <tr>
+              <td><a href="#"><img src="../../resources/images/로그인아이콘.PNG" style="height: 45px; margin-left: 40px;"></a>
+              </td>
+              <td><a href="#"><img src="../../resources/images/검색아이콘.PNG" style="height: 40px;  margin-left: 10px;"></a>
+              </td>
+              <td><a href="#"><img src="../../resources/images/찜 아이콘.PNG" style="height: 60px; "></a></td>
+              <td><a href="#"><img src="../../resources/images/장바구니 아이콘.PNG" style="height: 45px; "></a></td>
+
+            </tr>
+          </table>
+        </div>
+      </nav>
+        
+    </header>
+
+    <!--header end-->
+
+        <!-- Left and right controls -->
+      <div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+      <!-- 브레드크럼 start -->
+      <div class="breadcrumb">
+        <ol>
+            <li><a href="">Home</a></li> <!--홈화면으로 갈수있게-->
+            <li class="separator">&gt</li>
+            <li>로그인</li>
+        </ol>
+      </div>
+      <!-- 브레드크럼 end -->
+
+      <!-- Section start -->
+      <!-- 로그인 섹션 -->
+      <section class="main_content">
+        <div class="login-wrapper">
+          <h2><b>로그인</b></h2>
+          
+          <!--
+          <div class="center">
+            <input type="button" value="기존회원" id="user_login" selected>
+            <input type="button" value="비회원 주문조회" id="not_login">
+          </div> 
+
+          
+          <script>
+            
+            const userLoginButton = document.getElementById('user_login');
+            const notLoginButton = document.getElementById('not_login');
+            
+            userLoginButton.setAttribute('selected', true);
+            userLoginButton.style.backgroundColor = 'rgb(255, 224, 96)';
+
+            // 비회원 주문조회 버튼 클릭 시
+            notLoginButton.addEventListener('click', function() {
+                userLoginButton.removeAttribute('selected');
+                notLoginButton.setAttribute('selected', true);
+
+                userLoginButton.style.backgroundColor = '#F8F8F8';
+                notLoginButton.style.backgroundColor = 'rgb(255, 224, 96)';
+            });
+
+            userLoginButton.addEventListener('click', function() {  
+                notLoginButton.removeAttribute('selected');
+                userLoginButton.setAttribute('selected', true);
+
+                userLoginButton.style.backgroundColor = 'rgb(255, 224, 96)';
+                notLoginButton.style.backgroundColor = '#F8F8F8';
+            });
+        </script>
+        -->
+
+        <div class="input_group">
+          <form method="post" action="서버의url" id="login-form">
+              <input type="text" name="userId" placeholder="아이디"><br>
+              <input type="password" name="userPwd" placeholder="비밀번호"><br>
+              <label for="remember-check">
+                  <input type="checkbox" id="remember-check" style="width: 17px; height: 17px; vertical-align: middle;">&nbsp;아이디 저장
+              </label><br>
+              <input type="submit" value="로그인">
+          </form>
+        </div>
+
+        <div class="link_group">
+          <a href="#">아이디 찾기</a>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#">비밀번호 찾기</a>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#">회원가입</a>
+        </div>
+
+        <div class="container">
+          <div class="line" style="width: 200px;"></div>
+          <div class="text">또는</div>
+          <div class="line" style="width: 200px;"></div>
+        </div>
+
+        <div class="login_etc">
+          <a href=""><img src="../../resources/images/kakao_logo.png" style="width: 55px; height: 55px;" id="kakao"></a>
+          <div style="width: 70px;"></div>
+          <a href=""><img src="../../resources/images/naver_logo.png" style="width: 60px; height: 60px;"></a>
+        </div>
+
+      </div>
+    
+    </section>
+    <!-- 로그인 섹션 끝 -->
+
+      
+       
+
+
+   
+    <!-- Section end -->
+
+    <!--footer start-->    
+    <footer>
+      <div class="footer_company">
+        <ul>
+          <li>상호명 : 포마이펫</li>
+          <li>전화 : 02) 2696-8000</li>
+          <li>서울특별시 금천구 가산디지털2로 95 3층</li>
+        </ul>
+      </div>
+
+        <ul class="footer_copyright">
+            Copyright ⓒ <span style="color: #f1da05;">ForMyPet</span>. All rights reserved.
+        </ul>
+    </footer>
+    <!--footer end-->
+
+
+
+
+
+</div>
+
+</body>
+</html>

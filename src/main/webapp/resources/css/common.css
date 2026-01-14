@@ -1,0 +1,329 @@
+@charset "UTF-8";
+
+.wrap{ 
+    margin: auto;
+    width: 100%;
+    /* max-width: 1500px; */
+    display: flex;
+    flex-direction: column; 
+}
+.header{height: 250px;}
+.header_nav{
+    height: 20%; display: flex;
+    background-color: #f5f5f500;
+    padding-bottom: 10px; 
+    position: relative;
+} 
+
+.header_nav::before { /*상단 선 스타일*/
+        content: "";
+        position: absolute;
+        top: -10px; /* 선의 위치 조정 */
+        left: 0; 
+        width: 100%; 
+        height: 2px; /* 선의 두께 설정 */
+        background-color: #ffffff; 
+}
+    
+.header_nav div{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    flex-grow: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;  
+    
+}
+
+.header_nav div a{
+    color: black;
+}
+.menu_item {
+    margin-right: 60px; 
+}
+
+.headr_roop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.header-top-section { /* 홈페이지 최상단 여백*/ 
+    margin-top: 10px; 
+    margin-bottom: 20px;
+    position: relative;
+    
+}
+.header-top-section::after { /*하단 선 스타일*/
+    content: "";
+    position: absolute;
+    bottom: -5px; /* 선의 위치 조정 */
+    width: 100%; 
+    height: 2px; /* 선의 두께 설정 */
+    background-color: #e0e0e0; 
+}
+
+.menu_item {
+    display: inline-block; 
+    margin-right: 10px; 
+}
+
+.menu_item a {
+    text-decoration: none; 
+    display: inline-block; 
+}
+
+.menu_item:hover a {
+    font-weight: bold;
+    color: #ffa51f; 
+    text-shadow: 1px 1px 1px #b47920;
+}
+
+/*------------------------------ footer스타일 -----------------------------*/
+.footer_company {
+    border-top: 4px solid #e0e0e0; 
+    padding-top: 20px; 
+    list-style-type: none;
+}
+.footer_company li{
+    list-style-type: none;
+}
+
+/*sidebarstyle*/
+/* .sidebar {
+    position: fixed;
+    top: 110px;
+    right: 0;
+    margin-right: 140px;
+    height: 100%;
+    width: 50px;
+ }
+*/
+  /* 사이드바 스타일링 */
+  #sidebar {
+    width: 200px; /* 사이드바 너비 */
+    background-color: #f4f4f4; /* 배경색 */
+    padding: 20px; /* 내부 여백 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    position: fixed; /* 화면에 고정 */
+    top: 170px; /* 상단에 위치 */
+    right: -250px; /* 시작 시 오른쪽에 숨김 */
+    transition: right 0.3s ease; /* 오른쪽으로 이동하는 애니메이션 */
+}
+.dropdown:hover .dropdown-menu {
+	display: block;
+	margin-top: 0;
+}
+
+/*---------------- 최근 본 상품 리스트 스타일링 --------------------*/
+#recently-viewed {
+    list-style-type: none; /* 리스트 마커 없애기 */
+    padding: 0;
+}
+
+#recently-viewed li {
+    margin-bottom: 10px; /* 리스트 아이템 간격 */
+}
+
+#recently-viewed li a {
+    color: #333; /* 링크 색상 */
+    text-decoration: none; /* 밑줄 없애기 */
+}
+
+#recently-viewed li a:hover {
+    text-decoration: underline; /* 호버 시 밑줄 추가 */
+}
+
+#toggleButton {/* 토글 버튼 스타일링 */
+    position: fixed;
+    top: 125px;
+    right: 20px; /* 오른쪽 상단에 배치 */
+    cursor: pointer;
+    padding: 10px;
+    background-color:#ffa51f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    z-index: 999; /* 사이드바 위에 나타나도록 */
+}
+
+/*-------------------------- section 스타일- ------------------------*/
+.section {
+	float: right;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main_content>div{
+    /* border: 2px solid #1ABC9C; */
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    margin: bottom 50px; 
+    min-height: 600px;
+    padding: 50px;
+    border-radius: 10px;
+    
+}
+
+.main_content {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+
+ .main_h1{
+    font-size: 48px;
+    padding-bottom: 20px;
+    text-shadow: 1px 1px 1px;
+    
+ }
+ 
+ .main_list{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+ }
+ .thumbnail{
+    width: 250px;
+    margin: 20px;
+    padding: 5px;
+    padding-bottom: 30px;
+    cursor: pointer;
+    position: relative;
+}
+.thumbnail:hover>img{
+    opacity: 0.9;
+}
+.thumbnail_img{
+    width: 240px;
+    height: 240px;
+}
+
+.product_name {
+    width: 240px;
+    font-size: 22px;
+    font-weight: bolder;
+    padding-top: 10px;
+}
+.o_price{
+    padding-left: 10px;
+    color: gray;
+}
+.discount{
+    color: rgb(219, 31, 31);
+    font-size: 18px;
+    padding-left: 5px;
+}
+.fin_price{
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: right;
+}
+.star{
+    color: rgb(251, 255, 6);
+    text-align: right;
+    text-shadow: 1px 1px 1px gray;
+}
+.average{
+    text-align: center;
+    width: 45px;
+}
+.review_count{
+    /* text-align: center; */
+    width: 60px;
+
+}
+
+/*--------------------------- 상품 페이지 스타일 ------------------------------ */
+.product_best{
+    text-align: center;
+    padding-bottom: 50px;
+    text-shadow: 1px 1px 1px;
+}
+.category_area_dog{
+     height: 360px;
+     background-color: #ffa51f50;
+     padding-top: 40px;
+}
+.category_area_cat{
+    height: 400px;
+    background-color: #ffa51f50;
+    padding-top: 40px;
+}
+.category{
+    width: 100%;
+    padding-bottom: 30px;
+    align-items: center;
+    display: flex;
+    padding-bottom:8px;
+    padding-top: 5px;
+}
+.big_category{
+    width: 15%;
+    height: 50px;
+    text-align: center;
+    font-size: 22px;
+    color: rgb(37, 28, 28);
+    text-shadow: 1px 1px 2px rgb(136, 127, 127) ;
+}
+.category td{
+    padding: 10px;
+    text-align: left;
+    /* border-top: 1px dotted darkgray; */
+}
+
+.category_line{
+    border-top: 2px solid darkgray;
+    border-bottom: 2px solid darkgray;
+}
+.category span{
+    font-size: 13px;
+    padding-left: 3px;
+}
+.best_product{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid darkgray;
+    padding-bottom: 50px;
+ }
+
+ .product_content>div{
+    /* border: 2px solid #1ABC9C; */
+    width: 80%;
+    margin: auto;
+    /* margin-top: 50px; */
+    margin: bottom 50px; 
+    min-height: 800px;
+    padding: 50px;
+    border-radius: 10px;
+}
+.product_main{
+    margin-top: 100px;
+}
+
+/* ------------------------ 페이징 바 ----------------------------- */
+.page-link{
+    color: darkgray;
+}
+.page-link::marker{
+    background-color: #ffa51f;
+}
+.pagination .page-item.active .page-link {
+    background-color: #ffd000; /* 선택된 페이지의 배경색을 나타내는 원하는 색상 코드를 지정하세요 */
+    color: #fff; /* 선택된 페이지의 텍스트 색상 설정 */
+    border-color: #f7cb07;
+}
+

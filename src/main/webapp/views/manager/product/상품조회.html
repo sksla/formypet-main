@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>상품관리 페이지</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Favicons -->
+  <!-- <link href="resources/img/favicon.png" rel="icon"> -->
+  <!-- <link href="resources/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../../resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../resources/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../../resources/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../../resources/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../../resources/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../../resources/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../../resources/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="../../resources/images/logo.png" alt="로고">
+        <span class="d-none d-lg-block">포마이펫</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item dropdown pe-3">
+          <!-- 프로필이미지 -->
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <!-- 로그인 전 -->
+            <img src="../../resources/images/login.png" alt="Profile" class="rounded-circle">
+            <!-- 로그인 후 -->
+            <img src="../../resources/images/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">CEO 김호관</span>
+          </a><!-- End Profile Iamge Icon -->
+          <!-- 프로필이미지 드롭다운 -->
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>대표자 김호관</h6>
+              <span>CEO</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+            
+          </ul>
+          <!-- End Profile Dropdown Items -->
+        </li>
+        <!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i> <!-- 아이콘 -->
+          <span>대시보드</span>
+        </a>
+      </li>
+      <!-- 홈 Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>상품관리</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="components-alerts.html">
+              <i class="bi bi-circle"></i><span>상품 조회</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-accordion.html">
+              <i class="bi bi-circle"></i><span>상품 재고 관리</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <!-- 상품관리 Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-person"></i><span>회원관리</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="forms-elements.html">
+              <i class="bi bi-circle"></i><span>회원 조회</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-layouts.html">
+              <i class="bi bi-circle"></i><span>회원 등록/변경/삭제</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <!-- 회원관리 -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#order-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-box-seam"></i><span>주문 관리</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="order-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="tables-general.html">
+              <i class="bi bi-circle"></i><span>주문/취소/교환/반품 관리</span>
+            </a>
+          </li>
+           
+          <li>
+            <a href="tables-data.html">
+              <i class="bi bi-circle"></i><span>배송현황 관리</span>
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+      <!-- 주문 관리 Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-calendar-event"></i><span>이벤트 관리</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="tables-general.html">
+              <i class="bi bi-circle"></i><span>이벤트 목록 조회</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <!-- 이벤트 관리 Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>게시판 관리</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="charts-chartjs.html">
+              <i class="bi bi-circle"></i><span>게시글 관리</span>
+            </a>
+          </li>
+          <li>
+            <a href="charts-apexcharts.html">
+              <i class="bi bi-circle"></i><span>댓글 관리</span>
+            </a>
+          </li>
+          <li>
+            <a href="charts-echarts.html">
+              <i class="bi bi-circle"></i><span>리뷰 관리</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <!-- 게시판 Nav -->
+
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#cs-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-headset"></i><span>고객센터 관리</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="cs-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="forms-elements.html">
+              <i class="bi bi-circle"></i><span>공지사항</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-layouts.html">
+              <i class="bi bi-circle"></i><span>FAQ</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-editors.html">
+              <i class="bi bi-circle"></i><span>1:1 문의</span>
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+      <!-- 고객센터 Nav -->
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bar-chart"></i><span>통계</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="icons-bootstrap.html">
+              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
+            </a>
+          </li>
+          <li>
+            <a href="icons-remix.html">
+              <i class="bi bi-circle"></i><span>Remix Icons</span>
+            </a>
+          </li>
+          <li>
+            <a href="icons-boxicons.html">
+              <i class="bi bi-circle"></i><span>Boxicons</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <!-- 통계 Nav -->
+
+  </aside>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>상품 조회</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">홈</a></li>
+          <li class="breadcrumb-item"><a href="상품관리.html">상품관리</a></li>
+          <li class="breadcrumb-item active">상품조회</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col">
+
+          <div class="card product">
+            <form class="search-form" method="POST" action="#">
+            <div class="list-bar mt-5">
+              <div class="form-check m-auto">
+                <input class="form-check-input" type="checkbox" id="dog-food">
+                <label class="form-check-label" for="dog-food">
+                  강아지_사료
+                </label>
+              </div>
+              <div class="form-check m-auto">
+                <input class="form-check-input" type="checkbox" id="dog-snack">
+                <label class="form-check-label" for="dog-snack">
+                  강아지_간식
+                </label>
+              </div>
+              <div class="form-check m-auto">
+                <input class="form-check-input" type="checkbox" id="dog-playing">
+                <label class="form-check-label" for="dog-playing">
+                  강아지_용품
+                </label>
+              </div>
+            </div>
+            
+            <div class="list-bar my-3">
+              <div class="form-check m-auto">
+                <input class="form-check-input" type="checkbox" id="cat-food">
+                <label class="form-check-label" for="cat-food">
+                  고양이_사료
+                </label>
+              </div>
+              <div class="form-check m-auto">
+                <input class="form-check-input" type="checkbox" id="cat-snack">
+                <label class="form-check-label" for="cat-snack">
+                  고양이_간식
+                </label>
+              </div>
+              <div class="form-check m-auto">
+                <input class="form-check-input" type="checkbox" id="cat-playing">
+                <label class="form-check-label" for="cat-playing">
+                  고양이_용품
+                </label>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center search-bar mb-5">
+              <div class="me-3">상품 검색</div>
+              <input type="text" name="query" placeholder="Search" title="Enter search keyword" id="searchbar">
+              <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </div><!-- End Search Bar -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col">
+
+        <div class="card">
+          <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-outline-secondary mt-5 me-3">상품 등록하기</button>
+          </div>
+          <div class="card-body">
+            <table class="table datatable">
+              <thead>
+                <tr>
+                  <td></td>
+                  <th>
+                    상품코드
+                  </th>
+                  <th>상품명</th>
+                  <th>가격</th>
+                  <th>할인율</th>
+                  <th colspan="2">재고</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#product-delete">ㅡ</button></td>
+                  <td>C_Food_255</td>
+                  <td>로얄케닌 캣 인도어 4kg</td>
+                  <td>62,500</td>
+                  <td>0%</td>
+                  <td>105</td>
+                  <td><button class="btn btn-warning">수정</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- End Table with stripped rows -->
+
+            <!-- Centered Pagination -->
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&lt;</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">&gt;</a>
+                </li>
+              </ul>
+            </nav>
+            <!-- End Centered Pagination -->
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal" id="product-delete">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">상품을 삭제하시겠습니까?</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">삭제</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    </section>
+    
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>ForMyPet</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="#">포마이펫일동</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../../resources/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../resources/vendor/chart.js/chart.umd.js"></script>
+  <script src="../../resources/vendor/echarts/echarts.min.js"></script>
+  <script src="../../resources/vendor/quill/quill.min.js"></script>
+  <script src="../../resources/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../../resources/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../../resources/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../../resources/js/main.js"></script>
+
+</body>
+
+</html>

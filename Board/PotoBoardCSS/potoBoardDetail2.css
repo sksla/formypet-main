@@ -1,0 +1,96 @@
+
+
+/* Section 관련 스타일 */
+
+.content_area{
+    display: flex;
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+.board_title{
+    width: 400px;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+ }
+
+.board_content{
+    
+    width:100%;
+    margin:auto;
+    min-height:500px;
+    padding:50px;
+    border-radius:10px;
+}
+
+.side_area{
+    margin-right: 10px;
+    width: 20%;
+    height: 100%;
+    padding-top: 50px;
+ }
+
+ .side_area > h5{
+    margin-bottom: 30px;
+ }
+
+.side_area > .listTitle{
+    text-decoration: none;
+    color: black;
+}
+ 
+ .list>li{
+    margin-top: 10px;
+    list-style-type: none;
+ }
+
+ .list>li>a{
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+ }
+
+
+.detail{
+    border: 1px solid lightgray;
+    min-height: 200px;
+}
+
+#img_content{
+    width: 500px;
+    height: 300px;
+    margin: auto;
+}
+
+.carousel-item img{
+    width: 500px;
+    height: 300px;
+
+}
+
+div>h2{
+    margin-bottom: 5%;
+}
+
+.content_notice{
+    margin: auto;
+    margin-bottom: 5%;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    border: 1px solid lightgray;
+    width: 80%;
+    align-items: center;
+}
+
+.table{
+    width: 80%;
+}
+.table-item{
+    margin: auto;
+}
+

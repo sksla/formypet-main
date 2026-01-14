@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+/* 해당 css는 다른 페이지에서 가져다 쓰는 달력 기능 -->
+
+/* 날짜 기능 css */
+.dateTab{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+}
+.mypage_order_date_left{
+    width: 50%;
+}
+.date_left div {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: inline-flex;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin-right: 5px;
+}
+.div_selected{
+    background-color: gold;
+}
+.div_NoSelected{
+    background-color: white
+}
+.date_left * , .date_right * {
+    font-size: 20px;
+}
+.date_right{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end; /* 우측 정렬 */
+    align-items: center;
+    font-size: 25px;
+}
+
+input[type="date"] {
+    font-size: 25px;
+    margin: 0 10px;
+}
+.mouse_hover{
+    cursor: pointer;
+}

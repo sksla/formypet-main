@@ -1,0 +1,147 @@
+
+
+
+ /*--  BoardList -- */
+
+ .main_content > a{
+    text-decoration: none;
+ }
+
+ .aa{
+    font-size: 12px;
+ }
+
+ .board_title{
+    
+    width: 400px;
+    text-align: right;
+    font-weight: bold;
+    margin-bottom: 10px;
+ }
+ .board_list > h5{
+    margin-bottom: 30px;
+ }
+
+.board_area{
+    display: flex;
+    margin-top: 40px;
+    
+}
+
+
+.title_area{
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-weight: bold;
+    border: 1px solid red;
+    width: 50%;  
+}
+
+.item{
+    display: flex;
+    background-color: red;
+    text-align: right;
+}
+.item h3 , .item span{
+    text-align: right;
+}
+
+
+/* .title_area>div{
+    flex-direction: row;
+    color: red;
+} */
+
+.container{
+    width: 100%;
+}
+
+.selectList_area{
+    display: flex;
+    margin-bottom: 10px;  
+}
+
+.searchBoard{
+    width: 40%;
+}
+
+.selectList{
+    width: 110px;
+    
+}
+
+
+ .board_list{
+    width: 20%;
+    margin-right: 10px;
+
+ }
+
+ .list{
+    margin-top: 10px;
+ }
+ 
+ .board_contentList{
+    justify-content: center;
+    width: 1300px;
+ }
+
+
+ .list>li{
+    font-size: 12px;
+ }
+ ul{
+    list-style-type: none;
+ }
+ .contentList{
+    align-items: center;
+    text-align: center;
+    width: 1100px;
+    margin-bottom: 50px;
+ }
+
+.pagination{
+    margin-top: 40px;
+}
+
+td>img{
+    width: 80px;
+    height: 80px;
+}
+
+.aaaa{
+    display: flex;
+    margin-bottom: 10%;
+}
+.total_info1{
+    width: 27%;
+    text-align: center;
+}
+.total_info2{
+    width: 25%;
+    text-align: center;
+}
+
+.td-left{
+    text-align: left;
+}
+.td-center{
+    width: 40; 
+    height: 40px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.text_no{
+    width: 40; 
+    height: 40px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.table{
+    width: 100%;
+}
+
+

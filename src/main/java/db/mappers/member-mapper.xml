@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<entry key="insertMember">
+		INSERT
+		  INTO MEMBER
+		  (
+		    USER_NO
+		  , USER_ID
+		  , USER_PWD
+		  , USER_NAME
+		  , USER_BIRTH
+		  , GENDER
+		  , EMAIL
+		  , PHONE
+		  , ADDRESS
+		  , ADDRESS_DETAIL
+		  , ADDRESS_POST
+		  , STATUS_SNS
+		  , STATUS_EMAIL
+		  , PET_TYPE
+		  , PET_NAME
+		  , PET_KIND
+		  , PET_AGE
+		  , PET_GENDER
+		  )
+		  VALUES
+		  (
+		    SEQ_UNO.NEXTVAL
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  , ?
+		  )
+	</entry>
+	
+	<entry key="idCheck">
+		SELECT
+				COUNT(*) COUNT
+		FROM MEMBER
+		WHERE USER_ID = ?
+	
+	</entry>
+	
+	<entry key="loginMember">
+		SELECT 
+			   USER_NO
+			 , USER_ID
+			 , USER_PWD
+			 , USER_NAME
+			 , USER_BIRTH
+			 , GENDER
+			 , EMAIL
+			 , PHONE
+			 , ADDRESS
+			 , ADDRESS_DETAIL
+			 , ADDRESS_POST
+			 , ENROLL_DATE
+			 , MODIFY_DATE
+			 , STATUS
+			 , STATUS_SNS
+			 , STATUS_EMAIL
+			 , RESIGN_DATE
+			 , PET_TYPE
+			 , PET_NAME
+			 , PET_KIND
+			 , PET_AGE
+			 , PET_GENDER
+			 
+		  FROM MEMBER
+		 WHERE USER_ID = ?
+		   AND USER_PWD = ? 
+		   AND STATUS IN ('Y', 'A')
+	</entry>
+	
+	<!-- 수정 필요함. 카카오 첫 로그인 시 회원가입과 동시 진행 -->
+	<entry key="kakaoLogin">
+	
+		INSERT 
+		  INTO MEMBER
+		  (
+		  	USER_NAME
+		  , EMAIL
+		  )
+		  VALUES 
+		  (
+		  	?
+		  , ?
+		  )
+		  
+	</entry>
+	
+	<entry key="selectUserId">
+	
+		SELECT USER_ID
+		FROM   MEMBER 
+		WHERE  USER_NAME = ? 
+		  AND  EMAIL = ?
+		  AND  STATUS IN ('Y', 'A')
+	
+	</entry>
+	
+	<entry key="selectUserPwd">
+	
+		SELECT USER_PWD
+		FROM   MEMBER 
+		WHERE  USER_ID = ? 
+		  AND  EMAIL = ?
+		  AND  STATUS IN ('Y', 'A')
+	
+	</entry>
+	
+	<entry key="selectMemberCount">
+		SELECT
+				COUNT(*) COUNT
+		FROM MEMBER
+	</entry>
+	
+	<entry key="selectMemberList">
+		select 
+				user_no
+			  ,	user_id
+			  , user_pwd
+			  , user_name
+			  , user_birth
+			  , email
+			  , phone
+			  , address
+			  , address_detail
+			  , address_post
+			  , status
+			  , status_email
+			  , status_sns
+			  , pet_type
+			  , pet_name
+			  , pet_kind
+			  , pet_age
+			  , pet_gender
+		  from member m
+	</entry>
+	<entry key="updateMember">
+		update
+				member
+		   set  user_name = ?
+		   	  , email = ?
+		   	  , status_email = ?
+		   	  , phone = ?
+		   	  , status_sns = ?
+		   	  , address_post = ?
+		   	  , address = ?
+		   	  , address_detail = ?
+		   	  , user_birth = ?
+		   	  , status = ?
+		   	  , pet_type = ?
+		   	  , pet_name = ?
+		   	  , pet_kind = ?
+		   	  , pet_age = ?
+		   	  , pet_gender = ?
+		 where  user_no = ?
+	</entry>
+	<entry key="deleteMember">
+		update
+		        member
+		   set
+		   		status = 'N'
+		 where  user_no = ?
+	</entry>
+</properties>

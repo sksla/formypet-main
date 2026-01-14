@@ -1,0 +1,900 @@
+-- 상품 테이블 PRODUCT 삭제
+DROP TABLE PRODUCT;
+
+-- 상품 테이블 PRODUCT 생성
+CREATE TABLE "PRODUCT" (
+   "PRO_NO" NUMBER   NOT NULL,
+   "PRO_NAME" VARCHAR2(100) NOT NULL,
+   "PRO_CATE_CODE" CHAR(1) NOT NULL,
+   "PRO_MIDD_NO" NUMBER NOT NULL,
+   "PRICE"   NUMBER NOT NULL,
+   "STOCK"   NUMBER DEFAULT 0 NOT NULL,
+   "ENROLL_DATE" DATE DEFAULT SYSDATE NULL,
+   "MODIFY_DATE" DATE DEFAULT SYSDATE   NULL,
+   "STATUS" CHAR(1) DEFAULT 'Y' NULL,
+   "PRO_MAIN_IMAGE" VARCHAR2(500) NOT NULL,
+   "KEYWORD" VARCHAR2(100)   NOT NULL,
+    -- CHECK제약조건 추가
+    CHECK(STATUS IN ('Y', 'N', 'E'))
+);
+COMMIT;
+
+-- 시퀀스 삭제
+DROP SEQUENCE SEQ_PNO;
+
+-- 시퀀스 생성
+CREATE SEQUENCE SEQ_PNO
+  START WITH 1
+  INCREMENT BY 1
+  NOMAXVALUE;
+SET DEFINE OFF;
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '오리젠 독 퍼피 2kg', 'D', 1, 41000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/d/c/9/9/d/f/9dc99dffaa648c2151ffaddd6022b22e/10000/62464ad4d4a2ebd37c4798ad16d02804.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '오리젠 독 퍼피 6kg', 'D', 1, 88500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/d/c/9/9/d/f/9dc99dffaa648c2151ffaddd6022b22e/10000/62464ad4d4a2ebd37c4798ad16d02804.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 독 프레쉬 스몰브리드 퍼피 2.72kg', 'D', 1, 5500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/f/1/e/0/e/a/af1e0ea53131c79b30b4cd3c4447f611/10001/012093d8b284305467463ca97597c063.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 독 프레쉬 스몰브리드 퍼피 5.4kg', 'D', 1, 96000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/f/1/e/0/e/a/af1e0ea53131c79b30b4cd3c4447f611/10001/012093d8b284305467463ca97597c063.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 독 프레쉬 스몰브리드 퍼피 9.98kg', 'D', 1, 150000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/f/1/e/0/e/a/af1e0ea53131c79b30b4cd3c4447f611/10001/012093d8b284305467463ca97597c063.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '오리젠 독 퍼피 11.4kg', 'D', 1, 14500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/d/c/9/9/d/f/9dc99dffaa648c2151ffaddd6022b22e/10000/62464ad4d4a2ebd37c4798ad16d02804.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '오리젠 독 퍼피 라지브리드 11.4kg', 'D', 1, 14500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/7/a/7/f/d/8/87a7fd8d3d8b4bfdaf70d00dcbe43932/10001/2e1629464c7639948383d47ba683dd4f.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 독 미니 인도어 퍼피 3kg', 'D', 1, 46500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/c/0/3/f/3/0/5c03f3073a9646bbd3ae0476cda6ba3f/10000/61baec7b4a1bc9e0b5c1797a770b787a.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 독 미니 인도어 퍼피 8.7kg', 'D', 1, 9500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/c/0/3/f/3/0/5c03f3073a9646bbd3ae0476cda6ba3f/10000/61baec7b4a1bc9e0b5c1797a770b787a.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 독 엑스스몰 퍼피 3kg', 'D', 1, 46500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/5/6/b/d/7/0/e56bd708241fb43c40c026c7593cae24/10001/88fa696fced15e5545aecb136043286a.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '알모네이쳐 캣 대서양참치 캔 70g', 'C', 1, 2600, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/5/b/f/a/e/7/95bfae7fa3ecc47d59da5540d6838db1/10001/877314794f9dcbc0172c79583bd97854.jpeg', '전연령,주식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '쓰라이브 캣 Complete 100% 참지캔 75g', 'C', 1, 2800, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/8/5/f/0/d/5/385f0d596dc70c0481b123ab2bed908b/10000/db87c5a18fcee643f495a4f3b0c077e3.jpeg', '전연령,주식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '쓰라이브 캣 Complete 100% 참지&연어캔 75g', 'C', 1, 2800, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/f/0/f/8/4/d/5f0f84d81eb8acbd1471433b3457f952/10000/81b021f283f82f48dc18dbe915ad977d.jpeg', '전연령,주식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '쓰라이브 캣 Complete 100% 닭가슴살캔 75g', 'C', 1, 2800, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/8/e/3/c/1/3/08e3c13fd86be8bfd3e24122226d23eb/10001/ae3095dc38c8873dae60a1d4f6e92fcc.jpeg', '전연령,주식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '쓰라이브 캣 Complete 100% 닭가슴살 키튼캔 75g', 'C', 1, 2800, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/a/4/1/6/a/1/ca416a1875441f467fb285ade58335c0/10001/0d325dbd86d79b4c83117f6759047b93.jpeg', '키튼,주식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 캣 프레쉬 어덜트 1.36kg', 'C', 1, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/c/3/2/7/7/0/ac32770ac7be140f2a66288560c64e2b/10001/b875d9a1c025c88aadc68ced6ffe46dd.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 캣 프레쉬 어덜트 3.63kg', 'C', 1, 78000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/c/3/2/7/7/0/ac32770ac7be140f2a66288560c64e2b/10001/b875d9a1c025c88aadc68ced6ffe46dd.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 캣 프레쉬 시니어 1.36kg', 'C', 1, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/4/0/5/8/e/e/34058ee2f32eed748c041daf2bc647a9/10001/0faba55666eb80a6114d033f23bf91ae.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 캣 프레쉬 시니어 3.63kg', 'C', 1, 78000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/4/0/5/8/e/e/34058ee2f32eed748c041daf2bc647a9/10001/0faba55666eb80a6114d033f23bf91ae.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 캣 프레쉬 키튼 1.36kg', 'C', 1, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/c/5/9/e/f/f/bc59eff966cc4c4c58918f660992ee43/10001/6772030751011ef7a3ae813ac345cc87.jpeg', '키튼,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 캣 프레쉬 키튼 3.63kg', 'C', 1, 78000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/c/5/9/e/f/f/bc59eff966cc4c4c58918f660992ee43/10001/6772030751011ef7a3ae813ac345cc87.jpeg', '키튼,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '내추럴그레이트니스 캣 살몬&터키 위드 펌킨&캣닙 캔 200g', 'C', 1, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/3/a/b/0/d/0/b3ab0d01e4dcb653e9f27c9ef4050d6b/10000/3a801310a4a12a5c230a729bcf06241d.png', '어덜트,주식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '내추럴그레이트니스 캣 치킨 위드 요구르트 바나나&스트로베리 200g', 'C', 1, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/f/6/a/b/f/3/8/f6abf3817e5edc5d8398b2de805d4c50/10000/acf998ea992e19be93d5f13590e72fa9.png', '어덜트,주식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '내추럴그레이트니스 캣 레빗&덕 위드 케롯&카모마일 캔 200g', 'C', 1, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/4/3/3/b/9/6/5433b9638df467a4c72caaf0b1cab3e4/10000/785a3d3fd846ad55296dcdb02b6758d4.png', '어덜트,주식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 독 엑스스몰 퍼피 8.7kg', 'D', 1, 9500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/5/6/b/d/7/0/e56bd708241fb43c40c026c7593cae24/10001/88fa696fced15e5545aecb136043286a.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 독 미니 퍼피 8kg', 'D', 1, 93000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/b/1/d/b/3/b/ab1db3b4e4b2c090c44d11e346d5b03b/10000/a421b0787ea8804874216714fcbdf5e2.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 독 미니스타터 마더&베이비 3kg', 'D', 1, 50000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/6/5/5/b/d/f/b655bdf058232b3b3d07f39a8fd54b06/10001/b916ced97b02ff0b7150b363040797e5.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '아투 독 연어 퍼피 1.5kg', 'D', 1, 42000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/1/a/3/2/2/2/51a3222cd2820b00e37f10e2886d40e3/10001/6e462dcf8311a5d876066e66116e5f30.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '아투 독 연어 퍼피 5kg', 'D', 1, 106000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/1/a/3/2/2/2/51a3222cd2820b00e37f10e2886d40e3/10001/6e462dcf8311a5d876066e66116e5f30.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '아카나 독 퍼피 스몰브리드 레시피 2kg', 'D', 1, 30500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/6/3/c/b/d/d/763cbdd3d9d57cfaadaa1770c18c8db2/10001/27872a4a47929b418e218b1ef6b4def4.png', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '아카나 독 퍼피 스몰브리드 레시피 6kg', 'D', 1, 63000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/6/3/c/b/d/d/763cbdd3d9d57cfaadaa1770c18c8db2/10001/27872a4a47929b418e218b1ef6b4def4.png', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '피쉬포독 슈페리어 퍼피 5.7kg', 'D', 1, 9500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/2/1/c/6/0/4/721c604382f1f1ce0536e6454f329bc0/10000/1571e456327e1f9930f196dc16ce4272.jpeg', '퍼피,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 독 프레쉬 스몰브리드 어덜트 2.72kg', 'D', 1, 53000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/c/a/0/7/2/5/4ca0725ee800d2664baa11ae32b58779/10001/3fbba19f7b3793df21a149d1d98c4a95.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 독 프레쉬 스몰브리드 어덜트 5.4kg', 'D', 1, 93000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/c/a/0/7/2/5/4ca0725ee800d2664baa11ae32b58779/10001/3fbba19f7b3793df21a149d1d98c4a95.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 독 프레쉬 스몰브리드 어덜트 9.98kg', 'D', 1, 14500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/c/a/0/7/2/5/4ca0725ee800d2664baa11ae32b58779/10001/3fbba19f7b3793df21a149d1d98c4a95.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '퓨리나 캣 팬시피스트 부드러운 흰살생선 키튼 캔 85g', 'C', 1, 1800, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/f/c/6/9/7/8/2/fc69782d01d2f7cf8df9c9d42f186305/10001/4638e69238dfa0f8226508612d7bc447.jpeg', '키튼,주식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '퓨리나 캣 팬시피스트 부드러운 칠면조 키튼 캔 85g', 'C', 1, 1800, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/f/e/2/9/7/7/5fe2977984937e687056b124eb00372a/10001/1b409c112c6842f3b25fa2a72c9f22a6.jpeg', '키튼,주식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 캣 키튼 1.2kg', 'C', 1, 22600, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/b/a/a/c/1/b/bbaac1b2e0c06b6c7325bdf3bde0d21a/10001/97b53dad5ed59887c0d2558ac77430d7.jpeg', '키튼,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 캣 키튼 4kg', 'C', 1, 62500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/b/a/a/c/1/b/bbaac1b2e0c06b6c7325bdf3bde0d21a/10001/97b53dad5ed59887c0d2558ac77430d7.jpeg', '키튼,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 캣 키튼 10kg', 'C', 1, 129500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/b/a/a/c/1/b/bbaac1b2e0c06b6c7325bdf3bde0d21a/10001/97b53dad5ed59887c0d2558ac77430d7.jpeg', '키튼,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 캣 인도어 4kg 변냄새 감소', 'C', 1, 62500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/d/c/d/9/5/4/7dcd9546dc2a04d97f8d58c5d4ad01c7/10001/5003985ad939afda2d739b13c0a4ee10.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 캣 인도어 1.2kg 변냄새 감소', 'C', 1, 22600, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/d/c/d/9/5/4/7dcd9546dc2a04d97f8d58c5d4ad01c7/10001/5003985ad939afda2d739b13c0a4ee10.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 캣 인도어 10kg 변냄새 감소', 'C', 1, 129500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/d/c/d/9/5/4/7dcd9546dc2a04d97f8d58c5d4ad01c7/10001/5003985ad939afda2d739b13c0a4ee10.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '레오나르도 캣 푸드 시니어 2kg', 'C', 1, 39000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/b/3/5/6/e/9/7b356e99cf5628e061aa23cf48ccb201/10001/b03b3d77bbb53ae9d87fa2f1caebe991.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '캐츠랑 전연령 20kg', 'C', 1, 6500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/c/b/b/f/3/d/7cbbf3d07011b86173cb9e7b350f75c2/10001/425bd3ee99ff6e57b4f5d2ec324e0538.jpeg', '전연령,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '캐츠랑 전연령 5kg', 'C', 1, 28000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/e/8/a/7/e/a/de8a7ea393a771a80def97fdcf0d00b1/10001/a4c74989aee4aa74295c0b849be78372.jpeg', '전연령,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '캐츠랑 전연령 2kg', 'C', 1, 16000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/b/5/7/6/9/8/bb57698df87e53baa0fe015202cb1847/10001/c1429b6f560dbdabde5f6ea69cbe57b4.jpeg', '전연령,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 캣 양고기 400g', 'C', 1, 4500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/6/4/8/5/1/a/c64851a8d9a02f243d82a0f6368eba52/10000/a725a4e104ec7e4b673f40ffae833aae.jpeg', '전연령,에어/동결');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 캣 프로비넌스 오타고 밸리 340g', 'C', 1, 39000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/8/e/2/a/1/7/b8e2a174ca56d752df8498b76be3abda/10001/299f83b1cf28e9727c4278993f2cc3d9.jpeg', '전연령,에어/동결');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 독 미니 인도어 어덜트 3kg', 'D', 1, 46500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/8/c/c/9/a/b/a8cc9abe2c86253f3b6f9acea88db684/10001/2d6f1a038093bea3427d03258471a5ec.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 독 미니 인도어 어덜트 8.7kg', 'D', 1, 9500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/8/c/c/9/a/b/a8cc9abe2c86253f3b6f9acea88db684/10001/2d6f1a038093bea3427d03258471a5ec.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '오리젠 독 오리지날 2kg', 'D', 1, 41000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/e/c/c/3/0/a/4ecc30adc81b1fc147c51beb3cf5b98b/10001/bde700c8eb907bf325e50ca4c074e35b.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '오리젠 독 오리지날 6kg', 'D', 1, 88500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/e/c/c/3/0/a/4ecc30adc81b1fc147c51beb3cf5b98b/10001/bde700c8eb907bf325e50ca4c074e35b.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '오리젠 독 오리지날 11.4kg', 'D', 1, 14500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/e/c/c/3/0/a/4ecc30adc81b1fc147c51beb3cf5b98b/10001/bde700c8eb907bf325e50ca4c074e35b.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '게더 독 엔드레스 벨리 비건 레시피 1kg', 'D', 1, 29000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/8/0/7/d/8/3/1807d833ed972004c8e052d9eab2764e/10001/6245f009b06a9ca2d4d70ded38ff7a5c.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '게더 독 프리 에이커 치킨 레시피 1kg', 'D', 1, 29000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/0/0/4/9/d/0/a0049d0229610f6848b6924973aef710/10001/1497c96f76dbe97b58c67f5bcb21e949.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 닭고기 캔 390g', 'D', 1, 12000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/f/d/1/f/d/4/dfd1fd4b9424a0f9e1b1a60f80737176/10001/f72c463c57b8434a3f36e961a7f69a69.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 프로비넌스 이스트 케이프 1.8kg', 'D', 1, 16500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/5/6/2/1/6/4/95621642372ff3ee98a438aab371a46c/10001/07fc14d0d614a96a9b0f1131bfdf1e0f.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '피쉬포독 슈페리어 어덜트 5.7kg', 'D', 1, 9500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/f/4/f/f/c/4/1f4ffc4eb8f30276d20686420fd2e42c/10001/303e99d19384ec182a841eb2db9ff980.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '피쉬포독 화이트피쉬 어덜트 라지브리드 1kg', 'D', 1, 22000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/2/b/9/6/4/f/72b964f9f0c2382e9a76acb5b35a5ee0/10001/7fdf54203e790674fb8c6aca38f62eab.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '피쉬포독 화이트피쉬 어덜트 6.3kg', 'D', 1, 82000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/1/f/c/0/1/c/91fc01c2dcbc4ec00bcb0b8efbaf2145/10001/d7f5cfb848a02cb25a8d5053b1ddda8f.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '토우 독 구운오리&고구마 1.2kg', 'D', 1, 30000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/e/1/d/0/2/f/9e1d02fa27bc98e971b212fa038988c2/10000/8763f6fd9bf5815fb9e29a6362396b57.jpg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '웰니스 독 심플 살몬&포테이토 스몰브리드 2.04kg', 'D', 1, 4500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/0/2/f/e/3/9/b02fe39c09bc5db4f23e2bb5820459bd/10001/193bd2598c8d1d5fc2c9c4ce0abe77a6.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '웰니스 독 심플 살몬&포테이토 스몰브리드 4.76kg', 'D', 1, 83000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/0/2/f/e/3/9/b02fe39c09bc5db4f23e2bb5820459bd/10001/193bd2598c8d1d5fc2c9c4ce0abe77a6.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '내추럴발란스 독 LI 야채 레시피 브로스 코팅 스몰브리드 2.4kg', 'D', 1, 48000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/f/2/7/7/4/c/b/f2774cb6fb84ce90e441c51437e9548d/10001/22d1087402a0f1d58d451fe9beb64351.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '내추럴발란스 독 LI 연어&현미 레시피 라지브리드 2.4kg', 'D', 1, 48000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/9/8/2/c/3/7/c982c373a4b8264a642adc057957d8f7/10001/5421777f65a1b276a9dda1ddef034e07.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '내추럴발란스 독 LI 야채 레시피 브로스 코팅 라지브리드 5kg', 'D', 1, 91000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/6/3/2/5/8/b/a63258b7a9338d3dd93c8146347fdad9/10001/2def118230dfad22406b2b408acce4fe.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '내추럴발란스 독 LI 연어&현미 레시피 라지브리드 5kg', 'D', 1, 8500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/9/8/2/c/3/7/c982c373a4b8264a642adc057957d8f7/10001/5421777f65a1b276a9dda1ddef034e07.jpeg', '어덜트,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시저 독 쇠고기&달걀 1세이하 캔 100g', 'D', 1, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/0/5/7/2/c/a/c0572cab839a10a6905894ecf8d4f3c3/10001/96ea75ae8a6f5da4fd422cc268944914.jpeg', '퍼피,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '힐스 독 퍼피 스몰포 스튜 치킨&야채 99g', 'D', 1, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/c/8/7/e/0/0/ec87e00b6dac475c65b709ef9e6012ec/10000/2db37752fde931a9cbc11933c03f6d91.jpeg', '퍼피,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시저 독 쇠고기 캔 100g', 'D', 1, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/b/5/7/d/f/c/7b57dfce7e4910af7e24d0688245e734/10001/a7bbf101f3c2346b137e7118d39ed77f.png', '어덜트,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시저 독 쇠고기&치즈 캔 100g', 'D', 1, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/0/9/c/1/6/8/c09c1682980ace345da90a29a93d4abe/10001/c3a00a6c9290a169c574885cecdd5023.jpeg', '어덜트,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'ANF 캣 참치순살 캔 95g', 'C', 2, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/1/4/b/5/2/5/c14b525e60e4beacbed9c63a7ef684fe/10001/b6937b008aefdec45ef75e396e71398b.jpeg', '간식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'ANF 캣 참치무스 캔 95g', 'C', 2, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/3/4/e/2/6/6/034e2661e5aa607e0cea62ab61339d16/10001/c4408b0caadc3783d8c2cfd5e43008bb.jpeg', '간식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'ANF 캣 참치&새우 캔 95g', 'C', 2, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/2/f/7/7/3/e/f/2f773ef39c3311051e0a8f9b077c9ecc/10001/a30a492d40db77c2ca822019180b1f0f.jpeg', '간식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'ANF 캣 참치&게맛살 캔 95g', 'C', 2, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/0/8/e/9/6/5/908e965d47d1cbeb0f70780a90a65e40/10001/04418aa64729ae6dae2e0411f3ac8c87.jpeg', '간식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'ANF 캣 참치&치킨무스 캔 95g', 'C', 2, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/f/b/d/0/1/9/4fbd01969fa517fe57dd7764ff82bc9c/10001/c0b22ccb6e673100fcac63d86a973741.jpeg', '간식캔');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '뉴트리플랜 캣 흰살참치&연어 캔 160g', 'C', 2, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/4/5/2/7/2/4/a4527242f0bc1ca5953103a7564f0bb9/10001/f9d23833037e309531d2b10822257c80.png', '간식캔,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '뉴트리플랜 캣 흰살참치&게맛살 캔 160g', 'C', 2, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/f/d/a/0/7/c/7/fda07c78d29abf427451c3612690e28b/10001/fa582d65f673f6cd289a5913afc0d738.png', '간식캔,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '뉴트리플랜 캣 흰살참치&닭가슴살 캔 160g', 'C', 2, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/2/1/d/4/f/0/a21d4f04f38f7808f8601528153edc51/10001/6be7160f04850be9daf41e252bceeb2b.jpeg', '간식캔,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫모닝 마법의 캣닢 스프레이 60ml', 'C', 2, 7500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/b/1/6/f/2/a/6b16f2a7af886ff7d347af919cf1afbe/10000/999d56d638117aab28dadf6a39a1f075.png', '캣닢,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫모닝 마법의 캣닢가루 10g', 'C', 2, 4500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/a/8/0/5/f/1/0a805f11bcccf1cac2a6dc526370f25c/10001/195a0ef1f7c99e912edecd88f1bbb6bc.jpeg', '캣닢,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '더리얼 독 로우 오리 어덜트 360g', 'D', 1, 48000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/8/d/3/f/6/f/b8d3f6f6e3524d19506be67845a59fd1/10000/db96e1cb9988723da1ca1acb56e0b121.jpeg', '어덜트,에어/동결사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '더리얼 독 로우 오리 어덜트 50g', 'D', 1, 10000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/f/e/f/2/b/8/5fef2b83e787fff55540b35059b65ef2/10000/a1b5eb20f1bf8263fd879b855e7c3301.jpeg', '어덜트,에어/동결사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '디어니스트키친 독 그레인프리 치킨 907g', 'D', 1, 52000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/8/b/a/9/9/0/b8ba990b368eaea8c04a0adca4475255/10000/ced7676c1795e8cd942d182f546a2c69.jpeg', '어덜트,에어/동결사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '디어니스트키친 독 훌그레인 칠면조 레시피 907g', 'D', 1, 48000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/9/d/8/e/8/0/89d8e80199e1ec665e5dcbaaf3b276d6/10000/f5f559614594a039529f83a223efdd5c.jpeg', '어덜트,에어/동결사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '더리얼 독 로우 닭고기 어덜트 360g', 'D', 1, 46000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/c/2/1/5/2/7/1c21527f94f9f1d25ea639fa2cc67588/10000/ee601210e1731e4cc41f78561cdc1379.jpeg', '어덜트,에어/동결사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '더리얼 독 로우 닭고기 어덜트 50g', 'D', 1, 10000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/2/5/f/b/e/f/425fbefac5bd177046bdc7a7b8d12727/10000/2f03cd5f01af50604f1965faec0db511.jpeg', '어덜트,에어/동결사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시저 독 연어&감자 100g', 'D', 1, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/9/6/7/e/3/b/c967e3bd246511ba1f659f39cca48bb7/10000/f27d3e9a74b1100942e955d4fc1dcd18.jpeg', '어덜트,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시저 독 쇠고기&닭고기 캔 100g', 'D', 1, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/0/7/1/8/3/9/c071839d57a0c9eb17d009b960d25f0f/10001/dbfe6e2f4169aea4e63ef4536d496c82.jpeg', '어덜트,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시저 독 흰살생선&야채 100g', 'D', 1, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/7/1/c/0/6/2/771c062c69934f2f7672de0f58f2cc12/10001/4b9490326d727d5e73627a6ba8567382.jpeg', '어덜트,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시저 독 쇠고기,현미&야채 14세이상 캔 100g', 'D', 1, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/0/2/0/4/e/1/80204e1deb741c5a7d762efcb124e31b/10001/aec6f169a031a9d80ad3dbe445977137.jpeg', '시니어,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시저 독 쇠고기 11세이상 캔 100g', 'D', 1, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/2/2/6/0/f/5/5/2260f55c1922a44f5708ff7c6f1ad8c9/10001/2990f417beabecc43634e249ab9ba7ef.jpeg', '시니어,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시저 독 닭고기 11세이상 캔 100g', 'D', 1, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/8/f/c/e/1/9/b8fce19b2812b13da6bb943d1861d4dc/10001/2bc8ab52f8cd6657cde35e8f1e5132d1.jpeg', '시니어,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '네츄럴코어 독 에코9b 연어&고구마 시니어 2.4kg', 'D', 1, 35400, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/2/6/0/3/a/3/02603a36d7f0612613c0d0d5e5e3c0de/10000/f73b3a238022c47aff353a5195715343.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '네츄럴코어 독 에코9b 연어&고구마 시니어 6kg', 'D', 1, 69000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/5/b/4/1/0/c/95b410c783b8a5062829c984e72b9eb2/10000/29adec66508e1c9085a6bc017c6e4a4b.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '네츄럴코어 독 에코9a 오리&고구마 시니어 2.4kg', 'D', 1, 35400, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/3/5/b/b/b/f/535bbbf478dbf1628bff2a1939fe10d0/10001/2cfe83836781bce7f623e5c4c4b9920e.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '네츄럴코어 독 에코9a 오리&고구마 시니어 6kg', 'D', 1, 69000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/0/a/8/a/4/1/10a8a41a0beac94d459de93a90071bf3/10001/59cf62950a979910efec6b7a7780e91b.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '오리젠 독 시니어 2kg', 'D', 1, 41000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/6/0/7/3/e/7/86073e7eea314d6cb370c2c3715fa9c7/10001/406727f12ebc4a28a8d878d12eb6c28c.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '오리젠 독 시니어 6kg', 'D', 1, 88500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/6/0/7/3/e/7/86073e7eea314d6cb370c2c3715fa9c7/10001/406727f12ebc4a28a8d878d12eb6c28c.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'now 독 프레쉬 스몰브리드 시니어 2.72kg', 'D', 1, 53000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/9/2/d/7/1/a/992d71a8a4c19b6bcaa4108c2e07fddd/10001/381e74b9ebe994dce0920fa3415328e1.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '오리젠 독 시니어 11.4kg', 'D', 1, 14500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/6/0/7/3/e/7/86073e7eea314d6cb370c2c3715fa9c7/10001/406727f12ebc4a28a8d878d12eb6c28c.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '닥터소프트 독 치킨 시니어 1.2kg', 'D', 1, 12500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/d/3/9/c/a/7/7d39ca77ceb548990abd85d516702442/10000/4f78bd8f18853a0de02f9c41110f16f8.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로투스 독 오븐베이크 치킨 시니어 2.27kg', 'D', 1, 70000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/5/1/d/4/b/f/451d4bf3319a4162179ce64709cd4a7a/10000/a150698b624f4dfeec858abe8dd31d54.png', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로얄캐닌 독 미니 인도어 시니어 1.5kg', 'D', 1, 26500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/4/7/7/3/8/4/e477384b22e86ac2cc9c52a52689c765/10001/83d8a1f5b7eff13676c87de32f793aaf.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '힐스 독 어덜트 7+스몰브리드 치킨 2kg', 'D', 1, 42000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/2/4/2/3/b/6/a2423b62e4a0dbd219364cb7eb868f1a/10001/176501cae4ea0e9ae19d66266f65daea.jpeg', '시니어,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 사슴정강이뼈 소', 'D', 2, 21000.0, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/a/0/d/a/6/3/ca0da6322848049df657c6345a563430/10001/26a00d4d11cf058b1fb3073d364bb278.png', '뼈간식,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '와일드라이프 독 홀스 스틱 말갈비 100g', 'D', 2, 12000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/f/0/a/6/2/8/9/f0a6289d39fcfc3524a9a7fdd76cace0/10000/ddcf65c107d1d7094ea0573ef2b8bf4d.png', '뼈간식,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'THE 건강한 형제 독 수제간식 오리도가니 500g', 'D', 2, 21000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/1/7/2/6/b/a/41726ba09e6498a8783cbb966cd0b5c9/10000/70c45008a25f8d1bb01ee45af6a4ca16.jpeg', '뼈간식,수제간식,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'THE 건강한 형제 독 수제간식 돼지사골 2p', 'D', 2, 21000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/8/2/4/d/5/a/d824d5a7aad683cf47aef4fefdf945c5/10000/b71bc5455c03f361f37b138be0f58272.jpeg', '뼈간식,수제간식,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫홀릭 마따따비 꼬치', 'C', 2, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/5/e/e/a/a/b/e5eeaabeeda947691e31c496f6529d50/10000/74958f5aa81b0f910b727ed410cdeb83.jpeg', '캣닢,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '이나바 캣 챠오 츄르 참치&가다랑어 버라이어티 14g*40p', 'C', 2, 40000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/b/3/7/c/e/e/9b37cee3e2ab90aa0d710654e0fbed1a/10001/ff39aff86e5ee6dd6b712b79b0d39d7f.jpeg', '츄르,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '이나바 캣 챠오 츄르 가다랑어 14g*40p', 'C', 2, 40000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/1/7/3/b/7/9/9173b794e8f0183727e9fa1393d7d034/10001/abd635fa454ea64732f55bbecf21584f.png', '츄르');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '이나바 캣 챠오 츄르 닭가슴살 14g*4p', 'C', 2, 4700, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/e/c/3/4/5/f/5ec345fff92077b048b8f988638e736f/10001/711f0459668932127764b3250aabf388.png', '츄르');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '이나바 캣 챠오 츄르 참치&헤어볼 14g*4p', 'C', 2, 4700, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/b/f/8/5/4/f/0bf854fbefe0343c90a54d53b2771835/10001/922b1f32a69d952a1c32ddc5728cdca5.png', '츄르,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '이나바 캣 챠오 츄르 유산균 가다랑어 14g*4p', 'C', 2, 5500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/6/1/e/f/4/e/461ef4e8607f593a8466ac8adb3654ea/10001/3ea09cec8b0a3d6998526d98bc447410.png', '츄르,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '진짜육포 소고기 180g', 'A', 2, 10000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/f/f/8/d/2/f/0ff8d2fd682a708599443085453c7e61/10001/4ea62c79766a00edf34fb4b9215089a2.jpeg', '저키,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '진짜육포 연어180g', 'A', 2, 10000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/d/e/c/7/1/9/4dec719144926220cb59d73f64b2818f/10001/919a29b98e94ae90c108cb9f484ba196.jpeg', '저키,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '진짜육포 황태 180g', 'A', 2, 10000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/0/d/4/9/6/3/00d4963767d580128bda37f4a363a302/10000/55051aee27feb045d4c1fc26692d6b6f.jpeg', '저키,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '진짜육포 오리고기 180g', 'A', 2, 10000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/e/d/4/d/3/a/0ed4d3a89b9e9e798eeaa8b56671c5a5/10000/d5422e8baac52662f56c993e2463333b.jpeg', '저키,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '에버그로 펫밀크 눈&관절 150ml', 'A', 2, 2500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/2/a/6/d/2/5/d2a6d252392a237dd6b9e04f606b66dc/10000/533c66d1dde62bea5e2d36f2c2ccb138.png', '음료,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '에버그로 펫밀크 피부&모발 150ml', 'A', 2, 2500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/a/3/4/3/3/a/1a3433aa3eebb0f874fdb2e9a44652be/10001/1c407f32bca374cce8416c9d343c8990.jpeg', '음료,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '닥터할리 캣 펫밀크 200ml', 'C', 2, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/c/d/a/e/e/6/3cdaee6115eea18ed641fb193fc8a9c8/10001/f638f1f5669836268f961493b5480aff.jpeg', '음료,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '닥터할리 펫밀크 유산균 망고 180ml', 'A', 2, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/4/5/e/4/4/e/345e44e61e0d8a5ff2fbde0be9d17cd5/10000/0880da4dfffa4bd3666ec3c74d790da0.jpeg', '음료,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '닥터할리 펫밀크 홍삼 200ml', 'A', 2, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/8/e/8/0/5/2/68e8052b0d0ca8389955f896b2ee5829/10000/425f18a09c7772c06a8750cb8c671d0b.jpeg', '음료,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'THE 건강한 형제 독 수제간식 양등뼈 600g', 'D', 2, 19000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/4/2/5/f/5/6/3425f56fabad613d75c61cadc1bdcd63/10000/95e00dc4a22b80c9835b2f70c47ebbd2.jpeg', '뼈간식,수제간식,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 구강간식 디어후퍼 35g', 'D', 2, 21000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/f/a/c/e/a/7/8facea7899ef0f1a9d7e172b3ec12e37/10000/c025dca1e4e0af21d5307fcef652a9f2.jpeg', '뼈간식,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'THE 건강한 형제 독 수제간식 돼지귀 80g', 'D', 2, 6000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/b/a/f/1/7/b/bbaf17b5ce1bbf05e7c844285717bbee/10000/dc05bc82d553f1478f687172bd04ef45.jpeg', '뼈간식,수제간식,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '그래니스 독 터키츄 롱스틱 30g', 'D', 2, 7500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/3/7/a/0/9/f/c37a09fc57b552f92a1f4dced4e47c35/10000/5dc9352870e9cd8bfa2cb9ea769edfb6.jpeg', '껌');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '네츄럴코어 독 하루유산균 혼합 12p', 'D', 2, 5500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/0/9/d/9/8/2/809d982d284b3e242403a808a1ca35fc/10000/3b54b914570644b54c62bba19252c372.png', '껌,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '호랑이 독 콜라겐 치킨롤 닭가슴살&황태 180g', 'D', 2, 20000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/f/6/8/d/6/3/1f68d63a67f7b9db5076bd1a8852f93c/10000/389664be50f579f8b4ba840f7562d00b.jpeg', '껌,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '포켄스 덴티페어리 독 디스펜서 소형견용 S 80p', 'D', 2, 34200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/6/b/e/9/8/e/a6be98eab347e2ff2a9fbf82104e8fe1/10000/62d80b189883ae61f56a788fd3a27143.png', '껌,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '그래니스 독 터키츄 프레즐 5개입', 'D', 2, 12500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/8/1/9/b/c/5/5819bc5c97b3c78f8df0bde304be16e9/10001/bd36ffddfbc3066c8f3bbc5826afe420.jpeg', '껌');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '와일드라이프 독 홀스 스틱 말불리스틱 50g', 'D', 2, 13000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/2/9/c/3/b/8/429c3b8e512758b64e59b28abd67bf1f/10000/4d095495f8f0bb252f82f610179e956a.png', '껌,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'ANF 독 밀크스틱 27p', 'D', 2, 6000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/2/f/7/7/3/2/5/2f773250120dc70142c5b35f0a230330/10001/4f3da99d4dbc290972975892cad97408.png', '껌,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '그래니스 독 오리 도너츠 껌 S', 'D', 2, 2200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/3/b/4/f/c/4/c3b4fc462b899be32322d1b626202cf5/10000/2169d34594aa5391d823423f0ea35da5.jpeg', '껌');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '호랑이 독 유산균껌 딸기&바나나&블루베리 12p', 'D', 2, 5500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/4/a/8/6/0/7/74a8607128bf01f429013f4ae05597b3/10001/83e093733f6fcdf5d5fcf81f78deb8bb.jpeg', '껌,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '호랑이 독 콜라겐 밀크스틱 30p', 'D', 2, 10000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/5/3/2/9/6/0/e53296074403dc16d37ae8b27f5efc91/10000/2e16c0b79fc5632acb3a750e37299679.jpeg', '껌,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '포켄스 덴티페어리 독 디스펜서 중소현견용 M 46p', 'D', 2, 34200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/8/c/c/f/9/b/08ccf9bfd24f410547275d9defc96b70/10001/41e4f3c1d7d26bb0192bfd3c04f828ba.jpeg', '껌,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫생각 독 하루조이 미니말랑 자색고구마 200g', 'D', 2, 19500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/d/0/e/c/7/2/bd0ec72f96025bd6df0c23445141c6d2/10001/e94b08f2362d7a28b491749ee4f9713a.jpeg', '저키');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'POWER TREAT 독 파워바이트 소고기 15g', 'D', 2, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/7/8/a/3/2/5/678a32543c7afab79ea9d1d17c312e8a/10000/121c5424f9208a7001e1909a6c88bffb.png', '저키,영양/기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '베츠페츠 안티놀 래피드 30정', 'A', 2, 36000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/a/a/8/c/f/c/3aa8cfc838f5a63cc8caf49997b1e0ff/10000/eb41b9f61f9637bc9abfb871a2daae39.jpeg', '처방식');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '베츠페츠 안티놀 래피드 90정', 'A', 2, 90000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/2/4/7/f/8/1/9/247f81992cfa6975f5c93605f4a885d7/10000/009fe4551f62b7d037d7aa7a5b338af9.jpeg', '처방식');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시그니처바이 캣 A/a 식욕촉진&기력회복 캔 30g*8ea', 'C', 2, 12000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/7/8/1/e/6/3/1781e630cf153b7f83fe69dac6bfe7f9/10001/996c64958f8eab4ae3190d9731430144.jpeg', '처방식');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시그니처바이 캣 오라뮨 구강케어 참치&명태살 캔 30g*8ea', 'C', 2, 13000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/8/4/9/3/d/2/78493d2377d22a76e00a9f129e83ef18/10000/33c532b2d25a8e4fe77e98b1135a83e3.jpeg', '처방식');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시그니처바이 캣 P/a 복약지도 캔 30g*8ea', 'C', 2, 12000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/f/d/8/5/e/7/afd85e7697872e37053812b69ac87ed7/10001/a8d8228fe38f4039ef5b135701d86f39.jpeg', '처방식');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '시그니처바이 캣 오라뮨 구강케어 닭가슴살 캔 30g*8ea', 'C', 2, 13000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/f/b/3/b/0/b/5/fb3b0b50c538201606b774686128c86c/10001/def2f463897423a1fb1dacc3fe31ed41.jpeg', '처방식');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '미음펫 우리아이 보양식 한우곰탕 100g', 'A', 2, 4200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/8/3/1/e/1/c/a831e1cf376079b71cec5de73025300d/10001/e5f67d50031132bc9ad5f99f49cfc499.jpeg', '수제간식,영양기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '미음펫 우리아이 보양식 황태국 100g', 'A', 2, 4200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/3/2/e/1/7/f/632e17f0e53ac76025d0311207593cb4/10001/58558ba29b044ec648ba95bd0fea9540.jpeg', '수제간식,영양기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '미음펫 우리아이 보양식 삼계탕 100g', 'A', 2, 4200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/e/d/2/0/d/6/7ed20d618366b3b56d3fa3518b0f6959/10001/6790ae37ac97980c6febc636f902dc7f.jpeg', '수제간식,영양기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '미음펫 우리아이 보양식 오리탕 100g', 'A', 2, 4200, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/f/2/9/9/c/d/e/f299cdec2f189a5f42fbb91c328b141b/10001/eea71d711c2422e27f2dd6dfbe0530bd.jpeg', '수제간식,영양기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '동해형씨 원물건조 열빙어 60g', 'A', 2, 16000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/9/b/5/b/b/8/89b5bb88c623d8e97a560329a2243fd4/10000/22fa5bed0d09e51da3b0e1f479bc8dcf.jpeg', '수제간식,영양기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '동해형씨 원물건조 송어 65g', 'A', 2, 20000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/7/c/7/c/4/c/77c7c4c34787ecf64fa8c94dae7d0606/10000/99c1d275d351eb80885df438416b3f0c.jpeg', '수제간식,영양기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '동해형씨 원물건조 양미리 55g', 'A', 2, 16000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/4/f/1/a/2/9/14f1a29ef297b634a9f1a12d62f71bf8/10000/9c6e185ac09e2edb71db114cdc83d141.jpeg', '수제간식,영양기능');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 소고기 캔 170g', 'D', 1, 7700, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/1/5/a/3/7/b/515a37b7de7d9e03a3e0f867a29ad3bc/10001/337588a327a7c7c1ae6b7cecb55c7d67.jpeg', '전연령,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 양고기 캔 170g', 'D', 1, 7700, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/4/a/8/9/1/6/d4a891609dacf3e43a85d84d985e87bb/10001/48684b841cedad7372fdf0f5bc948ce8.jpeg', '전연령,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 소고기 캔 390g', 'D', 1, 12000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/0/7/6/1/7/1/b076171ce5941af5e97977e6a610dd45/10001/5fd18d69fb86de79974fa5292d944276.jpeg', '전연령,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 양고기 캔 390g', 'D', 1, 12000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/5/5/f/e/7/3/755fe73752dd47683815dff3309692f5/10001/b15a5954db9176e2bfc14c9aed08b554.jpeg', '전연령,습식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 소고기 1kg', 'D', 1, 80000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/8/0/8/d/e/f/8808defcd35315006da53e08bd1c79b0/10000/cf89420670679428b8721b5d9ce0cb24.jpeg', '전연령,에어/동결사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 소고기 4kg', 'D', 1, 283000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/8/0/8/d/e/f/8808defcd35315006da53e08bd1c79b0/10000/cf89420670679428b8721b5d9ce0cb24.jpeg', '전연령,에어/동결사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 양고기 454g', 'D', 1, 49000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/a/f/3/4/a/0/4af34a02bc514b87a3bb5ba55d856559/10000/e398fadebe263f29763cf188ce8ff538.jpeg', '전연령,에어/동결사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 닭고기 2.5kg', 'D', 1, 188000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/8/5/0/2/8/a/585028a24a381209c036ae8450e54e7c/10000/4a0a9188daf318abcb8cd6355e213758.jpeg', '전연령,에어/동결사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '지위픽 독 닭고기 1kg', 'D', 1, 78000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/8/5/0/2/8/a/585028a24a381209c036ae8450e54e7c/10000/4a0a9188daf318abcb8cd6355e213758.jpeg', '전연령,에어/동결사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'ANF 독 6 Free 플러스 소고기&연어 1.8kg', 'D', 1, 22500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/4/a/4/7/1/0/d4a47106ca48b74ebfbde96fa6c37e8c/10001/439209a25f67c81cc4b2a4b8e55c55b7.jpeg', '전연령,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'ANF 독 6 Free 플러스 소고기&연어 5.6kg', 'D', 1, 57500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/4/a/4/7/1/0/d4a47106ca48b74ebfbde96fa6c37e8c/10001/439209a25f67c81cc4b2a4b8e55c55b7.jpeg', '전연령,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '아카나 독 프리런 덕 2kg', 'D', 1, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/7/7/5/8/9/e/c77589e1a08dc517c85d7ef2c0286e41/10001/24e18f156821cdcef2b4d34ffb506008.png', '전연령,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '아카나 독 프리런 덕 6kg', 'D', 1, 83500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/7/7/5/8/9/e/c77589e1a08dc517c85d7ef2c0286e41/10001/24e18f156821cdcef2b4d34ffb506008.png', '전연령,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '아카나 독 프리런 덕 11.4kg', 'D', 1, 135500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/7/7/5/8/9/e/c77589e1a08dc517c85d7ef2c0286e41/10001/24e18f156821cdcef2b4d34ffb506008.png', '전연령,건식사료');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '호랑이모래 무향 6kg', 'C', 3, 16000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/c/7/9/7/a/4/5c797a417c97fc053db510dcf60fe478/10001/5ee408a284da521dc35ee898ec9b2a8d.jpeg', '모래,배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '호랑이 두부모래 오리지날 7L', 'C', 3, 10000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/f/c/4/6/1/4/3fc4614e7164e6aa22c3bec695529c9f/10001/6bf6c5d153b8a28bb09d822a05d74f5e.jpeg', '모래,배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '가필드 천연 카사바 고양이 모래 퍼플 4.55kg', 'C', 3, 29000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/4/a/2/a/0/7/a4a2a07c64ec8d42cb59a3beb8728179/10001/5da51d99b4b0953939b50abcde2b5da6.jpeg', '모래,배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '가필드 천연 카사바 고양이 모래 그린 4.55kg', 'C', 3, 29000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/2/7/4/6/5/2/c/274652c9b32d8ada7eaf473c2bea3983/10000/79f522fa00eb87d8d8f0fc06391f8c67.jpeg', '모래,배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '호랑이 모래탈취제 라벤더 1kg', 'C', 3, 10000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/6/5/d/7/3/2/665d732b1daf842558d64fd4dabcab4f/10001/86f730380e04bc8957467016416182da.jpeg', '모래');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '호랑이 모래탈취제 베이비파우더 1kg', 'C', 3, 10000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/8/d/c/2/1/e/b8dc21e71726cc0cd3d628da7f56728f/10001/ce3dec759032c06187e5c52e210c86c9.jpeg', '모래');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '호랑이 두부모래 참숯 7L', 'C', 3, 10000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/7/6/8/b/4/0/3768b40c2e080df8a6594b2a921cb158/10000/719b884c6c00982a0a873d7ce898b3df.jpeg', '모래,배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '그린백 배변봉투 리필용4p', 'D', 3, 500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/0/a/2/6/5/c/e0a265cd970385f3a1597b3485ca04cd/10001/e8eafd1324b63daecdbe561843799b5a.jpeg', '배변용품,산책용품,위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '호랑이패드 중형 200매', 'D', 3, 20000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/c/9/0/7/6/9/dc907690df0abd25fa43bbc916b95f4f/10000/807ddd99affa9dccd9d9d269cf2173ee.jpeg', '배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '풉 패드 소형 100매', 'D', 3, 11000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/4/a/2/b/f/4/94a2bf4ed19a8a3e926af939cc0d6cbf/10000/b234d58f6077f9660d180fd0d416a5ce.jpeg', '배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '호랑이패드 대형 60매', 'D', 3, 26000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/f/a/4/c/c/3/3/fa4cc33bda6d994af769c014933af555/10001/f878f3c957e6c8930e88d208ffca775f.png', '배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '호랑이 블랙패드 중형 50매', 'D', 3, 19000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/f/3/b/1/a/9/5f3b1a93285cacb34f878d8b1016a03d/10000/b39c3f26440701b256e0f41df1e5a1be.jpeg', '배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '호랑이 블랙패드 대형 20매', 'D', 3, 18000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/f/5/f/a/b/d/d/f5fabdd9144203c1feb20a1dc16cdbb4/10000/8f3ead0e5368b44efef325eb45e9e5db.jpeg', '배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '써니데이즈 논슬립 실리콘 배변매트 대형', 'D', 3, 35500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/7/3/2/4/d/8/07324d8b37932e35963ea13fc34aa521/10001/c6423a98c243ed4adada3507bd72cb9e.jpeg', '배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '플레이바우 심플 배변봉투 클립', 'D', 3, 9000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/b/5/a/f/2/f/7b5af2fb777c43579f66e62081b72baa/10000/da718f424b274bffa4b496caa362dd0a.jpg', '배변용품,산책용품,위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '베이컨박스 고아웃클럽 풉백 케이스', 'D', 3, 13000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/f/6/0/8/b/b/0/f608bb0a5f7adb63b18bde85ccbc76dc/10000/131e5aa087699347fd477180284fcbfb.jpeg', '배변용품,산책용품,위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '포포마크 독 풉백 케이스', 'D', 3, 11500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/3/c/d/3/a/1/13cd3a1ddedbb0b095fa002c64a1feec/10000/5f77c435c00096fb25884f560386768a.jpeg', '배변용품,산책용품,위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '요요쉬 중형 패드 30매', 'D', 3, 13000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/1/d/6/6/d/c/61d66dce21784457e4a8b3e2f00c95df/10000/2c2496602da1e0738b04257038e8dc6b.jpeg', '배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '요요쉬 플로랄와인 대형 20매', 'D', 3, 13000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/4/8/d/b/1/1/e48db1139f33954abb3de66527d749a0/10001/1e73237de12e0e4b1fb0be383a7bb5b4.jpeg', '배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '요기쏘 수컷용 벽면 배변판', 'D', 3, 16500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/7/6/0/3/5/e/776035e7be3b678a13dcfb18eff33966/10000/a1ae451bdabc47ebb548653972f9d9ec.jpg', '배변용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '오롯이 천연탈취제 30ml', 'D', 3, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/b/d/b/0/e/e/bbdb0eecf9674068349793495e6b9196/10001/bbd7b2dbd2c00bb0d3749bc96e390f3e.jpeg', '위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '쁨 물티슈 80매', 'D', 3, 6000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/2/1/8/0/8/7/e2180873c5e7ef1f481307932d04b130/10000/6c3fb8e97c9af2644ab5541cf989f3a7.jpeg', '위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '버박 에피오틱 귀세정제 125ml', 'D', 3, 20000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/5/7/4/d/e/1/e574de1e0f009f3ca4848d99235bdbc0/10001/42cc8710e796c05781d4cccec364a4c0.jpeg', '위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '오너스 아이클렌저(눈물세정제)120ml', 'D', 3, 18000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/c/f/3/0/2/a/bcf302a66694c2424ab028e2358892e8/10000/5963e6bc8d7a199b3fabfeb611239247.jpeg', '위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '에티펫 귀 깨끗시트 캡형 30매', 'D', 3, 3000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/b/a/a/2/0/0/abaa20013d161ff9220a3af80ef5d1bc/10001/5b66111b99a9bb520e5bcfd9040a0b1d.jpeg', '위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '에티펫 치아 깨끗시트 캡형 30매', 'D', 3, 3000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/b/6/e/e/8/a/0b6ee8aa366f9460c8b566390e0a09ca/10000/ab4142a2dd305cfb8b8506b937da7fe8.jpeg', '위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '이지세이프펫 스퀘어 반려동물 살균탈취제 1000ml', 'D', 3, 2500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/6/b/1/2/4/a/d6b124a554047bf4ea78842020a47122/10001/0c9dbbeaf71a1e0fbd3f7d47b1eab11e.jpeg', '위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '이너프파이브 컴포터블 미끄럼틀 캣타워', 'C', 3, 79000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/0/4/0/c/a/f/6040caf35930fc97d93727e26c9be0a9/10001/13a87c46b6b8d05817a26cf29abb2aa2.jpeg', '캣타워/휠');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '이너프파이브 컴포터블 라운지 캣타워', 'C', 3, 99000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/6/4/7/2/1/0/8647210ca2244bf591384778160f617b/10001/7f8e7c8dd7a7b3fe58385e016849690b.jpeg', '캣타워/휠');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '이너프파이브 컴포터블 베이직 캣타워', 'C', 3, 59000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/6/c/6/a/e/3/a6c6ae3b766408353e432dc465dd1967/10000/2ba2eabee105f7f4e2560dce27ee4c22.jpeg', '캣타워/휠');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '집사의 반격 스타캣휠 내부카펫포함(1060) 아이보리', 'C', 3, 422000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/4/a/7/0/6/2/64a7062d7c4810f14507cdf17f90c7a7/10000/f9ef4625e99856d332c728aa41f0dd23.png', '캣타워/휠');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '집사의 반격 스타캣휠 내부카펫포함(1060) 그레이', 'C', 3, 422000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/4/a/7/0/6/2/64a7062d7c4810f14507cdf17f90c7a7/10000/f9ef4625e99856d332c728aa41f0dd23.png', '캣타워/휠');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '집사의 반격 스타캣휠 내부카펫포함(1060) 브라운', 'C', 3, 422000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/4/a/7/0/6/2/64a7062d7c4810f14507cdf17f90c7a7/10001/f7aaa411038d0f39d8762c9e09fe0954.png', '캣타워/휠');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'VETRESKA 선인장 타워 스크래쳐 M', 'C', 3, 92500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/5/2/4/2/e/7/15242e7998082bdd4c5fd78541c7641a/10000/7cde77030a851af37d4db76567710a9b.jpeg', '스크래쳐');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'VETRESKA 선인장 타워 스크래쳐 L', 'C', 3, 133500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/9/6/c/3/d/2/496c3d224539988fd993efa5e9b44c1b/10000/7b6ea93300026a10d23a82c3df5f12c3.jpeg', '스크래쳐');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'VETRESKA 수박 스크래쳐', 'C', 3, 2500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/f/0/7/d/5/1/1/f07d511c402444a97e0ef4123bfd04b2/10001/de47cc6950e486a397a7b62e78407a6f.jpeg', '스크래쳐');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'VETRESKA 체리 스크래쳐', 'C', 3, 41000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/6/d/d/c/8/8/46ddc886dd166a44f06913720b0cd991/10000/bee1c27f2db4c666a8c17eccfdd5f0c3.jpeg', '스크래쳐');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, 'VETRESKA 흡착식 생과일 스크래쳐 복숭아', 'C', 3, 30000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/e/0/0/4/1/7/de00417cc2670570eb897585d16f654a/10000/f1b7c78343319310d669e94a991aac5b.jpeg', '스크래쳐');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '피버 미니 트리머', 'A', 3, 16500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/a/d/4/6/f/c/1ad46fcbf966b7c57cce1d724a8c7db2/10000/f4b13b76e41194bf5f28955ccc8e58e5.jpeg', '미용/관리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '트루터치 죽은털제거 글러브', 'A', 3, 500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/7/3/9/e/3/9/c739e397bbc831bc89619cfd92167398/10001/e1b43120342c544ace3ee763606661f0.jpeg', '미용/관리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '페스룸 이지 페이셜 콤', 'A', 3, 9000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/0/e/0/1/7/d/80e017deb5ea782a47f3edb6a7a37374/10000/f94d0209fa1f65bf99770c3a157dc711.jpeg', '미용/관리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '페스룸 브러쉬', 'A', 3, 2500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/f/9/3/f/4/4/af93f441923a7a847c7c51d4b8f61cbd/10000/3cce802024afd5fa3cfdca35d81fc338.jpeg', '미용/관리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '페스룸 포우 케어 에센스 85ml', 'A', 3, 2500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/7/d/5/1/8/4/37d5184693d14d740d7a1c2456cbf9c9/10000/2950287b7d2921242cadf26c2e8934e4.jpeg', '미용/관리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫홀릭 안전 미용가위세트', 'A', 3, 33000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/a/4/1/9/3/c/7a4193cb4265628a8ad361b81c47b69f/10001/08873d39890f27e1b51b7021705784f7.jpeg', '미용/관리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '케어앤맘 부분 미용가위', 'A', 3, 12000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/0/0/a/c/a/3/a00aca3c5a3fdff69a06727eedba8c1b/10000/2216dbf435bf221e51a8669a5ea91c82.jpg', '미용/관리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '케어앤맘 겸자가위 곡선형 귀털제거용', 'A', 3, 500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/1/7/a/2/9/7/617a297b64bfb14246a91e6652c2518d/10001/efd1c8d009fd8590bd6faa7e62aba4ca.png', '미용/관리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '네이처펫 강아지 노즈워크 터그폴', 'D', 3, 22800, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/6/5/2/3/2/b/165232b565022a3f77bea76502aedfb7/10000/8a1b99f02c61450bb1e86b5b2ea0695c.jpg', '훈련용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '쏘울펫 훈련 입마개 블랙4호', 'D', 3, 9500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/1/7/e/e/6/9/a17ee6940691caffece4db6c8aead944/10001/212fbeb2a028ec8071e044d94414f926.jpeg', '훈련용품,산책용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '니즈더펫 인터라켄 와이드 마틴 목줄', 'D', 3, 2500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/9/b/4/a/6/3/99b4a63183abad2446c4ae4e92049022/10000/16411ae5f0d84c098461ce76f8bdb71b.jpg', '훈련용품,산책용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '니즈더펫 인터라켄 슬림 2.0 마틴 목줄', 'D', 3, 2500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/8/0/f/3/8/1/a80f3810f7ae3871a2b082c19cbee93c/10000/8688958aed1843f791ed12fc79651e48.jpg', '훈련용품,산책용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '리스펫 말하는 강아지 지능개발 훈련벨 4종 세트', 'D', 3, 29800, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/a/c/9/8/c/a/eac98cabd043194cbf11a150cb4cbce3/10001/93a4cc4ef62b04813a168158189f5b5f.jpeg', '훈련용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫모닝 프리스비 소프트 원반', 'D', 3, 4500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/6/7/e/e/0/4/667ee04bd29e8f411708437dd1c110f3/10000/cf3c072f29fde88d6183b67c857e23ef.jpeg', '훈련용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '네추라 너리쉬 악어 덴탈장난감', 'D', 3, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/3/c/b/f/2/9/93cbf292ed640fe2014d228802d4a6fc/10001/f24ed88bc82184e2dca48f0c4351241f.jpeg', '장난감,노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '네추라 너리쉬 스테고 덴탈장난감', 'D', 3, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/f/2/a/4/2/0/9f2a4203a652d5c2faf6dd9b8d2194de/10001/8ee1f4416661037604a67d337cb56cdc.jpeg', '장난감,노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '네추라 너리쉬 미니공룡 덴탈장난감', 'D', 3, 12000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/d/f/e/e/6/c/bdfee6c7aff15109d822c9eaf9639be4/10001/55f815987460b3e9fb2f3525496accbd.jpeg', '장난감,노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '네추라 너리쉬 티렉스 덴탈장난감', 'D', 3, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/b/6/b/0/a/6/7b6b0a6c4a791bf7e5e494b820546d6f/10001/5c28d026018809364e08705ed5dc0582.jpeg', '장난감,노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '도기맨 IQ 스낵볼 장난감 S', 'D', 3, 500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/6/8/8/d/5/4/4688d54f4fad74273e0c2d8e9418eb54/10000/c30bf0d1da4256c195d3815edd6fadba.jpeg', '장난감,노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫홀릭 노즈워크 당근농장', 'D', 3, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/4/b/6/f/4/4/84b6f44ec6d869647d1338c2e77bdb96/10000/e0dee87b18c60ddf66f777f34a781355.jpeg', '장난감,노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '라텍스 동물농장 1p', 'D', 3, 2500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/6/8/e/3/a/8/868e3a8e49aa6ff04747810bdae68694/10001/623a3c33ba5482d5d719a8e9db6cf42a.jpeg', '장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '멍멍샵 스낵볼 대', 'D', 3, 9000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/c/3/2/3/d/c/cc323dc6516ec000396c483923bb7c5d/10000/ed358084485259a4e6e9ee91364cca66.jpg', '장난감,노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '와글와글 몬스터 라텍스 토이', 'D', 3, 3000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/b/3/2/5/0/2/ab325024daf2c4684a54a7a306c807e5/10001/68a65f4793401c6be0e84ca439d0fb1d.jpeg', '장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '베스트에버 바스락삑삑 브로콜리', 'D', 3, 500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/d/2/c/b/9/6/bd2cb965bb02296ec781d19f1831fafd/10001/5edb2962095c8e9df2698d7d53e3cda1.jpeg', '장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '베스트에버 파 빠스락 장난감', 'D', 3, 500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/0/8/e/b/f/4/708ebf4c6feb7f01710236d344843c58/10001/1f5ad7a02899507be7e33fd435e2fa86.jpeg', '장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '도기프랜드 탱탱볼 장난감 S 2p', 'D', 3, 500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/8/b/0/b/b/d/78b0bbdc394c54b90e87970c3a71c111/10001/a057662e9f34850bbcd88d162b287702.jpeg', '장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫모닝 소리나는 키위 바닐라향', 'D', 3, 5500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/b/e/3/c/7/a/abe3c7a77e06c8b64da16b70214faff1/10001/4cd899b03f2006deed6054ca07952960.jpeg', '장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '알뜰펫 탕탕탕냥 장난감', 'A', 3, 18000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/b/a/f/0/9/7/4baf097d9761b99ad4e5965dce78a82e/10000/34bde584f9d047de8fd7f263f519b9f6.jpg', '장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫홀릭 돌돌이 노즈워크', 'D', 3, 30000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/0/1/1/2/9/0/5011290fd87d9d97dddbde9f970c4dc9/10000/6213d8b7685813468be8009677e0db28.jpeg', '노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '더플래 노즈워크 킁킁볼', 'D', 3, 14500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/6/b/a/8/f/8/a6ba8f8dcd2a11993f9ff14bbace0564/10001/a45e21137606faf6570ed75a8ecb8558.jpeg', '노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '니나오토슨 트위스터 레벨3', 'D', 3, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/7/2/3/9/b/2/c7239b288f748168e3114bf9a0f2ea49/10000/5002b10d9438229a588b37ff9b64cd64.jpeg', '노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '니나오토슨 카지노 레벨3', 'D', 3, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/1/a/1/9/8/8/e1a19889645ff9e32cced56e4ab53f01/10000/973c125653653fd5d90978226e1d0ec1.jpeg', '노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '보드미펫 노즈워크볼', 'D', 3, 22000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/e/e/d/2/4/7/5eed2472916cd6d13f1bd0b5a00290e5/10000/28042f22cac54d78980fa11a6abe28b1.jpg', '노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '니나오토슨 챌린지', 'D', 3, 39000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/f/e/7/7/e/a/7fe77ea025187622c9412333f48260f5/10000/87e38516dc60108b8eb40985c804c16c.jpeg', '노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '니나오토슨 멀티퍼즐', 'D', 3, 36000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/4/5/e/9/8/4/d45e984852ba8309989c17b15ecbdc4f/10000/9bb509417805a5f11c0f63853af86582.jpeg', '노즈워크');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '고양이섬 카샤카샤 라바 네온옐로우', 'C', 3, 3600, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/b/4/5/4/2/c/eb4542cc834632a5e46908abc8c95366/10001/a96c9bf44075f0962dbaa060b1bfedf0.jpeg', '장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '고양이섬 토끼털 오뎅꼬치 3p', 'C', 3, 3000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/8/4/4/4/3/1/a/844431a02fc7b22a5c5b4c22b903f6ab/10000/d0b57faf447554c6c1cbb02112dd7acb.jpeg', '장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '고양이섬 바스락 꿈틀이', 'C', 3, 3600, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/2/5/7/a/f/7/d257af7c9f0e9ad739da577c7bac769b/10000/32fc062a291139790f30b8a6e9513191.jpeg', '장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '고양이섬 비단결 오로라스틱', 'C', 3, 3300, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/4/7/3/3/a/5/94733a5dc58b8a5be7266a8910dcd70b/10000/4f8532e6be946e2f603f8cd2200302e6.jpeg', '장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '고양이섬 공룡 캣닢쿠션', 'C', 3, 1000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/6/5/6/7/4/a/9/65674a9c3ff7932ac6fd0445bff54fc3/10001/e872a0711d5cf7a96a11658a3b11b88e.jpeg', '캣닢,장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '고양이섬 캣파춥스 캣닢토이', 'C', 3, 7500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/2/0/8/3/c/9/d2083c9a00c9162872f54724f00a1ec9/10001/ac8f52008d402442a0e4b36cf86b638a.jpeg', '캣닢,장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '고양이섬 캣닢품은 양모 마우스', 'C', 3, 13500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/5/3/f/9/9/6/353f996a790d0e2107bc75f6921a30bb/10001/a1b57d4c21b2f1c52a5ed97e6c7d92a8.jpeg', '캣닢,장난감');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '냥품멍품 캣 칫솔 냥냥 치카칫솔', 'C', 3, 500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/e/6/3/a/e/4/7e63ae4cd17927c08a1652651ef82f09/10000/e7b41b8d4e6bf8cf3854bae5ed6f2493.jpeg', '위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '메디멀 효소치약 30ml', 'A', 3, 9500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/4/1/8/e/5/1/9418e51401b70f17e8e045de0f9a1155/10000/955be1036073f57469d1734c2453e37a.jpeg', '위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '버박 C.E.T 이중효소 닭고기맛 70g', 'A', 3, 19000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/e/a/3/9/5/2/e/ea3952e5e18790919174bd0d8bbc02c4/10001/82d024f9f7167cb34efd0c4c9df2067d.jpeg', '위생용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '아토주 마그리 고양이 방묘문 펫도어 150cm', 'C', 3, 98800, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/f/0/b/c/7/5/df0bc75705ca416452b4e809714a96a8/10000/9bbbc7024c5a432c8c65ffcc32b98236.jpg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '갓펜 고양이 안전문 본품 150cm', 'C', 3, 99500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/e/f/1/4/6/f/def146f492d5a2fd5abf6c71f3fecf51/10000/1cfa712d82bd218eb660dc9ec85f6cb5.jpeg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '모모제리 쁘띠 스카프 러버덕 S', 'A', 3, 500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/d/a/a/2/0/1/3daa201e1bef111a48593266e3f2e68a/10001/b8f28a7b4e672f7bb33a491045f7329d.jpeg', '의류/악세사리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '모모제리 쁘띠 스카프 러버덕 M', 'A', 3, 500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/d/a/a/2/0/1/3daa201e1bef111a48593266e3f2e68a/10001/b8f28a7b4e672f7bb33a491045f7329d.jpeg', '의류/악세사리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '냥슬아치 할매 조끼 티셔츠 S', 'A', 3, 19500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/9/5/e/6/4/3/595e64379ae18cf5d393fc49d808e236/10001/223478969aeb432f89973b129c962e32.jpg', '의류/악세사리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '냥슬아치 할매 조끼 티셔츠 M', 'A', 3, 19500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/9/5/e/6/4/3/595e64379ae18cf5d393fc49d808e236/10001/223478969aeb432f89973b129c962e32.jpg', '의류/악세사리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '냥슬아치 할매 조끼 티셔츠 L', 'A', 3, 19500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/9/5/e/6/4/3/595e64379ae18cf5d393fc49d808e236/10001/223478969aeb432f89973b129c962e32.jpg', '의류/악세사리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '냥슬아치 할매 조끼 티셔츠 XL', 'A', 3, 19500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/9/5/e/6/4/3/595e64379ae18cf5d393fc49d808e236/10001/223478969aeb432f89973b129c962e32.jpg', '의류/악세사리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '미요펫 당초무늬 방울 목걸이 레드', 'A', 3, 12800, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/2/a/4/3/1/7/92a4317a8f6d21498e416aad2f5bbab1/10000/7465e93334867a145f4ac47f75bcaba7.jpeg', '의류/악세사리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '미요펫 당초무늬 방울 목걸이 그린', 'A', 3, 12800, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/9/2/a/4/3/1/7/92a4317a8f6d21498e416aad2f5bbab1/10000/7465e93334867a145f4ac47f75bcaba7.jpeg', '의류/악세사리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '개달당 꽃송이 뜨개 초커', 'A', 3, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/c/a/0/1/b/d/7ca01bdf974c5938f1448b933a8cff5a/10000/f864fd2cb60f0853c3d804575a296a17.jpeg', '의류/악세사리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '이츠독 꿀벌 구명조끼 S', 'D', 3, 38000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/2/1/f/5/f/6/521f5f6d51173c387d4574add9908532/10001/cfb5b435f512561d7ffb94657551ec35.jpeg', '의류/악세사리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '이츠독 꿀벌 구명조끼 M', 'D', 3, 38000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/2/1/f/5/f/6/521f5f6d51173c387d4574add9908532/10001/cfb5b435f512561d7ffb94657551ec35.jpeg', '의류/악세사리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '이츠독 꿀벌 구명조끼 L', 'D', 3, 38000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/2/1/f/5/f/6/521f5f6d51173c387d4574add9908532/10001/cfb5b435f512561d7ffb94657551ec35.jpeg', '의류/악세사리');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '딩동펫 반려동물 애견투명 울타리 소형12p', 'D', 3, 17500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/6/9/f/7/7/1/769f771081689cea7d2e671118603d80/10000/caa74b5c06dd74259aba0b0cb1c4fb2a.jpeg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫트리움 이지스텝 안전문', 'D', 3, 59000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/2/e/e/a/5/2/d2eea52ac4cbd1ab1acd5b90d9f4cfa4/10000/f559216013c92e2eef9676018011514d.jpeg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫홀릭 데일리 넥카라 그레이', 'A', 3, 6000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/0/9/0/e/8/a/c090e8a3db2229264bd507308032c49d/10000/f0fcc42aeeab56c6d43deff6027326f1.jpeg', '기타');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫홀릭 데일리 넥카라 화이트', 'A', 3, 6000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/0/9/0/e/8/a/c090e8a3db2229264bd507308032c49d/10000/f0fcc42aeeab56c6d43deff6027326f1.jpeg', '기타');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '예보들 벚꽃 넥카라', 'A', 3, 19000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/b/7/4/7/7/e/bb7477ee4fdbd538db04e9d31c6f0d3e/10000/8d6e63dd5356b8d68298ea1398f41547.jpeg', '기타');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫트니스 미아방지 위치추적 스마트 인식표 핑크', 'A', 3, 62500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/8/7/5/d/f/a/c875dfa9756773baf726f65070b162e6/10001/494bbabc48dd4e728426945ddcf4b573.jpeg', '기타');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫트니스 미아방지 위치추적 스마트 인식표 블루', 'A', 3, 62500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/8/7/5/d/f/a/c875dfa9756773baf726f65070b162e6/10000/6bc7383c0b7c400d9671e4acc20c9e29.jpeg', '기타');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫트니스 미아방지 위치추적 스마트 인식표 옐로우', 'A', 3, 62500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/8/7/5/d/f/a/c875dfa9756773baf726f65070b162e6/10000/6bc7383c0b7c400d9671e4acc20c9e29.jpeg', '기타');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '꼬잇 미리해요 소변 검사키트', 'A', 3, 18000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/b/3/b/d/a/b/0/b3bdab0d4e1008354b523dd78992619b/10000/e71ac397e3283a79cf67390bb2af49ef.jpeg', '기타');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫홀릭 알약 물약 투약기 필건', 'A', 3, 3000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/a/3/f/2/c/7/1a3f2c7ce16802d1ec9e551a08bd9308/10001/c39e7504c4c74120b625abd8d8774809.jpeg', '기타');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '산타펫 꾹꾹이 방석 핑크', 'A', 3, 29000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/e/b/d/c/5/b/7ebdc5b3d9b2d4bc1ffe0d011659d9b8/10001/dd11f6cdccceb79384b610da7319cd80.jpeg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '엠피에스 이태리 스쿠도1 그레이', 'A', 3, 5500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/b/e/0/9/0/7/0be090744c6ba34f08e0828c9bde6e80/10001/da8cb4c7d12d7707999a52c872f80dbe.jpeg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '릿첼 접이식 켄넬 이동장 아이보리', 'A', 3, 91500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/3/e/0/3/2/c/d3e032c92d7a54a91fb6d3f52aee90bd/10001/9564dc775bbbb42a826b25361641dcb8.jpeg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '스페이스캣 사계절 720g 이동가방 베이지', 'A', 3, 28000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/a/d/b/d/b/c/a/adbdbca8b6d3dccd293c26fe8a76e240/10001/a3cdea61948eca7dc46ac838a708e8fc.jpeg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '스페이스캣 사계절 720g 이동가방 카키', 'A', 3, 28000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/c/9/2/a/5/7/7c92a5737f0a1c863fd9c628a6a17b3c/10001/c53f9e6c8290ca04409525873f64874e.jpeg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로띠에 뉴바론 유모차 베이지', 'A', 3, 149000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/9/0/7/9/d/b/d9079db84d4c0a7e6a94c998830f66f8/10001/a73f50e3ee1a465a8e63b669b96ffafa.jpg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로띠에 뉴바론 유모차 아이보리', 'A', 3, 149000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/9/0/7/9/d/b/d9079db84d4c0a7e6a94c998830f66f8/10001/2956f0c24bfc4a80ae543716e70b854b.jpg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '로띠에 뉴바론 유모차 블랙', 'A', 3, 149000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/d/9/0/7/9/d/b/d9079db84d4c0a7e6a94c998830f66f8/10001/99469551ce6f43e1bf014a4c9adbd7ae.jpg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '쥬쥬베 캣 하네스 레드', 'C', 3, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/9/d/5/6/0/b/c9d560b0d50333c6f9d40b47bfd12ec3/10001/0f4af7e8879b08b8938be87fc2764050.jpeg', '산책용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '쥬쥬베 캣 하네스 블루', 'C', 3, 3500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/c/9/d/5/6/0/b/c9d560b0d50333c6f9d40b47bfd12ec3/10001/f1d73b4fbf875377f19ccef5788a61d9.jpeg', '산책용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '산타펫 꾹꾹이 방석 그레이', 'A', 3, 29000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/7/e/b/d/c/5/b/7ebdc5b3d9b2d4bc1ffe0d011659d9b8/10000/5e72d223b679261b55cb91b3e3fc3948.jpeg', '생활용품');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫홀릭 에코 세라믹 식기 화이트', 'A', 3, 9500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/3/1/a/4/0/a/5/31a40a5e66d4c858e2ae1dd3007a7b88/10001/9a7468441736932e9aa592eb29fb3e5e.jpeg', '급수/급식기');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '까사미코 원목 물그릇 대형', 'A', 3, 22000, 10, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/4/b/8/0/e/d/2/4b80ed2e89a85b9c5757f7011a35202d/10001/42ae5ed0f66afd664e48c51cb424ac23.jpeg', '급수/급식기');
+
+INSERT INTO PRODUCT (PRO_NO, PRO_NAME, PRO_CATE_CODE, PRO_MIDD_NO, PRICE, STOCK, ENROLL_DATE, MODIFY_DATE, STATUS, PRO_MAIN_IMAGE, KEYWORD) 
+VALUES (SEQ_PNO.NEXTVAL, '펫홀릭 물과 사료를 동시에 2in1 식기', 'A', 3, 1500, 0, SYSDATE, SYSDATE, 'Y', 'https://images.pet-friends.co.kr/storage/pet_friends/product/id/2/2/a/3/e/a/1/22a3ea1a0c6ad0111c84e774cbb14816/10001/aeb930a18f2637ddabbdbb3e1f15a7bb.jpeg', '급수/급식기');
+
+COMMIT;
+SET DEFINE ON;

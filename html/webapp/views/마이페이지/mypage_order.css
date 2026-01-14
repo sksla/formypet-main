@@ -1,0 +1,28 @@
+/* 마이페이지 주문·교환·반품·취소 내역 css */
+
+/* 해당 css는  mypage_order.html에서만 사용 */
+
+/* 주문·교환·반품·취소 버튼 관련 css */
+.hr_selected{
+    border: 0;
+    background-color: gold;
+    height: 8px;
+    width: 100%;
+}
+.hr_NoSelected{
+    border: 0;
+    background-color: lightgray;
+    height: 8px;
+    width: 100%;
+}
+.div_total{
+    margin-top: 30px;
+    display: flex;
+    font-size: 20px;
+}
+.div_total div{
+    flex: 1;
+}
+.content_result{
+    height: 700px;
+}

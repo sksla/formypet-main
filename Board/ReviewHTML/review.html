@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰</title>
+    <link rel="icon" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../03_JavaScript/resources/js/sample.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Board_list bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../ReviewCSS/review.css">
+    <script src="js/fmp.js"> </script>
+</head>
+<body>
+    <div class="wrap">
+
+    <!--headr start-->   
+    <header class="header-top-section">
+ 
+        <nav class="header_nav">
+           <div width="80%">
+              <div class="menu_logo">
+                  <a href=""><img src="../../html/webapp/resources/images/포마이펫.png" style="width: 200px;" "></a>
+                </div>
+
+              <div class="menu_item">
+              <a href="" class="community">EVENT</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >강아지</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >고양이</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >리뷰</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >게시판</a>
+            </div>
+            <div class="menu_item">
+              <a href="" >고객센터</a>
+            </div> 
+         </div>   
+          <div class="section">
+            <table class="Login_section">
+              <tr>
+                <td><a href="#"><img src="../../html/webapp/resources/images/로그인아이콘.PNG" style="height: 45px; margin-left: 40px;"></a></td>
+                <td><a href="#"><img src="../../html/webapp/resources/images/검색아이콘.PNG" style="height: 40px;  margin-left: 10px;"></a></td>
+                <td><a href="#"><img src="../../html/webapp/resources/images/찜 아이콘.PNG" style="height: 60px; margin-left: 13px"></a></td>
+                <td><a href="#"><img src="../../html/webapp/resources/images/장바구니 아이콘.PNG" style="height: 45px; margin-right: 45px;"></a></td>
+               
+              </tr>
+            </table>
+          </div>
+        </nav>
+        <table id="hiddenTable" style="display: none;">
+            <tr>
+                <td>테이블 내용</td>
+            </tr>
+        </table>
+    </header>
+
+    <!--headr end-->
+  
+      <!--section start-->    
+      <section class="main_content">
+
+        <div class="aa">
+          <a href="">Home</a>
+          <span>&gt;</span>
+          <a href="">게시판</a>
+          <span>&gt;</span>
+          <a href="">포토갤러리</a>
+
+        </div>
+        
+
+        <div class="title_area">
+          <div class="item">
+            <h3>Review</h3>
+            <span>(리뷰 총 개수)</span>
+          </div>
+        </div>
+
+
+        <div class="board_area">
+          <div class="board_list">
+            <h5>게시판</h5>
+                <a href="#" class="listTitle">리뷰</a>
+                <ul class="list">
+                  <li><a href="#">내가 쓴 리뷰</a></li>
+                </ul>
+          </div>
+          <div class="board_contentList">
+            
+
+            <div class="container">
+              
+              <!-- <div class="aaaa">
+                <div><img src="../../ForMyPet/images/별점.png" alt="" class="star"></div>
+                <div><h4></h4></div>
+                <div>a</div>
+              </div> -->
+              <table class="total_info1">
+                <tr>
+                  <td>상품 평점</td>
+                  <td>리뷰 개수</td>
+                </tr>
+                </table>
+                <br>
+                <table class="total_info2">
+                <tr>
+                  <td><img src="../../ForMyPet/images/별점.png" alt="" style="width: 30px; height:30px;"></td>
+                  <td><h4>4.8/5.0</h4></td>
+                  <td><h4>2,312</h4></td>
+                </tr>
+              </table>
+
+              <br><br>
+              <form action="" > 
+              <div class="selectList_area">     
+                <select name="" id="" class="selectList form-control selectpicker noborder">
+                  <option value="">작성자명</option>
+                  <option value="">강아지</option>
+                  <option value="">고양이</option>
+                  <option value=""></option>
+                  <input type="text" class="searchBoard" placeholder="내용을 입력해주세요">
+                </select>
+              </div>
+              </form>
+
+              <table class="table contentList table-hover">
+                <thead class="thead-light">
+                  <tr>
+                    <td width="10%">글번호</td>
+                    <td width="10%">이미지</td>
+                    <td width="45%">상품명/상품리뷰</td>
+                    <td width="15%">작성자/평점</td>
+                    <td width="10%">등록일</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div class="text_no">1</div></td>
+                    <td><a href="#"><img src="../../html/webapp/resources/images/cat1.png" alt="" class="bc" style="width: 60px; height: 60x;"></a></td>
+                    <td><div class="td-left td-center"><strong>상품명</strong> <br>내용</div></td>
+                    <td><div class="td-center">마상이집사님 <br> <span style="color:#CA8D36;font-family:'나눔바른고딕', 'NanumBarunGothic', 'ng';">★★★★★</span></div></td>
+                    <td><div class="td-center">2024-02-01</div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <button class="btn btn-secondary btn-sm">작성하기</button>
+            </div>
+
+          </div>
+          <div class="board_list"></div>
+    
+       </div>
+
+       
+        
+       <ul class="pagination justify-content-center">
+        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+
+      
+
+      </section>
+      <!--section end-->
+
+      <!--footer start-->    
+      
+          <div class="footer_company">
+              <ul>
+                  <li>상호명 : 포마이펫</li>
+                  <li>전화 : 02) 2696-8000</li>
+                  <li>서울특별시 금천구 가산디지털2로 95 3층</li>
+              </ul>
+          </div>
+
+          <ul class="footer_copyright">
+              Copyright ⓒ <span style="color: #f1da05;">ForMyPet</span>. All rights reserved.
+          </ul>
+      </footer>
+      <!--footer end-->
+
+      <!--sidebar start-->
+      
+        <!--sidebar end-->
+      </div>
+
+
+
+
+  </div>
+
+</body>
+</html>

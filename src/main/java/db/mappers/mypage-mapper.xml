@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<!-- 사용자 정보 가져오기 +회원수정에 사용 -->
+	<entry key="userInfo">
+		SELECT 
+			   USER_ID
+			 , USER_NAME 
+			 , USER_BIRTH
+			 , GENDER
+			 , EMAIL
+			 , PHONE
+			 , ADDRESS
+			 , ADDRESS_DETAIL
+			 , ADDRESS_POST
+			 , STATUS_SNS
+			 , STATUS_EMAIL
+			 , PET_TYPE
+			 , PET_NAME
+			 , PET_KIND
+			 , PET_AGE
+			 , PET_GENDER
+		  FROM MEMBER
+		 WHERE USER_NO = ?
+	</entry>
+	
+	<entry key="mypageUpdate">
+		UPDATE MEMBER 
+		SET
+		   USER_NAME = ?
+		 , USER_BIRTH = ?
+		 , EMAIL = ?
+		 , PHONE = ?
+		 , ADDRESS = ?
+		 , ADDRESS_DETAIL = ?
+		 , ADDRESS_POST = ?
+		 , STATUS_SNS = ?
+		 , STATUS_EMAIL = ?
+		 , PET_TYPE = ?
+		 , PET_NAME = ?
+		 , PET_KIND = ?
+		 , PET_AGE = ?
+		 , PET_GENDER = ?
+	 WHERE USER_NO = ?
+	</entry>
+	
+	
+
+	<!-- 현재 적립금 구하기 -->
+	<entry key="pointTotal">
+		SELECT 
+			   SUM(POINT_ADD_LIST - POINT_USE_LIST) AS POINT_TOTAL
+		  FROM POINT
+		 WHERE USER_NO = ?
+	</entry>
+
+	<!-- 위시리스트 개수 구하기 -->
+	<entry key="wishCount">
+		SELECT 
+    		   COUNT(WISH_NO) AS WISH_COUNT
+		  FROM WISH
+	     WHERE USER_NO = ?
+	</entry>
+	
+	<!-- 위시리스트 가져오기 -->
+	<entry key="wishList">
+		SELECT
+	    	   WISH_NO
+	   		 , PRO_MAIN_IMAGE	
+	   		 , W.PRO_NO
+	  		 , PRO_NAME
+	  		 , PRICE
+	  		 , STOCK
+             , STATUS
+		  FROM WISH W
+    	  JOIN PRODUCT P ON W.PRO_NO = P.PRO_NO
+		 WHERE USER_NO = ?
+		 ORDER BY WISH_NO ASC
+	</entry>
+	
+	<!-- 총 구매 금액 계산 -->
+	<entry key="totalAmount">
+		SELECT SUM(TOTAL_AMOUNT)
+	   	  FROM TB_ORDER
+	     WHERE USER_NO = ?
+	</entry>
+	
+	<!-- 위시리스트 전체 삭제 기능 -->
+	<entry key="deleteAllWishlist">
+		DELETE 
+	      FROM WISH 
+	      WHERE USER_NO = ?
+	</entry>
+	
+	<!-- 위시리스트 1개 삭제 기능 -->
+	<entry key="deleteOneWishlist">
+		DELETE 
+	      FROM WISH 
+         WHERE USER_NO = ?
+	       AND PRO_NO =?
+	</entry>
+		
+	<!-- 적립금 내역 데이터 가져오기 -->
+	<entry key="pointHistory">
+		SELECT *
+		  FROM POINT
+		 WHERE USER_NO = ?
+         ORDER BY POINT_DATE DESC
+	</entry>
+	
+	<!-- 상품 재고 가져오기(품절 기능) -->
+	<entry key="productStock">
+		SELECT STOCK
+		  FROM PRODUCT
+		 WHERE STOCK = ?
+	</entry>
+	
+	<!-- 배송지 관리 데이터 -->
+	<entry key="deliveryInfo">
+		SELECT DELIVERY_NO
+			 , DELIVERY_NAME
+		     , DELIVERY_RECEIVER
+		     , PHONE
+		     , POST
+		     , ADDRESS
+		     , ADDRESS_DETAIL
+		     , STATUS
+		  FROM DELIVERY
+		 WHERE DELIVERY_USER_NO = ?
+	</entry>
+	
+	<!-- 기본 배송지 변경 시키기 기본->서브, 서브->기본 으로 변경 -->
+	<entry key="updateAddressStatus">
+		 UPDATE DELIVERY
+            SET STATUS =
+                CASE
+                WHEN DELIVERY_NO = ? THEN 'Y'
+                ELSE 'N'
+                END,
+       			MODIFY_DATE = SYSDATE
+          WHERE DELIVERY_USER_NO = ? OR DELIVERY_NO = ?
+	</entry>
+	
+	<!-- 배송지 삭제하기 -->
+	<entry key="deleteAddress">
+		 DELETE DELIVERY
+          WHERE DELIVERY_NO = ?
+	</entry>
+	
+	<!-- 배송지 추가시 기본 배송지 지정시 기존 배송지 N으로 변경 -->
+	<entry key="updateAddress">
+		UPDATE DELIVERY
+	       SET STATUS = 'N'
+         WHERE DELIVERY_USER_NO = ?
+	</entry>
+	
+	
+	<!-- 배송지 관리에서 배송지 추가하기 -->
+	<entry key="insertAddress">
+		INSERT INTO
+			   DELIVERY
+			   (DELIVERY_NO, DELIVERY_USER_NO, DELIVERY_RECEIVER, PHONE, POST, ADDRESS, ADDRESS_DETAIL, ENROLL_DATE, MODIFY_DATE, STATUS)
+		VALUES (SEQ_DNO.NEXTVAL
+				, ?
+				, ?
+				, ?
+				, ?
+				, ?
+				, ?
+				, SYSDATE
+				, SYSDATE
+				, ?) 
+	</entry>
+	
+	<!-- 배송지 수정하기 위해 가져옴 -->
+	<entry key="modifyAddress">
+		SELECT DELIVERY_RECEIVER
+		     , PHONE
+		     , POST
+		     , ADDRESS
+		     , ADDRESS_DETAIL
+		     , STATUS
+		  FROM DELIVERY
+		 WHERE DELIVERY_NO = ?
+	</entry>
+	
+	<!-- 회원 탈퇴 하기 -->
+	<entry key="updateUnregister">
+		  UPDATE MEMBER
+            SET STATUS = 'N'
+          WHERE USER_NO = ?
+            AND USER_PWD = ?
+	</entry>
+	
+	
+	<entry key="orderSelect">
+	    SELECT P.PRO_NO
+	         , P.PRO_MAIN_IMAGE
+	         , P.PRO_NAME
+	         , OD.COUNT
+	         , OD.PRICE
+	         , O.ORDER_DATE
+	    FROM 
+	        PRODUCT P
+	    JOIN 
+	        ORDER_DETAIL OD ON P.PRO_NO = OD.PRO_NO
+	    JOIN 
+	        TB_ORDER O ON OD.ORDER_NO = O.ORDER_NO
+	    WHERE 
+	        O.USER_NO = ?
+	    ORDER BY 
+	        O.ORDER_DATE DESC
+	</entry>
+	
+		
+	<!-- 장바구니 리스트 -->
+	<entry key="selectCartList">
+		select
+			   pro_main_image,
+			   pro_name,
+			   price,
+			   cart_count,
+		  from cart
+		  join product using (pro_no)
+		 where cart_user = ?
+	</entry>	
+</properties>

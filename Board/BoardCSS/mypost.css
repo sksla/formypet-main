@@ -1,0 +1,277 @@
+.wrap{ 
+    margin: auto;
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column; 
+}
+.section .Login_section td a {
+    width: 90px;
+    height: 30px;
+}
+.header{height: 250px;}
+.header-top
+{
+    background-color: #e0e0e0;
+   
+}
+.header_nav{
+    height: 20%; display: flex;
+    background-color: #f5f5f500;
+    padding-top: 5%; 
+    padding-bottom: 10px; 
+    position: relative;
+} 
+
+
+
+.header_nav::before { /*상단 선 스타일*/
+        content: "";
+        position: absolute;
+        top: -10px; /* 선의 위치 조정 */
+        left: 0; 
+        width: 100%; 
+        height: 2px; /* 선의 두께 설정 */
+        background-color: #ffffff; 
+}
+    
+.header_nav div{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    flex-grow: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;  
+    
+}
+
+
+.header_nav div a{
+    color: black;
+}
+.menu_item {
+    margin-right: 60px; 
+}
+
+
+.headr_roop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Search_section {
+    flex: 1;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
+}
+
+.section {
+    width: 33%;
+   
+}
+
+.Search_area {
+    width: 100%;
+   
+}
+.headr_roop {
+    display: flex;
+    margin-bottom: 20px; 
+    
+}
+
+.section {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.Login_section {
+    width: 100%;
+    margin-left: 13px;
+}
+.header-top-section { /* 홈페이지 최상단 여백*/ 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    position: relative;
+    
+}
+.header-top-section::after { /*하단 선 스타일*/
+    content: "";
+    position: absolute;
+    bottom: -10px; /* 선의 위치 조정 */
+    width: 100%; 
+    height: 2px; /* 선의 두께 설정 */
+    background-color: #e0e0e0; 
+}
+
+.menu_item {
+    display: inline-block; 
+    margin-right: 10px; 
+}
+
+.menu_item a {
+    text-decoration: none; 
+    display: inline-block; 
+}
+
+.menu_item:hover a {
+    font-weight: bold;
+    color: #ffa51f; 
+    text-shadow: 1px 1px 1px #b47920;
+}
+
+/*section 스타일*/
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* max-height: 400px; */
+}
+.main_text{
+    text-align: center;
+    font-size: 40px;
+    min-height: 50px;
+   border-bottom: 3px solid #e0e0e0;;
+   margin-bottom: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+
+.main_content {
+    margin-bottom: 30px;
+}
+.footer_company {
+    border-top: 4px solid #e0e0e0; 
+    padding-top: 20px; 
+    list-style-type: none;
+}
+.footer_company li{
+    list-style-type: none;
+}
+
+/*sidebarstyle*/
+.sidebar {
+    position: fixed;
+    top: 500px;
+    right: 0;
+    margin-right: 140px;
+    height: 100%;
+    width: 50px;
+  
+  
+ }
+
+ .sidebar-item {
+    display: block;
+    padding: 10px;
+    
+    text-decoration: none;
+    
+ }
+ .sidebar-item:hover {
+    background-color: #f1ee3a; 
+ }
+
+ /* BoardInsert*/
+
+ .main_content > a{
+    text-decoration: none;
+ }
+
+ .aa{
+    font-size: 12px;
+ }
+
+ .board_title{
+    
+    width: 400px;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 50px;
+ }
+
+ .board_list > h5{
+    margin-bottom: 30px;
+ }
+
+ .content_area{
+    display: flex;
+    width: 100%;
+}
+
+
+
+.board_list{
+    margin-right: 10px;
+    width: 20%;
+ }
+
+.board_list > .listTitle{
+    text-decoration: none;
+    color: black;
+}
+ 
+ .list>li{
+    margin-top: 10px;
+    list-style-type: none;
+ }
+
+ .list>li>a{
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+ }
+
+ .content{
+    width: 100%;
+ }
+
+
+.comment_area{
+    width: 60%;
+}
+
+
+.content_side_area{
+    width: 15%;
+}
+.contentList{
+    align-items: center;
+    text-align: center;
+    width: 100%;
+ }
+
+ /* modal */
+
+/* modal 크기 */
+.modal-dialog{
+    width: 400px;
+}
+/* modal body */
+.modal-detail{
+    height: 80px;
+    padding: 40px 0;
+    text-align: center;
+}
+/* modal button */
+.item{
+    width: 100px;
+    color: white;
+}
+.modal-btn-area{
+    width: 290px;  
+}
+ 

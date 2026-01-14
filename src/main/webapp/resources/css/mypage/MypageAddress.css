@@ -1,0 +1,237 @@
+@charset "UTF-8";
+
+/* 배송지 관리  css */
+
+/* 해당 css는  mypage_address.html에서만 사용 */
+
+#table_address{
+	margin-bottom: 100px;
+	width: 1000px;
+}
+
+table {
+    width: 1000px;
+    margin: 20px 0;
+}
+.address_table th, .address_table td{
+    text-align: left;
+    padding: 5px
+}
+
+.default_address{
+    width: 100px;
+    height: 40px;
+    background-color: gold;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.other_address{
+    width: 200px;
+    height: 40px;
+    background-color: gainsboro;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.other_address:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+.btn_address{
+    width: 100px;
+    height: 40px;
+    border: 1px solid black;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+.address_table .btn_address {
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.address_table .btn_address:hover {
+    background-color: lightgray;
+}
+.address_table .address_th1 span {
+    margin-right: 30px;
+}
+
+.btn_sort{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* 배송지 추가 버튼 */
+.add_address{
+	margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px black;
+    width: 300px;
+    height: 80px;
+}
+.add_address:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.moatal_title{
+    display: flex;
+    justify-content: space-between;
+}
+.add_address p {
+	margin: 0;
+}
+
+
+/* 배송지 추가 modal */
+.modal {
+    display: none; /* 초기에는 숨김 상태 */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* modal 창 크기 지정 */
+.modal_content {
+    background-color: white;
+    width: 450px;
+    margin: 1% auto;
+    padding: 20px;
+    border: 1px solid lightgray;
+}
+/* 닫기 창 x 버튼 */
+.close {
+    color: gray;
+    font-size: 50px !important;
+    font-weight: bold;
+    text-align: center;
+    width: 50px;
+    height: 60px;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* 배송지 추가 테이블 css */
+.modal_content table {
+    width: 100%;
+    text-align: left;
+}
+.modal_content table input[type="text"]{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    border: 1px solid lightgray;
+    margin: 10px 0;
+}
+
+/* modal 우편번호 버튼 */
+input[type="button"]{
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+}
+.address_font {
+    vertical-align: top;
+    padding-top: 20px;
+}
+.mypage_font4{
+    width: 120px;
+}
+.btn_zip {
+	width: 100% !important;
+    background-color: gold;
+}
+.btn_zip:hover{
+    background-color: goldenrod;
+    cursor: pointer;
+}
+
+.modal_checkbox{
+    width: 100%;
+}
+.modal_checkbox div{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+input[type="checkbox"]{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+.btn_hover{
+    width: 300px;
+    height: 70px;
+    font-size: 50px;
+    text-align: center;
+}
+.btn_hover:hover{
+    background-color: goldenrod;
+    cursor: pointer;
+}
+
+.tr3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.address_scroll{
+    background-color: beige;
+    overflow: auto;
+    height: 200px;
+}
+.scroll_pont{
+    padding: 0 20px;
+    font-size: 12px;
+}
+
+
+/* 저장 버튼 */
+.div_btn_save{
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.btn_save {
+    border: 1px solid gray;
+    text-align: center;
+    background-color: gold;
+    flex: 1;
+    font-size: 100px;
+}
+.btn_save:hover{
+    background-color: goldenrod;
+    border: 1px solid gray;
+}
+.tr4{
+    background-color: red;
+}
+
+.display_none{
+	display: none !important;
+}
+
+

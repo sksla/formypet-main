@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위시리스트</title>
+</head>
+
+
+<!-- 헤더 css -->
+
+
+<!-- 브레드크럼 css -->
+<link rel="stylesheet" href="/html/webapp/resources/css/breadcrumb.css">
+
+<!-- 마이페이지 css -->
+<link rel="stylesheet" href="mypage.css">
+
+<!-- 위시리스트 전용 css -->
+<link rel="stylesheet" href="mypage_wishlist.css">
+
+<!-- 사이드바 적용 js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="mypage.js"></script>
+
+<!-- 푸터 css -->
+
+
+<body>
+    <!--head start-->   
+    <header>
+        <h1>헤더 영역</h1>
+        <h1>헤더 영역</h1>
+    </header>
+
+    <!--head end-->
+    <hr class="hr1">
+    
+    <!-- 브레드크럼 start -->
+    <div class="breadcrumb">
+        <ol>
+            <li><a href="/html/webapp/views/공통부분/mainPage.html">Home</a></li>
+            <li class="separator">&gt</li>
+            <li><a href="mypage_mainpage.html">마이페이지</a></li>
+            <li class="separator">&gt</li>
+            <li>위시리스트</li>
+        </ol>
+    </div>
+    <!-- 브레드크럼 end -->
+    
+    
+    <!-- 메인페이지 start-->
+    <!-- 제목 -->
+    <h1 class="title">위시리스트</h1>
+    
+    <!-- section start -->
+    <section>
+        <!-- 좌우로 영역 나누기(사이드바, contents) start -->
+        <div class="dividing_area1">
+            <!-- 사이드바 -->
+            <div class="sidebar"></div>
+
+
+            <!-- ---------------------------------------- -->
+            <!-- 보여지는 화면 start -->
+            <div class="wishlist_contents">
+
+
+                <div class="wishlist_title">
+                    <div class="wishlist_title_left">
+                        <span class="mypage_font3">전체</span>
+                        <span class="mypage_font3 font_yellow">5</span>
+                    </div>
+                    <div class="wishlist_title_right">
+                        <label class="wishlist_font1">
+                            <input type="checkbox" class="checkbox_wishlist" value="">
+                            <span class="checkbox_text">품절제외</span>
+                        </label>
+                        <button class="wishlist_delete" onclick="openModal('deleteWishlist');">전체삭제</button>
+                    </div>
+                </div>
+
+                <!-- 전체 삭제  모달 -->
+                <div id="deleteWishlist" class="modal">
+                    <div class="modal-content">
+                      <span class="close" onclick="closeModal('deleteWishlist');">&times;</span>
+                      <p>정말로 전체 삭제하시겠습니까?</p>
+                      <button onclick="deleteWishlist();" class="btn_delete">삭제</button>
+                      <button onclick="deleteWishlist();" class="btn_cancle">취소</button>
+                    </div>
+                  </div>
+  
+
+
+
+                <!-- 상품 start -->
+                <div class="wishlist_product">
+                    
+                    <!-- 이미지 -->
+                    <div class="div_pro">
+                        <div class="div_img">
+                        <a href="">
+                            <img src="/html/webapp/resources/images/나우퍼피.png">
+                        </a>
+                        </div>
+                        <a href="">
+                            <span class="wishlist_font2">오리젠 독 퍼피</span>
+                            <span class="wishlist_font3">40,000</span>
+                            <div class="div_flex"> 
+                                <span class="wishlist_font4">20%</span>
+                                <div class="div_right">
+                                    <span class="wishlist_font5">32,000 원</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="wishlist_font6">⭐4.9 (7,541)</span>
+                            </div>
+                        </a>
+                    </div>
+
+                        
+                </div>
+                <!-- 상품 end -->
+
+
+                <!-- 전체 삭제 modal start -->
+                <div id="modal_wishlist" class="modal" onclick="closeModal('modal_wishlist')">
+                    <div class="modal_content" onclick="event.stopPropagation();">
+                      <div class="moatal_title">
+                        <h3>전체 상품을 위시리스트에서 삭제하시겠습니까?</h3>
+                        <div class="modal_div">
+                            <div class="modal_ok" onclick="deleteAllItems()">확인</div>
+                            <div class="modal_no" onclick="closeModal('modal_wishlist')">취소</div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!-- 전체 삭제 modal end -->
+
+
+                
+
+            </div>
+            <!-- 보여지는 화면 end -->
+            <!-- ---------------------------------------- -->
+
+
+
+        </div>
+        <!-- 좌우로 영역 나누기(사이드바, contents) end -->
+    </section>
+    <!-- section end -->
+    <!-- 메인페이지 End-->
+
+
+
+
+
+    <hr class="hr1">
+    <!-- 푸터 영역 start -->
+    <footer>
+        <h1>푸터 영역</h1>
+        <h1>푸터 영역</h1>
+    </footer>
+    <!-- 푸터 영역 end -->
+
+
+</body>
+</html>

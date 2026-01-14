@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="selectListCount">
+		select Count(*) count
+			from product
+			where status != 'N'
+	</entry>
+	
+	<entry key="selectStockListCount">
+		select Count(*) count
+			from stock s
+	</entry>
+	
+	<entry key="selectList">
+		SELECT *
+		  FROM (
+				SELECT ROWNUM RNUM, A.*
+				  FROM(
+						select 
+								pro_no
+							  ,	pro_cate_code
+							  , pro_midd_no
+							  , pro_name
+							  , price
+							  , discount
+							  , stock
+							  , status
+						  from product p
+						  full outer join event_product using(pro_no)
+						 ORDER
+						     BY PRO_NO DESC
+					  ) A
+			  )
+		 WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	
+	<entry key="selectStockList">
+		SELECT *
+		  FROM (
+				SELECT ROWNUM RNUM, A.*
+				  FROM(
+						select 
+								pro_no
+							  ,	pro_cate_code
+							  , pro_midd_no
+							  , pro_name
+							  , s.enroll_date enroll_date
+							  , count
+							  , stock
+							  , s.status status
+						  from stock s
+						  join product using(pro_no)
+						 ORDER
+						     BY s.enroll_date DESC
+					  ) A
+			  )
+		 WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	<entry key="selectStockSearchList">
+		SELECT *
+		  FROM (
+				SELECT ROWNUM RNUM, A.*
+				  FROM(
+						select 
+								pro_no
+							  ,	pro_cate_code
+							  , pro_midd_no
+							  , pro_name
+							  , s.enroll_date enroll_date
+							  , stock
+							  , count
+							  , s.status status
+						  from stock s
+						  join product using(pro_no)
+						 where pro_cate_code = ?
+						   and pro_midd_no = ?
+						   and s.status = ?
+						   and pro_name like ?
+						   and s.enroll_date between ? and ?
+						 ORDER
+						     BY s.ENROLL_DATE DESC
+					  ) A
+			  )
+		 WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	<!-- <entry key="searchProductList">
+		SELECT *
+		  FROM (
+				SELECT ROWNUM RNUM, A.*
+				  FROM(
+						select 
+								pro_no
+							  , pro_name
+							  ,	pro_cate_code
+							  , pro_midd_no
+							  , price
+							  , stock
+							  , discount
+						  from product p
+						  full outer join event_product using(pro_no)
+						 where p.status = 'Y'
+						   and pro_name like ?
+						   and pro_cate_code in ('A','D','C')
+						   and pro_midd_no in (1)
+						 ORDER
+						     BY PRO_NO DESC
+					  ) A
+			  )
+		 WHERE RNUM BETWEEN ? AND ?
+		   
+	</entry> -->
+	
+	
+	<entry key="searchProductList">
+		select 
+				pro_no
+			  , pro_name
+			  ,	pro_cate_code
+			  , pro_midd_no
+			  , price
+			  , stock
+			  , discount
+			  , status
+		  from product p
+		  full outer join event_product using(pro_no)
+		 where pro_name like ?
+		   
+	</entry>
+	
+	<entry key="insertProduct">
+		insert
+			into product
+			(
+				pro_no
+			  , pro_name
+			  , pro_cate_code
+			  , pro_midd_no
+			  , price
+			  , stock
+			  , keyword
+			  , pro_main_image
+			)
+			values
+			(
+				SEQ_PNO.NEXTVAL
+			  , ?
+			  , ?
+			  , ?
+			  , ?
+			  , ?
+			  , ?
+			  , ?
+			)
+				
+	</entry>
+	
+	<entry key="updateProduct">
+		update
+				product
+		   set  pro_name = ?
+		   	  , pro_cate_code = ?
+		   	  , pro_midd_no = ?
+		   	  , price = ?
+		   	  , stock = ?
+		   	  , keyword = ?
+		   	  , pro_main_image = ?
+		 where  pro_no = ?
+				
+	</entry>
+	
+	<entry key="insertAttachment">
+		insert
+				into attachment
+				(
+					file_no
+				  , ref_bno
+				  , ref_type
+				  , origin_name
+				  , change_name
+				  , file_path
+				  , file_level
+				)
+				values
+				(
+					SEQ_ANO.NEXTVAL
+				  , SEQ_PNO.CURRVAL
+				  , 'P'
+				  , ?
+				  , ?
+				  , ?
+				  , ?
+				)
+	</entry>
+	
+	<entry key="updateAttachment">
+		update
+				 attachment
+			set
+				 origin_name = ?
+			   , change_name = ?
+			   , file_path = ?
+			   , file_level = ?
+		  where  ref_bno = ?
+		    and  ref_type = 'P'
+	</entry>
+	
+	
+	<entry key="selectProductList">
+	SELECT *
+	  FROM (
+	 		 SELECT ROWNUM RNUM, A.*
+				FROM(
+					SELECT
+						   PRO_NO
+						 , PRO_NAME
+						 , PRICE
+						 , STOCK
+						 , P.STATUS
+						 , PRO_MAIN_IMAGE
+						 , DISCOUNT
+						 , COUNT(RE_STAR) AS RE_COUNT
+						 , AVG(RE_STAR) AS STAR
+					  FROM PRODUCT P
+					  LEFT JOIN EVENT_PRODUCT USING (PRO_NO)
+					  LEFT JOIN REVIEW USING (PRO_NO)
+					 WHERE PRO_CATE_CODE IN ('A', ? )
+					 GROUP 
+						  BY PRO_NO
+						   , PRO_NAME
+						   , PRICE
+						   , STOCK
+						   , P.STATUS
+						   , PRO_MAIN_IMAGE
+						   , DISCOUNT
+					 ORDER
+					 	BY PRO_NO DESC
+			 			)A
+		 	)
+	WHERE RNUM BETWEEN ? AND ?
+		 
+	</entry>
+	
+	<entry key="selectProduct">
+		select
+				pro_no
+			  , pro_name
+			  , pro_cate_code
+			  , pro_midd_no
+			  , price
+			  , stock
+			  , P.STATUS
+			  , keyword
+			  , pro_main_image
+			  , AVG(RE_STAR) AS STAR
+			  , discount
+		  from product p
+		  LEFT JOIN EVENT_PRODUCT USING (PRO_NO)
+		  LEFT JOIN REVIEW USING (PRO_NO)
+		 where pro_no = ?
+		 GROUP 
+			  BY pro_no
+			  , pro_name
+			  , pro_cate_code
+			  , pro_midd_no
+			  , price
+			  , stock
+			  , P.STATUS
+			  , keyword
+			  , pro_main_image
+			  , discount
+		 
+	</entry>
+	
+	<entry key="selectAttachment">
+		select
+				origin_name
+			  , ref_bno
+			  , ref_type
+			  , change_name
+			  , file_path
+			  , file_level
+		  from attachment
+		 where ref_bno = ?
+		   and ref_type = 'P'
+	</entry>
+	
+	<entry key="selectBestList">
+	<![CDATA[
+	SELECT
+		   PRO_NO
+		 , PRO_NAME
+		 , PRICE
+		 , STOCK
+		 , P.STATUS
+		 , PRO_MAIN_IMAGE
+		 , DISCOUNT
+		 , COUNT(RE_STAR) AS RE_COUNT
+		 , AVG(RE_STAR) AS STAR
+	  FROM PRODUCT P
+	  LEFT JOIN EVENT_PRODUCT USING (PRO_NO)
+	  LEFT JOIN REVIEW USING (PRO_NO)
+	 WHERE PRO_NO IN (
+                       SELECT
+                              PRO_NO
+                         FROM (
+                               SELECT PRO_NO
+                               FROM STOCK
+                               WHERE STATUS = 'O'
+                               GROUP BY PRO_NO
+                               ORDER BY SUM(COUNT)DESC
+                           )
+                            WHERE ROWNUM <= 20
+                       )
+		 GROUP 
+			  BY PRO_NO
+			   , PRO_NAME
+			   , PRICE
+			   , STOCK
+			   , P.STATUS
+			   , PRO_MAIN_IMAGE
+			   , DISCOUNT
+		 ORDER
+		 	BY PRO_NO DESC
+	]]>
+	</entry>
+	
+	<entry key="selectEventList">
+	SELECT *
+	  FROM (
+	 		 SELECT ROWNUM RNUM, A.*
+				FROM(
+					SELECT
+						   PRO_NO
+						 , PRO_NAME
+						 , PRICE
+						 , STOCK
+						 , P.STATUS
+						 , PRO_MAIN_IMAGE
+						 , DISCOUNT
+						 , COUNT(RE_STAR) AS RE_COUNT
+						 , AVG(RE_STAR) AS STAR
+					  FROM PRODUCT P
+					  LEFT JOIN EVENT_PRODUCT USING (PRO_NO)
+					  LEFT JOIN REVIEW USING (PRO_NO)
+					 WHERE P.STATUS = 'E'
+					 GROUP 
+						  BY PRO_NO
+						   , PRO_NAME
+						   , PRICE
+						   , STOCK
+						   , P.STATUS
+						   , PRO_MAIN_IMAGE
+						   , DISCOUNT
+					 ORDER
+					 	BY PRO_NO DESC
+					 	) A
+			  )
+	WHERE RNUM BETWEEN ? AND ?
+	 
+	</entry>
+	
+	<entry key="selectCateProduct">
+	SELECT *
+	  FROM (
+	 		 SELECT ROWNUM RNUM, A.*
+				FROM(
+					SELECT
+						   PRO_NO
+						 , PRO_NAME
+						 , PRICE
+						 , STOCK
+						 , P.STATUS
+						 , PRO_MAIN_IMAGE
+						 , DISCOUNT
+						 , COUNT(RE_STAR) AS RE_COUNT
+						 , AVG(RE_STAR) AS STAR
+					  FROM PRODUCT P
+					  LEFT JOIN EVENT_PRODUCT USING (PRO_NO)
+					  LEFT JOIN REVIEW USING (PRO_NO)
+					  WHERE PRO_CATE_CODE IN ('A', ? )
+					    AND P.KEYWORD LIKE ?
+					 GROUP 
+						  BY PRO_NO
+						   , PRO_NAME
+						   , PRICE
+						   , STOCK
+						   , P.STATUS
+						   , PRO_MAIN_IMAGE
+						   , DISCOUNT
+					 ORDER
+					 	BY PRO_NO DESC
+					 	) A
+			  )
+	WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	
+	<entry key="insertStock">
+		insert
+				into stock
+				(
+					stock_no
+				  , pro_no
+				  , count
+				  , enroll_date
+				  , status
+				)
+				values
+				(
+					SEQ_SNO.NEXTVAL
+				  , ?
+				  , ?
+				  , ?
+				  , ?
+				)
+	</entry>
+	
+	<entry key="searchKeywordList">
+		SELECT
+			   PRO_NO
+			 , PRO_NAME
+			 , PRICE
+			 , STOCK
+			 , P.STATUS
+			 , PRO_MAIN_IMAGE
+			 , DISCOUNT
+			 , COUNT(RE_STAR) AS RE_COUNT
+			 , AVG(RE_STAR) AS STAR
+		  FROM PRODUCT P
+		  LEFT JOIN EVENT_PRODUCT USING (PRO_NO)
+		  LEFT JOIN REVIEW USING (PRO_NO)
+		 
+	</entry>
+	
+	<entry key="selectMainBestList">
+	<![CDATA[
+	SELECT
+		   PRO_NO
+		 , PRO_NAME
+		 , PRICE
+		 , STOCK
+		 , P.STATUS
+		 , PRO_MAIN_IMAGE
+		 , DISCOUNT
+		 , COUNT(RE_STAR) AS RE_COUNT
+		 , AVG(RE_STAR) AS STAR
+	  FROM PRODUCT P
+	  LEFT JOIN EVENT_PRODUCT USING (PRO_NO)
+	  LEFT JOIN REVIEW USING (PRO_NO)
+	 WHERE PRO_NO IN (
+                       SELECT
+                              PRO_NO
+                         FROM (
+                               SELECT PRO_NO
+                               FROM STOCK
+                               WHERE STATUS = 'O'
+                               GROUP BY PRO_NO
+                               ORDER BY SUM(COUNT)DESC
+                           )
+                            WHERE ROWNUM <= 8
+                       )
+		 GROUP 
+			  BY PRO_NO
+			   , PRO_NAME
+			   , PRICE
+			   , STOCK
+			   , P.STATUS
+			   , PRO_MAIN_IMAGE
+			   , DISCOUNT
+		 ORDER
+		 	BY PRO_NO DESC
+	]]>
+	</entry>
+	
+	<entry key="selectMainEventList">
+	<![CDATA[
+	SELECT ROWNUM RNUM, A.*
+				FROM(
+					SELECT
+						   PRO_NO
+						 , PRO_NAME
+						 , PRICE
+						 , STOCK
+						 , P.STATUS
+						 , PRO_MAIN_IMAGE
+						 , DISCOUNT
+						 , COUNT(RE_STAR) AS RE_COUNT
+						 , AVG(RE_STAR) AS STAR
+					  FROM PRODUCT P
+					  LEFT JOIN EVENT_PRODUCT USING (PRO_NO)
+					  LEFT JOIN REVIEW USING (PRO_NO)
+					 WHERE PRO_NO IN (
+				                       SELECT
+				                              PRO_NO
+				                         FROM (
+				                               SELECT PRO_NO
+				                               FROM PRODUCT
+				                               WHERE STATUS = 'E'
+				                               GROUP BY PRO_NO
+				                              
+				                           )
+				                            WHERE ROWNUM <= 8
+			                            )
+					 GROUP 
+						  BY PRO_NO
+						   , PRO_NAME
+						   , PRICE
+						   , STOCK
+						   , P.STATUS
+						   , PRO_MAIN_IMAGE
+						   , DISCOUNT
+					 ORDER
+					 	BY PRO_NO DESC
+					 	) A
+	]]>
+	</entry>
+	
+	<entry key="selectReviewListCount">
+		select Count(*) count
+			from product p
+			left join review r using(pro_no)
+			where p.status != 'N'
+			  and pro_no = ?
+			
+	</entry>
+	
+	<!-- 박수경 상품상세페이지 리뷰리스트 -->
+	<entry key="selectProReviewList">
+		SELECT 
+	         DENSE_RANK() OVER(ORDER BY RE_NO DESC) AS RANK 
+	        , RE_NO
+	        ,R.PRO_NO
+	        , PRO_NAME
+	        ,USER_ID
+	        ,RE_TITLE
+	        ,RE_CONTENT
+	        ,RE_STAR
+	        ,TO_CHAR(R.ENROLL_DATE, 'YYYY-MM-DD') ENROLL_DATE
+	        ,READ_COUNT
+	        ,R.STATUS
+	        ,MACRO_NO
+	        ,REVIEW
+	        ,FILE_NO
+	        ,REF_BNO
+	        ,REF_TYPE
+	        ,ORIGIN_NAME
+	        ,CHANGE_NAME
+	        ,FILE_PATH
+	        ,FILE_LEVEL
+	        
+        FROM REVIEW R
+        JOIN MEMBER ON (RE_WRITER = USER_NO)
+        JOIN PRODUCT P ON (R.PRO_NO = P.PRO_NO)
+        LEFT JOIN ATTACHMENT ON (REF_TYPE = 'R' AND RE_NO = REF_BNO) 
+        WHERE R.STATUS IN ('Y','N')
+          AND R.PRO_NO = ?
+
+	</entry>
+	
+	<entry key="selectWishProduct">
+		SELECT *
+		  FROM WISH
+		 WHERE USER_NO =?
+		   AND PRO_NO = ?
+		 
+	</entry>
+	
+	<entry key="selectOrderProduct">
+		SELECT
+			   PRO_NO
+			 , PRO_NAME
+			 , PRICE
+			 , STOCK
+			 , P.STATUS
+			 , PRO_MAIN_IMAGE
+			 , DISCOUNT
+			 , COUNT(RE_STAR) AS RE_COUNT
+			 , AVG(RE_STAR) AS STAR
+		  FROM PRODUCT P
+		  LEFT JOIN EVENT_PRODUCT USING (PRO_NO)
+		  LEFT JOIN REVIEW USING (PRO_NO)
+		 WHERE PRO_CATE_CODE IN ('A', ? )
+		 GROUP 
+			  BY PRO_NO
+			   , PRO_NAME
+			   , PRICE
+			   , STOCK
+			   , P.STATUS
+			   , PRO_MAIN_IMAGE
+			   , DISCOUNT
+		 ORDER
+		 	BY PRO_NO DESC
+	</entry>
+	
+
+	<entry key="deleteWishProduct">
+		BEGIN
+		    IF EXISTS (SELECT 1 
+		    			 FROM WISH
+		    			WHERE USER_NO = ? 
+		    			  AND PRO_NO = ?) THEN
+		        DELETE 
+		          FROM WISH 
+		         WHERE WHERE USER_NO = ? 
+		    			  AND PRO_NO = ?;
+		    END IF;
+		END;
+	</entry>
+	
+	<entry key="deleteProduct">
+		update
+				product
+		   set  
+		        status = 'N'
+		 where  pro_no = ?
+	</entry>
+
+</properties>
